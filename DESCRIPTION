@@ -1,0 +1,34 @@
+Package: mlr3tuningspaces
+Title: Search Spaces for Hyperparameter Tuning
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Marc",
+           family = "Becker",
+           role = c("cre", "aut"),
+           email = "marcbecker@posteo.de",
+           comment = c(ORCID = "0000-0002-8115-0400"))
+Description: Collection of search spaces for hyperparameter tuning. Includes
+    various search spaces that can be directly applied on an `mlr3` learner. 
+    Additionally, meta information about the search space can queried.
+License: LGPL-3
+Depends:
+    R (>= 3.1.0)
+Imports:
+    checkmate (>= 2.0.0),
+    data.table (>= 1.14.0),
+    mlr3 (>= 0.11.0),
+    mlr3misc (>= 0.9.1),
+    mlr3tuning (>= 0.8.0),
+    paradox (>= 0.7.1),
+    R6 (>= 2.5.0)
+Config/testthat/edition: 3
+Config/testthat/parallel: false
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Collate: 
+    'mlr_tuning_spaces.R'
+    'TuningSpace.R'
+    'classif_svm_s1.R'
+    'zzz.R'
