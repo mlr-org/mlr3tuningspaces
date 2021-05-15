@@ -43,3 +43,20 @@ add_tuning_space = function(id, values, tags, learner) {
   tuning_space = TuningSpace$new(id, values, tags, learner)
   mlr_tuning_spaces$add(id, tuning_space)
 }
+
+#' @export
+rd_info.TuningSpace = function(obj) {
+  ps = lrn(obj$learner)$param_set
+
+  c("",
+    sprintf("* Learner: %s", rd_format_string(obj$learner)),
+    "* Tuning Space:",
+    imap_chr(obj$values, function(space, name) {
+        if (ps$params[[name]]$class %in% c("ParamFct", "ParamLgl")) {
+          sprintf("* %s (%s)", name, as_short_string(space$content$param$levels))
+        } else {
+          sprintf("* %s (%s, %s)", name, as_short_string(space$content$lower), as_short_string(space$content$upper))
+        }
+    })
+  )
+}

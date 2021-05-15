@@ -6,9 +6,10 @@
 \alias{mlr3tuningspaces-package}
 \title{mlr3tuningspaces: Search Spaces for Hyperparameter Tuning}
 \description{
-Collection of search spaces for hyperparameter tuning. Includes
-    various search spaces that can be directly applied on an `mlr3` learner. 
-    Additionally, meta information about the search space can queried.
+Collection of search spaces for hyperparameter tuning.
+    Includes various search spaces that can be directly applied on an
+    `mlr3` learner. Additionally, meta information about the search space
+    can be queried.
 }
 \author{
 \strong{Maintainer}: Marc Becker \email{marcbecker@posteo.de} (\href{https://orcid.org/0000-0002-8115-0400}{ORCID})

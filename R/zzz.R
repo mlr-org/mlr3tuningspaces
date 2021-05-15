@@ -1,4 +1,6 @@
 #' @import paradox
+#' @import mlr3
+#' @import mlr3learners
 #' @import mlr3misc
 #' @import checkmate
 #' @import data.table

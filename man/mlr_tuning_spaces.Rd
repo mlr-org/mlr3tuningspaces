@@ -26,8 +26,9 @@ Returns a \code{\link[data.table:data.table]{data.table::data.table()}} with col
 }
 
 \examples{
+library(data.table)
 as.data.table(mlr_tuning_spaces)
-mlr_resamplings$get("classif.ranger.s1")
+mlr_tuning_spaces$get("classif.ranger.default")
 }
 \concept{Dictionary}
 \concept{TuningSpace}

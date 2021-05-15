@@ -19,8 +19,9 @@
 #' @family TuningSpace
 #' @export
 #' @examples
+#' library(data.table)
 #' as.data.table(mlr_tuning_spaces)
-#' mlr_resamplings$get("classif.ranger.s1")
+#' mlr_tuning_spaces$get("classif.ranger.default")
 mlr_tuning_spaces = R6Class("DictionaryTuningSpaces",
   inherit = Dictionary,
   cloneable = FALSE,

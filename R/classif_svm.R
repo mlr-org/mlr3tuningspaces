@@ -1,6 +1,21 @@
+#' @title Tuning Space for the svm Learner
+#' 
+#' @name mlr_tuning_spaces_classif_svm
+#' @include mlr_tuning_spaces.R
+#' 
+#' @description 
+#' A tuning space for the [mlr3learners::LearnerClassifSVM].
+#' 
+#' @section Meta Information:
+#' `r rd_info(lts("classif.svm.default"))`
+NULL
+
+# source: Bischl et al. (2021) A Practical Introduction into Hyperparameter Optimization
 set = list(
-  cost = to_tune(1e-5, 1e5, logscale = TRUE),
-  gamma = to_tune(1e-5, 1e5, logscale = TRUE)
+  cost = to_tune(1e-4, 1e4, logscale = TRUE),
+  kernel = to_tune(c("polynomial", "radial", "sigmoid", "linear")),
+  degree = to_tune(2, 5),
+  gamma = to_tune(1e-4, 1e4, logscale = TRUE)
 )
 
-add_tuning_space("classif.svm.s1", set, "classification", "classif.svm")
+add_tuning_space("classif.svm.default", set, "classification", "classif.svm")
