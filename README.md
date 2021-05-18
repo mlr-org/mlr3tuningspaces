@@ -29,21 +29,8 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 
 ``` r
 library("mlr3tuningspaces")
-```
-
-    ## Loading required package: mlr3tuning
-
-    ## Loading required package: mlr3
-
-    ## Loading required package: paradox
-
-``` r
 library("data.table")
-```
 
-    ## data.table 1.14.0 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
-
-``` r
 # print keys and learners
 as.data.table(mlr_tuning_spaces)
 ```
