@@ -11,7 +11,6 @@ Package website: [release](https://mlr3tuningspaces.mlr-org.com/) |
 Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran.r-project.org/package=mlr3tuningspaces)
 [![StackOverflow](https://img.shields.io/badge/stackoverflow-mlr3-orange.svg)](https://stackoverflow.com/questions/tagged/mlr3)
 [![Mattermost](https://img.shields.io/badge/chat-mattermost-orange.svg)](https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/)
-[![CodeFactor](https://www.codefactor.io/repository/github/mlr-org/mlr3tuningspaces/badge)](https://www.codefactor.io/repository/github/mlr-org/mlr3tuningspaces)
 <!-- badges: end -->
 
 Collection of search spaces for hyperparameter tuning. Includes various
@@ -30,8 +29,21 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 
 ``` r
 library("mlr3tuningspaces")
-library("data.table")
+```
 
+    ## Loading required package: mlr3tuning
+
+    ## Loading required package: mlr3
+
+    ## Loading required package: paradox
+
+``` r
+library("data.table")
+```
+
+    ## data.table 1.14.0 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+``` r
 # print keys and learners
 as.data.table(mlr_tuning_spaces)
 ```
