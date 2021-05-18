@@ -13,7 +13,7 @@
 #' @section S3 methods:
 #' * `as.data.table(dict)`\cr
 #'   [mlr3misc::Dictionary] -> [data.table::data.table()]\cr
-#'   Returns a [data.table::data.table()] with columns `"key"`, `"params"`, and `"iters"`.
+#'   Returns a [data.table::data.table()] with columns `"key"` and `"learner"`.
 #'
 #' @family Dictionary
 #' @family TuningSpace

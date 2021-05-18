@@ -17,3 +17,4 @@
 ^\.github$
 ^\.lintr$
 ^docs$
+^README\.Rmd$

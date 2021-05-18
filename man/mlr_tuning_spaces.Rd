@@ -21,7 +21,7 @@ See \link[mlr3misc:Dictionary]{mlr3misc::Dictionary}.
 \itemize{
 \item \code{as.data.table(dict)}\cr
 \link[mlr3misc:Dictionary]{mlr3misc::Dictionary} -> \code{\link[data.table:data.table]{data.table::data.table()}}\cr
-Returns a \code{\link[data.table:data.table]{data.table::data.table()}} with columns \code{"key"}, \code{"params"}, and \code{"iters"}.
+Returns a \code{\link[data.table:data.table]{data.table::data.table()}} with columns \code{"key"} and \code{"learner"}.
 }
 }
 
