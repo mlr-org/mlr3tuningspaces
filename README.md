@@ -29,8 +29,7 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 ## Example
 
 ``` r
-library("mlr3")
-library("mlr3tuning")
+library("mlr3tuningspaces")
 library("data.table")
 
 # print keys and learners
@@ -73,4 +72,9 @@ instance = tune(
   resampling = rsmp ("holdout"),
   measure = msr("classif.ce"),
   term_evals = 10)
+
+instance$result
 ```
+
+    ##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce
+    ## 1: 4.174471 0.5070691 -4.542023          <list[3]> <list[3]>  0.1953125

@@ -18,7 +18,6 @@ Package website: [release](https://mlr3tuningspaces.mlr-org.com/) | [dev](https:
 [![CRAN Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran.r-project.org/package=mlr3tuningspaces)
 [![StackOverflow](https://img.shields.io/badge/stackoverflow-mlr3-orange.svg)](https://stackoverflow.com/questions/tagged/mlr3)
 [![Mattermost](https://img.shields.io/badge/chat-mattermost-orange.svg)](https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/)
-[![CodeFactor](https://www.codefactor.io/repository/github/mlr-org/mlr3tuningspaces/badge)](https://www.codefactor.io/repository/github/mlr-org/mlr3tuningspaces)
 <!-- badges: end -->
 
 Collection of search spaces for hyperparameter tuning.
@@ -36,8 +35,7 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 ## Example
 
 ```{r}
-library("mlr3")
-library("mlr3tuning")
+library("mlr3tuningspaces")
 library("data.table")
 
 # print keys and learners
@@ -56,4 +54,6 @@ instance = tune(
   resampling = rsmp ("holdout"),
   measure = msr("classif.ce"),
   term_evals = 10)
+
+instance$result
 ```
