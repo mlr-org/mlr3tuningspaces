@@ -36,6 +36,7 @@ RoxygenNote: 7.1.1
 Collate: 
     'mlr_tuning_spaces.R'
     'TuningSpace.R'
+    'bibentries.R'
     'classif_ranger.R'
     'classif_rpart.R'
     'classif_svm.R'

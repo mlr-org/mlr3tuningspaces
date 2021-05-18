@@ -8,9 +8,12 @@
 #' 
 #' @section Meta Information:
 #' `r rd_info(lts("classif.svm.default"))`
+#' 
+#' @source
+#' `r format_bib("bischl_2021")`
+#' 
 NULL
 
-# source: Bischl et al. (2021) A Practical Introduction into Hyperparameter Optimization
 set = list(
   cost = to_tune(1e-4, 1e4, logscale = TRUE),
   kernel = to_tune(c("polynomial", "radial", "sigmoid", "linear")),

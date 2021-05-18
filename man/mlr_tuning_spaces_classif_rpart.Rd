@@ -3,6 +3,11 @@
 \name{mlr_tuning_spaces_classif_rpart}
 \alias{mlr_tuning_spaces_classif_rpart}
 \title{Tuning Space for the rpart Learner}
+\source{
+Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A (2021).
+\emph{A Practical Introduction into Hyperparameter Optimization: Algorithms, Software, Best Practices and Open Challenges}.
+Preprint.
+}
 \description{
 A tuning space for the \link[mlr3:mlr_learners_classif.rpart]{mlr3::LearnerClassifRpart}.
 }

@@ -8,10 +8,12 @@
 #' 
 #' @section Meta Information:
 #' `r rd_info(lts("classif.xgboost.default"))`
+#'
+#' @source
+#' `r format_bib("bischl_2021")`
 #' 
 NULL
 
-# source: Bischl et al. (2021) A Practical Introduction into Hyperparameter Optimization
 set = list(
   eta = to_tune(1e-4, 1, logscale = TRUE),
   nrounds = to_tune(1, 5000),

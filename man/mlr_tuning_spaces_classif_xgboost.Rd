@@ -3,6 +3,11 @@
 \name{mlr_tuning_spaces_classif_xgboost}
 \alias{mlr_tuning_spaces_classif_xgboost}
 \title{Tuning Space for the xgboost Learner}
+\source{
+Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A (2021).
+\emph{A Practical Introduction into Hyperparameter Optimization: Algorithms, Software, Best Practices and Open Challenges}.
+Preprint.
+}
 \description{
 A tuning space for the \link[mlr3learners:mlr_learners_classif.xgboost]{mlr3learners::LearnerClassifXgboost}.
 }

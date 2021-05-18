@@ -9,9 +9,11 @@
 #' @section Meta Information:
 #' `r rd_info(lts("classif.ranger.default"))`
 #' 
+#' @source
+#' `r format_bib("bischl_2021")`
+#' 
 NULL
 
-# source: Bischl et al. (2021) A Practical Introduction into Hyperparameter Optimization
 set = list(
   replace = to_tune(p_lgl()),
   sample.fraction = to_tune(0.1, 1),

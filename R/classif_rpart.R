@@ -9,9 +9,11 @@
 #' @section Meta Information:
 #' `r rd_info(lts("classif.rpart.default"))`
 #' 
+#' @source
+#' `r format_bib("bischl_2021")`
+#' 
 NULL
 
-# source: Bischl et al. (2021) A Practical Introduction into Hyperparameter Optimization
 set = list(
     minsplit = to_tune(2, 128, logscale = TRUE),
     minbucket = to_tune(1, 64, logscale = TRUE),
