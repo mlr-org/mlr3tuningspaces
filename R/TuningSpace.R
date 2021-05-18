@@ -39,15 +39,14 @@ TuningSpace = R6Class("TuningSpace",
 )
 
 #' @include mlr_tuning_spaces.R
-add_tuning_space = function(id, values, tags, learner) {
+add_tuning_space = function(id, values, tags, learner) { # nolint
   tuning_space = TuningSpace$new(id, values, tags, learner)
   mlr_tuning_spaces$add(id, tuning_space)
 }
 
 #' @export
-rd_info.TuningSpace = function(obj) {
+rd_info.TuningSpace = function(obj) { # nolint
   ps = lrn(obj$learner)$param_set
-
   c("",
     sprintf("* Learner: %s", rd_format_string(obj$learner)),
     "* Tuning Space:",

@@ -18,3 +18,4 @@
 ^\.lintr$
 ^docs$
 ^README\.Rmd$
+^README\.html$
