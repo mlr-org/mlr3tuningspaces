@@ -2,11 +2,16 @@ Package: mlr3tuningspaces
 Title: Search Spaces for Hyperparameter Tuning
 Version: 0.0.0.9000
 Authors@R:
-    person(given = "Marc",
-           family = "Becker",
-           role = c("cre", "aut"),
-           email = "marcbecker@posteo.de",
-           comment = c(ORCID = "0000-0002-8115-0400"))
+    c(person(given = "Marc",
+             family = "Becker",
+             role = c("cre", "aut"),
+             email = "marcbecker@posteo.de",
+             comment = c(ORCID = "0000-0002-8115-0400")),
+      person(given = "Michel",
+             family = "Lang",
+             role = "ctb",
+             email = "michellang@gmail.com",
+             comment = c(ORCID = "0000-0001-9754-0393")))
 Description: Collection of search spaces for hyperparameter tuning.
     Includes various search spaces that can be directly applied on an
     `mlr3` learner. Additionally, meta information about the search space
@@ -22,8 +27,8 @@ Imports:
     paradox (>= 0.7.1),
     R6 (>= 2.5.0)
 Suggests:
-    mlr3learners (>= 0.4.5),
     e1071 (>= 1.7-6),
+    mlr3learners (>= 0.4.5),
     ranger (>= 0.12.1),
     rpart (>= 4.1-15),
     testthat (>= 3.0.0)
