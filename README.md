@@ -42,10 +42,9 @@ as.data.table(mlr_tuning_spaces)
     ## 4: classif.xgboost.default classif.xgboost
 
 ``` r
-# get learner and set tuning space
-learner = lrn("classif.rpart")
-learner$param_set$values = lts("classif.rpart.default")$values
-learner$param_set$values
+# get tuning space and view tune token
+tuning_space = lts("classif.rpart.default")
+tuning_space$values
 ```
 
     ## $minsplit
@@ -63,6 +62,9 @@ learner$param_set$values
     ## range [1e-04, 0.1] (log scale)
 
 ``` r
+# get learner with tuning space
+learner = tuning_space$get_learner()
+
 # tune learner 
 instance = tune(
   method = "random_search",
