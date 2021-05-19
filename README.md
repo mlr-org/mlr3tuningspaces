@@ -1,7 +1,7 @@
 
 # mlr3tuningspaces
 
-Package website: [release](https://mlr3tuningspaces.mlr-org.com/) |
+Package website: [release](https://mlr3tuningspaces.mlr-org.com/) \|
 [dev](https://mlr3tuningspaces.mlr-org.com/dev/)
 
 <!-- badges: start -->
@@ -28,6 +28,7 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 ## Example
 
 ``` r
+library("mlr3tuning")
 library("mlr3tuningspaces")
 library("data.table")
 
@@ -63,7 +64,7 @@ learner$param_set$values
     ## range [1e-04, 0.1] (log scale)
 
 ``` r
-# tune learner 
+# tune learner
 instance = tune(
   method = "random_search",
   task = tsk("pima"),

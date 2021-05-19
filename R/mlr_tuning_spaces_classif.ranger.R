@@ -1,6 +1,6 @@
 #' @title Tuning Space for the ranger Learner
 #'
-#' @name mlr_tuning_spaces_classif_ranger
+#' @name mlr_tuning_spaces_classif.ranger
 #' @include mlr_tuning_spaces.R
 #'
 #' @description
@@ -21,5 +21,6 @@ add_tuning_space(
     num.trees = to_tune(1, 2000)
   ),
   tags = c("default", "classification"),
-  learner = "classif.ranger"
+  learner = "classif.ranger",
+  package = "mlr3learners"
 )

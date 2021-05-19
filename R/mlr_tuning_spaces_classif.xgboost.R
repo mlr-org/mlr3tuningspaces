@@ -27,5 +27,6 @@ add_tuning_space(
     subsample = to_tune(1e-1, 1, logscale = TRUE)
   ),
   tags = c("default", "classification"),
-  learner = "classif.xgboost"
+  learner = "classif.xgboost",
+  package = "mlr3learners"
 )

@@ -16,9 +16,9 @@ A tuning space for \link[mlr3:mlr_learners_classif.rpart]{mlr3::LearnerClassifRp
 \itemize{
 \item Learner: \dQuote{classif.rpart}
 \item Tuning Space:
-\item minsplit (2, 128)
-\item minbucket (1, 64)
-\item cp (0.0001, 0.1)
+\item minsplit \eqn{[2, 128]}{[2, 128]}
+\item minbucket \eqn{[1, 64]}{[1, 64]}
+\item cp \eqn{[1e-04, 0.1]}{[1e-04, 0.1]}
 }
 }
 

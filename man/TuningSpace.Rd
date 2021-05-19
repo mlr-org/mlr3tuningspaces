@@ -15,6 +15,8 @@ This is the abstract base class for tuning spaces.
 
 \item{\code{tags}}{(\code{character()}).}
 
+\item{\code{package}}{(\code{character()}).}
+
 \item{\code{learner}}{(\code{character(1)}).}
 }
 \if{html}{\out{</div>}}
@@ -32,7 +34,7 @@ This is the abstract base class for tuning spaces.
 \subsection{Method \code{new()}}{
 Creates a new instance of this \link[R6:R6Class]{R6} class.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{TuningSpace$new(id, values, tags, learner)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{TuningSpace$new(id, values, tags, learner, package = character())}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -49,6 +51,10 @@ Tags to group and filter tuning spaces.}
 
 \item{\code{learner}}{(\code{character(1)})\cr
 \link[mlr3:Learner]{mlr3::Learner} identifier in \link[mlr3:mlr_learners]{mlr3::mlr_learners}.}
+
+\item{\code{package}}{(\code{character()})\cr
+Packages which provide the \link{Learner}, e.g. \CRANpkg{mlr3learners} for the learner
+\link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners::LearnerClassifRanger} which interfaces the \CRANpkg{ranger} package.}
 }
 \if{html}{\out{</div>}}
 }

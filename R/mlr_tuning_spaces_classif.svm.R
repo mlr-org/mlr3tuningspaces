@@ -22,5 +22,6 @@ add_tuning_space(
     gamma = to_tune(1e-4, 1e4, logscale = TRUE)
   ),
   tags = c("default", "classification"),
-  learner = "classif.svm"
+  learner = "classif.svm",
+  package = "mlr3learners"
 )

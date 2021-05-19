@@ -35,6 +35,7 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 ## Example
 
 ```{r, message = FALSE}
+library("mlr3tuning")
 library("mlr3tuningspaces")
 library("data.table")
 
@@ -46,7 +47,7 @@ learner = lrn("classif.rpart")
 learner$param_set$values = lts("classif.rpart.default")$values
 learner$param_set$values
 
-# tune learner 
+# tune learner
 instance = tune(
   method = "random_search",
   task = tsk("pima"),

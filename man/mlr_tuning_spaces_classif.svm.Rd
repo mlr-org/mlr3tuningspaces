@@ -16,10 +16,10 @@ A tuning space for \link[mlr3learners:mlr_learners_classif.svm]{mlr3learners::Le
 \itemize{
 \item Learner: \dQuote{classif.svm}
 \item Tuning Space:
-\item cost (0.0001, 1e+04)
-\item kernel (polynomial,radial,sigmoid\link{...})
-\item degree (2, 5)
-\item gamma (0.0001, 1e+04)
+\item cost \eqn{[1e-04, 10000]}{[1e-04, 10000]}
+\item kernel (\dQuote{polynomial}, \dQuote{radial}, \dQuote{sigmoid}, \dQuote{linear})
+\item degree \eqn{[2, 5]}{[2, 5]}
+\item gamma \eqn{[1e-04, 10000]}{[1e-04, 10000]}
 }
 }
 
