@@ -45,10 +45,10 @@ Identifier for the new instance.}
 List of \link[paradox:to_tune]{paradox::TuneToken} and parameter values.}
 
 \item{\code{tags}}{(\code{character()})\cr
-Tags to group tuning spaces.}
+Tags to group and filter tuning spaces.}
 
 \item{\code{learner}}{(\code{character(1)})\cr
-\link[mlr3:Learner]{mlr3::Learner} id.}
+\link[mlr3:Learner]{mlr3::Learner} identifier in \link[mlr3:mlr_learners]{mlr3::mlr_learners}.}
 }
 \if{html}{\out{</div>}}
 }

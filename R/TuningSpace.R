@@ -1,8 +1,8 @@
 #' @title Tuning Spaces
-#' 
-#' @description 
+#'
+#' @description
 #' This is the abstract base class for tuning spaces.
-#' 
+#'
 #' @export
 TuningSpace = R6Class("TuningSpace",
   public = list(
@@ -26,14 +26,14 @@ TuningSpace = R6Class("TuningSpace",
     #' @param values (`list()`)\cr
     #'   List of [paradox::TuneToken] and parameter values.
     #' @param tags (`character()`)\cr
-    #'   Tags to group tuning spaces.
+    #'   Tags to group and filter tuning spaces.
     #' @param learner (`character(1)`)\cr
-    #'   [mlr3::Learner] id.
+    #'   [mlr3::Learner] identifier in [mlr3::mlr_learners].
     initialize = function(id, values, tags, learner) {
-      self$id = assert_string(id, min.chars = 1L) 
+      self$id = assert_string(id, min.chars = 1L)
       self$learner = assert_string(learner, min.chars = 1L)
-      self$values = assert_list(values)
-      self$tags = assert_character(tags)
+      self$values = assert_list(values, names = "unique")
+      self$tags = assert_character(tags, any.missing = FALSE)
     }
   )
 )
