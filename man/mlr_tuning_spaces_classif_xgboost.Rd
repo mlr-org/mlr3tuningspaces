@@ -16,15 +16,15 @@ A tuning space for the \link[mlr3learners:mlr_learners_classif.xgboost]{mlr3lear
 \itemize{
 \item Learner: \dQuote{classif.xgboost}
 \item Tuning Space:
-\item eta (0.0001, 1)
-\item nrounds (1, 5000)
-\item max_depth (1, 20)
-\item colsample_bytree (0.1, 1)
-\item colsample_bylevel (0.1, 1)
-\item lambda (0.1, 1)
-\item gamma (0.0001, 1000)
-\item alpha (0.0001, 1000)
-\item subsample (0.1, 1)
+\item eta \eqn{[1e-04, 1]}{[1e-04, 1]}
+\item nrounds \eqn{[1, 5000]}{[1, 5000]}
+\item max_depth \eqn{[1, 20]}{[1, 20]}
+\item colsample_bytree \eqn{[0.1, 1]}{[0.1, 1]}
+\item colsample_bylevel \eqn{[0.1, 1]}{[0.1, 1]}
+\item lambda \eqn{[0.1, 1]}{[0.1, 1]}
+\item gamma \eqn{[1e-04, 1000]}{[1e-04, 1000]}
+\item alpha \eqn{[1e-04, 1000]}{[1e-04, 1000]}
+\item subsample \eqn{[0.1, 1]}{[0.1, 1]}
 }
 }
 

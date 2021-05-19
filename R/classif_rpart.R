@@ -15,9 +15,9 @@
 NULL
 
 set = list(
-    minsplit = to_tune(2, 128, logscale = TRUE),
-    minbucket = to_tune(1, 64, logscale = TRUE),
-    cp = to_tune(1e-04, 1e-1, logscale = TRUE)
+  minsplit = to_tune(2, 128, logscale = TRUE),
+  minbucket = to_tune(1, 64, logscale = TRUE),
+  cp = to_tune(1e-04, 1e-1, logscale = TRUE)
 )
 
 add_tuning_space("classif.rpart.default", set, "classification", "classif.rpart")

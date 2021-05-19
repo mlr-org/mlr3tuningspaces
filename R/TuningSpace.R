@@ -1,9 +1,32 @@
 #' @title Tuning Spaces
 #' 
 #' @description 
-#' This is the abstract base class for tuning spaces.
+#' This is the abstract base class for tuning spaces which define a search space
+#' for hyperparameter tuning. `TuningSpace` objects store a list of 
+#' [paradox::TuneToken] which can assigned to the values slot of learner's 
+#' [paradox::ParamSet]. 
 #' 
 #' @export
+#' @examples
+#' library(mlr3tuning)
+#' 
+#' # get default tuning space of rpart learner
+#' tuning_space = mlr_tuning_spaces$get("classif.rpart.default")
+#' 
+#' # get learner and set tuning space
+#' learner = lrn("classif.rpart")
+#' learner$param_set$values = tuning_space$values
+#' 
+#' # tune learner 
+#' instance = tune(
+#'  method = "random_search",
+#'  task = tsk("pima"),
+#'  learner = learner,
+#'  resampling = rsmp ("holdout"),
+#'  measure = msr("classif.ce"),
+#'  term_evals = 10)
+#' 
+#' instance$result
 TuningSpace = R6Class("TuningSpace",
   public = list(
     #' @field id (`character(1)`).
@@ -34,6 +57,19 @@ TuningSpace = R6Class("TuningSpace",
       self$learner = assert_string(learner, min.chars = 1L)
       self$values = assert_list(values)
       self$tags = assert_character(tags)
+    },
+
+    #' @description
+    #' Returns a learner with [TuneToken] set in parameter set.
+    #'
+    #' @param ... (named ‘list()’)\cr
+    #'   Passed to `mlr3::lrn()`. Named arguments passed to the constructor, to
+    #'   be set as parameters in the [paradox::ParamSet], or to be set as public
+    #'   field. See `mlr3misc::dictionary_sugar_get()` for more details.
+    get_learner = function(...) {
+      learner = lrn(self$learner, ...)
+      learner$param_set$values = lts(self$id)$values
+      learner
     }
   )
 )
@@ -52,9 +88,9 @@ rd_info.TuningSpace = function(obj) { # nolint
     "* Tuning Space:",
     imap_chr(obj$values, function(space, name) {
         if (ps$params[[name]]$class %in% c("ParamFct", "ParamLgl")) {
-          sprintf("* %s (%s)", name, as_short_string(space$content$param$levels))
+          sprintf("* %s \\[%s\\]", name, as_short_string(space$content$param$levels))
         } else {
-          sprintf("* %s (%s, %s)", name, as_short_string(space$content$lower), as_short_string(space$content$upper))
+          sprintf("* %s %s", name, rd_format_range(space$content$lower, space$content$upper))
         }
     })
   )
