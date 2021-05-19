@@ -7,5 +7,3 @@ bibentries = c(
     publisher    = "Preprint"
   )
 )
-
-

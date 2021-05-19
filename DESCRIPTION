@@ -1,7 +1,7 @@
 Package: mlr3tuningspaces
 Title: Search Spaces for Hyperparameter Tuning
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     person(given = "Marc",
            family = "Becker",
            role = c("cre", "aut"),
@@ -33,13 +33,13 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Collate: 
+Collate:
     'mlr_tuning_spaces.R'
     'TuningSpace.R'
     'bibentries.R'
-    'classif_ranger.R'
-    'classif_rpart.R'
-    'classif_svm.R'
-    'classif_xgboost.R'
+    'mlr_tuning_spaces_classif.ranger.R'
+    'mlr_tuning_spaces_classif.rpart.R'
+    'mlr_tuning_spaces_classif.svm.R'
+    'mlr_tuning_spaces_classif.xgboost.R'
     'sugar.R'
     'zzz.R'

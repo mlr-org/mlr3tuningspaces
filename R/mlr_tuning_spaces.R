@@ -28,7 +28,7 @@ mlr_tuning_spaces = R6Class("DictionaryTuningSpaces",
 )$new()
 
 #' @export
-as.data.table.DictionaryTuningSpaces = function(x, ...) {
+as.data.table.DictionaryTuningSpaces = function(x, ...) { # nolint
   setkeyv(map_dtr(x$keys(), function(key) {
     l = withCallingHandlers(x$get(key),
       packageNotFoundWarning = function(w) invokeRestart("muffleWarning"))
