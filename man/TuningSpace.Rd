@@ -103,6 +103,9 @@ field. See \code{mlr3misc::dictionary_sugar_get()} for more details.}
 }
 \if{html}{\out{</div>}}
 }
+\subsection{Returns}{
+\link[mlr3:Learner]{mlr3::Learner}
+}
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-clone"></a>}}

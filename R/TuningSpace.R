@@ -73,6 +73,7 @@ TuningSpace = R6Class("TuningSpace",
     #'   Passed to `mlr3::lrn()`. Named arguments passed to the constructor, to
     #'   be set as parameters in the [paradox::ParamSet], or to be set as public
     #'   field. See `mlr3misc::dictionary_sugar_get()` for more details.
+    #' @return [mlr3::Learner]
     get_learner = function(...) {
       learner = lrn(self$learner, ...)
       learner$param_set$values = insert_named(learner$param_set$values, lts(self$id)$values)
