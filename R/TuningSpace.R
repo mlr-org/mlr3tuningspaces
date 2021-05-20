@@ -75,7 +75,7 @@ TuningSpace = R6Class("TuningSpace",
     #'   field. See `mlr3misc::dictionary_sugar_get()` for more details.
     get_learner = function(...) {
       learner = lrn(self$learner, ...)
-      learner$param_set$values = lts(self$id)$values
+      learner$param_set$values = insert_named(learner$param_set$values, lts(self$id)$values)
       learner
     }
   )
