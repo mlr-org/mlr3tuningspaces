@@ -12,4 +12,8 @@ test_tuning_space = function(learner, set) {
   learner = lrn(learner)
   learner$param_set$values = mlr_tuning_spaces$get(set)$values
   expect_equal(learner$param_set$values, mlr_tuning_spaces$get(set)$values)
+  
+  learner = learner$get_learner()
+  expect_learner(learner)
+  expect_equal(learner$param_set$values, mlr_tuning_spaces$get(set)$values)
 }

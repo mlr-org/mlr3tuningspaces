@@ -92,8 +92,6 @@ rd_info.TuningSpace = function(obj) { # nolint
   require_namespaces(obj$package)
   ps = lrn(obj$learner)$param_set
   c("",
-    sprintf("* Learner: %s", rd_format_string(obj$learner)),
-    "* Tuning Space:",
     imap_chr(obj$values, function(space, name) {
       switch(ps$params[[name]]$class,
         "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$param$levels)),
