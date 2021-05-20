@@ -42,10 +42,12 @@ library("data.table")
 # print keys and learners
 as.data.table(mlr_tuning_spaces)
 
-# get learner and set tuning space
-learner = lrn("classif.rpart")
-learner$param_set$values = lts("classif.rpart.default")$values
-learner$param_set$values
+# get tuning space and view tune token
+tuning_space = lts("classif.rpart.default")
+tuning_space$values
+
+# get learner with tuning space
+learner = tuning_space$get_learner()
 
 # tune learner
 instance = tune(

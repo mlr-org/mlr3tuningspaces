@@ -4,7 +4,31 @@
 \alias{TuningSpace}
 \title{Tuning Spaces}
 \description{
-This is the abstract base class for tuning spaces.
+This is the abstract base class for tuning spaces which define a search space
+for hyperparameter tuning. \code{TuningSpace} objects store a list of
+\link[paradox:to_tune]{paradox::TuneToken} which can assigned to the values slot of learner's
+\link[paradox:ParamSet]{paradox::ParamSet}.
+}
+\examples{
+library(mlr3tuning)
+
+# get default tuning space of rpart learner
+tuning_space = mlr_tuning_spaces$get("classif.rpart.default")
+
+# get learner and set tuning space
+learner = lrn("classif.rpart")
+learner$param_set$values = tuning_space$values
+
+# tune learner
+instance = tune(
+ method = "random_search",
+ task = tsk("pima"),
+ learner = learner,
+ resampling = rsmp ("holdout"),
+ measure = msr("classif.ce"),
+ term_evals = 10)
+
+instance$result
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
@@ -25,6 +49,7 @@ This is the abstract base class for tuning spaces.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-new}{\code{TuningSpace$new()}}
+\item \href{#method-get_learner}{\code{TuningSpace$get_learner()}}
 \item \href{#method-clone}{\code{TuningSpace$clone()}}
 }
 }
@@ -55,6 +80,26 @@ Tags to group and filter tuning spaces.}
 \item{\code{package}}{(\code{character()})\cr
 Packages which provide the \link{Learner}, e.g. \CRANpkg{mlr3learners} for the learner
 \link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners::LearnerClassifRanger} which interfaces the \CRANpkg{ranger} package.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-get_learner"></a>}}
+\if{latex}{\out{\hypertarget{method-get_learner}{}}}
+\subsection{Method \code{get_learner()}}{
+Returns a learner with \link{TuneToken} set in parameter set.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{TuningSpace$get_learner(...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{(named ‘list()’)\cr
+Passed to \code{mlr3::lrn()}. Named arguments passed to the constructor, to
+be set as parameters in the \link[paradox:ParamSet]{paradox::ParamSet}, or to be set as public
+field. See \code{mlr3misc::dictionary_sugar_get()} for more details.}
 }
 \if{html}{\out{</div>}}
 }

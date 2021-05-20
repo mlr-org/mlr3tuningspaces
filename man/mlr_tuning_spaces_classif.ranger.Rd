@@ -16,7 +16,7 @@ A tuning space for \link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners:
 \itemize{
 \item Learner: \dQuote{classif.ranger}
 \item Tuning Space:
-\item replace (TRUE,FALSE)
+\item replace [TRUE,FALSE]
 \item sample.fraction \eqn{[0.1, 1]}{[0.1, 1]}
 \item num.trees \eqn{[1, 2000]}{[1, 2000]}
 }
