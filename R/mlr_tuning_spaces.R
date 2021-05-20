@@ -34,7 +34,8 @@ as.data.table.DictionaryTuningSpaces = function(x, ...) { # nolint
       packageNotFoundWarning = function(w) invokeRestart("muffleWarning"))
     list(
       key = key,
-      learner = list(l$learner)
+      learner = list(l$learner),
+      n_values = length(l$values)
     )
   }), "key")[]
 }
