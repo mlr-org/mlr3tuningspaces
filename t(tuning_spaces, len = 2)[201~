@@ -1,0 +1,215 @@
+checkList              package:checkmate               R Documentation
+
+_C_h_e_c_k _i_f _a_n _a_r_g_u_m_e_n_t _i_s _a _l_i_s_t
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     Check if an argument is a list
+
+_U_s_a_g_e:
+
+     checkList(
+       x,
+       types = character(0L),
+       any.missing = TRUE,
+       all.missing = TRUE,
+       len = NULL,
+       min.len = NULL,
+       max.len = NULL,
+       unique = FALSE,
+       names = NULL,
+       null.ok = FALSE
+     )
+     
+     check_list(
+       x,
+       types = character(0L),
+       any.missing = TRUE,
+       all.missing = TRUE,
+       len = NULL,
+       min.len = NULL,
+       max.len = NULL,
+       unique = FALSE,
+       names = NULL,
+       null.ok = FALSE
+     )
+     
+     assertList(
+       x,
+       types = character(0L),
+       any.missing = TRUE,
+       all.missing = TRUE,
+       len = NULL,
+       min.len = NULL,
+       max.len = NULL,
+       unique = FALSE,
+       names = NULL,
+       null.ok = FALSE,
+       .var.name = vname(x),
+       add = NULL
+     )
+     
+     assert_list(
+       x,
+       types = character(0L),
+       any.missing = TRUE,
+       all.missing = TRUE,
+       len = NULL,
+       min.len = NULL,
+       max.len = NULL,
+       unique = FALSE,
+       names = NULL,
+       null.ok = FALSE,
+       .var.name = vname(x),
+       add = NULL
+     )
+     
+     testList(
+       x,
+       types = character(0L),
+       any.missing = TRUE,
+       all.missing = TRUE,
+       len = NULL,
+       min.len = NULL,
+       max.len = NULL,
+       unique = FALSE,
+       names = NULL,
+       null.ok = FALSE
+     )
+     
+     test_list(
+       x,
+       types = character(0L),
+       any.missing = TRUE,
+       all.missing = TRUE,
+       len = NULL,
+       min.len = NULL,
+       max.len = NULL,
+       unique = FALSE,
+       names = NULL,
+       null.ok = FALSE
+     )
+     
+     expect_list(
+       x,
+       types = character(0L),
+       any.missing = TRUE,
+       all.missing = TRUE,
+       len = NULL,
+       min.len = NULL,
+       max.len = NULL,
+       unique = FALSE,
+       names = NULL,
+       null.ok = FALSE,
+       info = NULL,
+       label = vname(x)
+     )
+     
+_A_r_g_u_m_e_n_t_s:
+
+       x: [any]
+          Object to check.
+
+   types: [‘character’]
+          Character vector of class names. Each list element must
+          inherit from at least one of the provided types. The types
+          “logical”, “integer”, “integerish”, “double”, “numeric”,
+          “complex”, “character”, “factor”, “atomic”, “vector”
+          “atomicvector”, “array”, “matrix”, “list”, “function”,
+          “environment” and “null” are supported. For other types
+          ‘inherits’ is used as a fallback to check ‘x’'s inheritance.
+          Defaults to ‘character(0)’ (no check).
+
+any.missing: [‘logical(1)’]
+          Are vectors with missing values allowed? Default is ‘TRUE’.
+
+all.missing: [‘logical(1)’]
+          Are vectors with only missing values allowed? Default is
+          ‘TRUE’.
+
+     len: [‘integer(1)’]
+          Exact expected length of ‘x’.
+
+ min.len: [‘integer(1)’]
+          Minimal length of ‘x’.
+
+ max.len: [‘integer(1)’]
+          Maximal length of ‘x’.
+
+  unique: [‘logical(1)’]
+          Must all values be unique? Default is ‘FALSE’.
+
+   names: [‘character(1)’]
+          Check for names. See ‘checkNamed’ for possible values.
+          Default is “any” which performs no check at all. Note that
+          you can use ‘checkSubset’ to check for a specific set of
+          names.
+
+ null.ok: [‘logical(1)’]
+          If set to ‘TRUE’, ‘x’ may also be ‘NULL’. In this case only a
+          type check of ‘x’ is performed, all additional checks are
+          disabled.
+
+.var.name: [‘character(1)’]
+          Name of the checked object to print in assertions. Defaults
+          to the heuristic implemented in ‘vname’.
+
+     add: [‘AssertCollection’]
+          Collection to store assertion messages. See
+          ‘AssertCollection’.
+
+    info: [character(1)]
+          Extra information to be included in the message for the
+          testthat reporter. See ‘expect_that’.
+
+   label: [‘character(1)’]
+          Name of the checked object to print in messages. Defaults to
+          the heuristic implemented in ‘vname’.
+
+_V_a_l_u_e:
+
+     Depending on the function prefix: If the check is successful, the
+     functions ‘assertList’/‘assert_list’ return ‘x’ invisibly, whereas
+     ‘checkList’/‘check_list’ and ‘testList’/‘test_list’ return ‘TRUE’.
+     If the check is not successful, ‘assertList’/‘assert_list’ throws
+     an error message, ‘testList’/‘test_list’ returns ‘FALSE’, and
+     ‘checkList’ returns a string with the error message.  The function
+     ‘expect_list’ always returns an ‘expectation’.
+
+_N_o_t_e:
+
+     Contrary to R's ‘is.list’, objects of type ‘pairlist’ are not
+     recognized as list.
+
+     Missingness is defined here as elements of the list being ‘NULL’,
+     analogously to ‘anyMissing’.
+
+     The test for uniqueness does differentiate between the different
+     NA types which are built-in in R. This is required to be
+     consistent with ‘unique’ while checking scalar missing values.
+     Also see the example.
+
+_S_e_e _A_l_s_o:
+
+     Other basetypes: ‘checkArray()’, ‘checkAtomicVector()’,
+     ‘checkAtomic()’, ‘checkCharacter()’, ‘checkComplex()’,
+     ‘checkDataFrame()’, ‘checkDate()’, ‘checkDouble()’,
+     ‘checkEnvironment()’, ‘checkFactor()’, ‘checkFormula()’,
+     ‘checkFunction()’, ‘checkIntegerish()’, ‘checkInteger()’,
+     ‘checkLogical()’, ‘checkMatrix()’, ‘checkNull()’,
+     ‘checkNumeric()’, ‘checkPOSIXct()’, ‘checkRaw()’, ‘checkVector()’
+
+_E_x_a_m_p_l_e_s:
+
+     testList(list())
+     testList(as.list(iris), types = c("numeric", "factor"))
+     
+     # Missingness
+     testList(list(1, NA), any.missing = FALSE)
+     testList(list(1, NULL), any.missing = FALSE)
+     
+     # Uniqueness differentiates between different NA types:
+     testList(list(NA, NA), unique = TRUE)
+     testList(list(NA, NA_real_), unique = TRUE)
+     
+
