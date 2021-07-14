@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mlr3tuningspaces.mlr-org.com/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3tuningspaces.mlr-org.com/reference/TuningSpace.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3tuningspaces.mlr-org.com/reference/lts.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3tuningspaces.mlr-org.com/reference/mlr3tuningspaces-package.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3tuningspaces.mlr-org.com/reference/mlr_tuning_spaces.html</loc>
+  </url>
+  <url>
+    <loc>https://mlr3tuningspaces.mlr-org.com/reference/tuning_spaces_default.html</loc>
+  </url>
+</urlset>
