@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • mlr3tuningspaces</title>
+<title>RandomBot Tuning Spaces — tuning_spaces_rbv2 • mlr3tuningspaces</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -47,7 +47,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="RandomBot Tuning Spaces — tuning_spaces_rbv2" />
+<meta property="og:description" content="Tuning spaces from the Kuehn (2018) article." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -66,7 +68,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -128,72 +130,100 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>RandomBot Tuning Spaces</h1>
+    
+    <div class="hidden name"><code>tuning_spaces_rbv2.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Tuning spaces from the Kuehn (2018) article.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="TuningSpace.html">TuningSpace</a></code> </p>
-        </td>
-        <td><p>Tuning Spaces</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="lts.html">lts()</a></code> <code><a href="lts.html">ltss()</a></code> </p>
-        </td>
-        <td><p>Syntactic Sugar for Tuning Space Construction</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlr3tuningspaces-package.html">mlr3tuningspaces-package</a></code> </p>
-        </td>
-        <td><p>mlr3tuningspaces: Search Spaces for Hyperparameter Tuning</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="mlr_tuning_spaces.html">mlr_tuning_spaces</a></code> </p>
-        </td>
-        <td><p>Dictionary of Tuning Spaces</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tuning_spaces_default.html">tuning_spaces_default</a></code> </p>
-        </td>
-        <td><p>Default Tuning Spaces</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tuning_spaces_rbv2.html">tuning_spaces_rbv2</a></code> </p>
-        </td>
-        <td><p>RandomBot Tuning Spaces</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Kuehn D, Probst P, Thomas J, Bischl B (2018).
+&#8220;Automatic Exploration of Machine Learning Experiments on OpenML.&#8221;
+<em>arvixs</em>.</p>
+    <h2 class="hasAnchor" id="glmnet-tuning-space"><a class="anchor" href="#glmnet-tuning-space"></a>glmnet tuning space</h2>
+
+    
+
+<ul>
+<li><p>alpha \([0, 1]\)</p></li>
+<li><p>s \([1e-04, 1000]\)</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="kknn-tuning-space"><a class="anchor" href="#kknn-tuning-space"></a>kknn tuning space</h2>
+
+    
+
+<ul>
+<li><p>k \([1, 30]\)</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="ranger-tuning-space"><a class="anchor" href="#ranger-tuning-space"></a>ranger tuning space</h2>
+
+    
+
+<ul>
+<li><p>num.trees \([1, 2000]\)</p></li>
+<li><p>replace [TRUE,FALSE]</p></li>
+<li><p>sample.fraction \([0.1, 1]\)</p></li>
+<li><p>respect.unordered.factors [&#8220;ignore&#8221;, &#8220;order&#8221;, &#8220;partition&#8221;]</p></li>
+<li><p>min.node.size \([1, 100]\)</p></li>
+<li><p>splitrule [&#8220;gini&#8221;, &#8220;extratrees&#8221;]</p></li>
+<li><p>num.random.splits \([1, 100]\)</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="rpart-tuning-space"><a class="anchor" href="#rpart-tuning-space"></a>rpart tuning space</h2>
+
+    
+
+<ul>
+<li><p>cp \([1e-04, 1]\)</p></li>
+<li><p>maxdepth \([1, 30]\)</p></li>
+<li><p>minbucket \([1, 100]\)</p></li>
+<li><p>minsplit \([1, 100]\)</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="svm-tuning-space"><a class="anchor" href="#svm-tuning-space"></a>svm tuning space</h2>
+
+    
+
+<ul>
+<li><p>kernel [&#8220;linear&#8221;, &#8220;polynomial&#8221;, &#8220;radial&#8221;]</p></li>
+<li><p>cost \([1e-04, 1000]\)</p></li>
+<li><p>gamma \([1e-04, 1000]\)</p></li>
+<li><p>tolerance \([1e-04, 2]\)</p></li>
+<li><p>degree \([2, 5]\)</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="xgboost-tuning-space"><a class="anchor" href="#xgboost-tuning-space"></a>xgboost tuning space</h2>
+
+    
+
+<ul>
+<li><p>booster [&#8220;gblinear&#8221;, &#8220;gbtree&#8221;, &#8220;dart&#8221;]</p></li>
+<li><p>nrounds \([2, 8]\)</p></li>
+<li><p>eta \([1e-04, 1]\)</p></li>
+<li><p>gamma \([1e-05, 7]\)</p></li>
+<li><p>lambda \([1e-04, 1000]\)</p></li>
+<li><p>alpha \([1e-04, 1000]\)</p></li>
+<li><p>subsample \([0.1, 1]\)</p></li>
+<li><p>max_depth \([1, 15]\)</p></li>
+<li><p>min_child_weight \([1, 100]\)</p></li>
+<li><p>colsample_bytree \([0.01, 1]\)</p></li>
+<li><p>colsample_bylevel \([0.01, 1]\)</p></li>
+<li><p>rate_drop \([0, 1]\)</p></li>
+<li><p>skip_drop \([0, 1]\)</p></li>
+</ul>
+
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
