@@ -34,9 +34,34 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 
 ## Example
 
+```{r, include = FALSE}
+# mute load messages
+library(mlr3tuningspaces)
+library(data.table)
+```
+
+### Quick tuning
+
+```{r}
+library(mlr3tuningspaces)
+
+# tune learner with default search space
+instance = tune(
+  method = "random_search",
+  task = tsk("pima"),
+  learner = lts(lrn("classif.rpart")),
+  resampling = rsmp ("holdout"),
+  measure = msr("classif.ce"),
+  term_evals = 10
+)
+
+# best performing hyperparameter configuration
+instance$result
+```
+
+### Tuning search spaces
+
 ```{r, message = FALSE}
-library("mlr3tuning")
-library("mlr3tuningspaces")
 library("data.table")
 
 # print keys and learners

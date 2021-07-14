@@ -18,6 +18,7 @@ Description: Collection of search spaces for hyperparameter tuning.
     can be queried.
 License: LGPL-3
 Depends:
+    mlr3tuning (>= 0.8.0),
     R (>= 3.1.0)
 Imports:
     checkmate (>= 2.0.0),
@@ -29,7 +30,6 @@ Imports:
 Suggests:
     e1071 (>= 1.7-6),
     mlr3learners (>= 0.4.5),
-    mlr3tuning (>= 0.8.0),
     ranger (>= 0.12.1),
     rpart (>= 4.1-15),
     testthat (>= 3.0.0),
