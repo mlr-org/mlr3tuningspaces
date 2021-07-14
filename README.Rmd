@@ -35,6 +35,7 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 ## Example
 
 ```{r, message = FALSE}
+library("mlr3tuning")
 library("mlr3tuningspaces")
 library("data.table")
 
@@ -48,7 +49,7 @@ tuning_space$values
 # get learner with tuning space
 learner = tuning_space$get_learner()
 
-# tune learner 
+# tune learner
 instance = tune(
   method = "random_search",
   task = tsk("pima"),

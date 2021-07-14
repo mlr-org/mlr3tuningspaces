@@ -1,45 +1,48 @@
 Package: mlr3tuningspaces
 Title: Search Spaces for Hyperparameter Tuning
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "Marc",
-           family = "Becker",
-           role = c("cre", "aut"),
-           email = "marcbecker@posteo.de",
-           comment = c(ORCID = "0000-0002-8115-0400"))
+Authors@R:
+    c(person(given = "Marc",
+             family = "Becker",
+             role = c("cre", "aut"),
+             email = "marcbecker@posteo.de",
+             comment = c(ORCID = "0000-0002-8115-0400")),
+      person(given = "Michel",
+             family = "Lang",
+             role = "ctb",
+             email = "michellang@gmail.com",
+             comment = c(ORCID = "0000-0001-9754-0393")))
 Description: Collection of search spaces for hyperparameter tuning.
     Includes various search spaces that can be directly applied on an
     `mlr3` learner. Additionally, meta information about the search space
     can be queried.
 License: LGPL-3
 Depends:
-    R (>= 3.1.0),
-    mlr3tuning (>= 0.8.0)
+    R (>= 3.1.0)
 Imports:
     checkmate (>= 2.0.0),
     data.table (>= 1.14.0),
     mlr3 (>= 0.11.0),
-    mlr3learners (>= 0.4.5),
     mlr3misc (>= 0.9.1),
     paradox (>= 0.7.1),
     R6 (>= 2.5.0)
 Suggests:
     e1071 (>= 1.7-6),
+    mlr3learners (>= 0.4.5),
+    mlr3tuning (>= 0.8.0),
     ranger (>= 0.12.1),
     rpart (>= 4.1-15),
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    xgboost (>= 1.4.1.1)
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Collate: 
+Collate:
     'mlr_tuning_spaces.R'
     'TuningSpace.R'
     'bibentries.R'
-    'classif_ranger.R'
-    'classif_rpart.R'
-    'classif_svm.R'
-    'classif_xgboost.R'
     'sugar.R'
+    'tuning_spaces_default.R'
     'zzz.R'

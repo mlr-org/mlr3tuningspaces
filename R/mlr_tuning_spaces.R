@@ -13,7 +13,8 @@
 #' @section S3 methods:
 #' * `as.data.table(dict)`\cr
 #'   [mlr3misc::Dictionary] -> [data.table::data.table()]\cr
-#'   Returns a [data.table::data.table()] with columns `"key"` and `"learner"`.
+#'   Returns a [data.table::data.table()] with columns `"key"`, `"learner"` and
+#'   `"n_values"`.
 #'
 #' @family Dictionary
 #' @family TuningSpace
@@ -28,13 +29,14 @@ mlr_tuning_spaces = R6Class("DictionaryTuningSpaces",
 )$new()
 
 #' @export
-as.data.table.DictionaryTuningSpaces = function(x, ...) {
+as.data.table.DictionaryTuningSpaces = function(x, ...) { # nolint
   setkeyv(map_dtr(x$keys(), function(key) {
     l = withCallingHandlers(x$get(key),
       packageNotFoundWarning = function(w) invokeRestart("muffleWarning"))
     list(
       key = key,
-      learner = list(l$learner)
+      learner = list(l$learner),
+      n_values = length(l$values)
     )
   }), "key")[]
 }

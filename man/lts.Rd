@@ -2,23 +2,23 @@
 % Please edit documentation in R/sugar.R
 \name{lts}
 \alias{lts}
+\alias{lts.character}
+\alias{lts.Learner}
 \alias{ltss}
 \title{Syntactic Sugar for Tuning Space Construction}
 \usage{
-lts(.key, ...)
+lts(x)
 
-ltss(.keys, ...)
+\method{lts}{character}(x)
+
+\method{lts}{Learner}(x)
+
+ltss(x)
 }
 \arguments{
-\item{.key}{(\code{character(1)})\cr
-Key passed to the respective \link[mlr3misc:Dictionary]{dictionary} to retrieve the object.}
-
-\item{...}{(named \code{list()})\cr
-Named arguments passed to the constructor, to be set as parameters in the \link[paradox:ParamSet]{paradox::ParamSet}, or to be set as public field.
-See \code{\link[mlr3misc:dictionary_sugar_get]{mlr3misc::dictionary_sugar_get()}} for more details.}
-
-\item{.keys}{(\code{character()})\cr
-Keys passed to the respective \link[mlr3misc:Dictionary]{dictionary} to retrieve multiple objects.}
+\item{x}{(\code{character()} | \link[mlr3:Learner]{mlr3::Learner})\cr
+If \code{character}, key passed the dictionary to retrieve the tuning space.
+If \link[mlr3:Learner]{mlr3::Learner}, default tuning space is added to the learner.}
 }
 \value{
 \itemize{

@@ -14,4 +14,9 @@ Collection of search spaces for hyperparameter tuning.
 \author{
 \strong{Maintainer}: Marc Becker \email{marcbecker@posteo.de} (\href{https://orcid.org/0000-0002-8115-0400}{ORCID})
 
+Other contributors:
+\itemize{
+  \item Michel Lang \email{michellang@gmail.com} (\href{https://orcid.org/0000-0001-9754-0393}{ORCID}) [contributor]
+}
+
 }
