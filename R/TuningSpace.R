@@ -94,10 +94,13 @@ rd_info.TuningSpace = function(obj) { # nolint
   ps = lrn(obj$learner)$param_set
   c("",
     imap_chr(obj$values, function(space, name) {
+ 
       switch(ps$params[[name]]$class,
         "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$param$levels)),
         "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$param$levels)),
-        sprintf("* %s %s", name, rd_format_range(space$content$lower, space$content$upper))
+        {lower = c(space$content$param$lower, space$content$lower) # one is NULL
+        upper = c(space$content$upper, space$content$param$upper)
+        sprintf("* %s %s", name, rd_format_range(lower, upper))}
       )
     })
   )
