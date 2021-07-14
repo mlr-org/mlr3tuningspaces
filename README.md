@@ -14,7 +14,7 @@ Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran
 <!-- badges: end -->
 
 Collection of search spaces for hyperparameter tuning. Includes various
-search spaces that can be directly applied on an `mlr3` learner.
+search spaces that can be directly applied to an `mlr3` learner.
 Additionally, meta information about the search space can be queried.
 
 ## Installation
