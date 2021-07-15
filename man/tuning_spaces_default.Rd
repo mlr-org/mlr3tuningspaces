@@ -14,7 +14,7 @@
 \source{
 Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A (2021).
 \dQuote{A Practical Introduction into Hyperparameter Optimization: Algorithms, Software, Best Practices and Open Challenges.}
-\emph{arvixs}.
+2107.05847.
 }
 \description{
 Tuning spaces from the Bischl (2021) article.

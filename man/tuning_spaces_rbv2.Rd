@@ -14,7 +14,7 @@
 \source{
 Kuehn D, Probst P, Thomas J, Bischl B (2018).
 \dQuote{Automatic Exploration of Machine Learning Experiments on OpenML.}
-\emph{arvixs}.
+1806.10961.
 }
 \description{
 Tuning spaces from the Kuehn (2018) article.
