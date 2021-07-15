@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Default Tuning Spaces — tuning_spaces_default • mlr3tuningspaces</title>
+<title>Changelog • mlr3tuningspaces</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -47,9 +47,7 @@
 
 
 
-<meta property="og:title" content="Default Tuning Spaces — tuning_spaces_default" />
-<meta property="og:description" content="Tuning spaces from the Bischl (2021) article." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -68,7 +66,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -135,76 +133,25 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Default Tuning Spaces</h1>
-    
-    <div class="hidden name"><code>tuning_spaces_default.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      
     </div>
 
-    <div class="ref-description">
-    <p>Tuning spaces from the Bischl (2021) article.</p>
-    </div>
-
-
-
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A (2021).
-&#8220;A Practical Introduction into Hyperparameter Optimization: Algorithms, Software, Best Practices and Open Challenges.&#8221;
-<em>arvixs</em>.</p>
-    <h2 class="hasAnchor" id="ranger-tuning-space"><a class="anchor" href="#ranger-tuning-space"></a>ranger tuning space</h2>
-
-    
-
+    <div id="mlr3tuningspaces-001" class="section level1">
+<h1 class="page-header" data-toc-text="0.0.1">
+<a href="#mlr3tuningspaces-001" class="anchor"></a>mlr3tuningspaces 0.0.1</h1>
 <ul>
-<li><p>replace [TRUE,FALSE]</p></li>
-<li><p>sample.fraction \([0.1, 1]\)</p></li>
-<li><p>num.trees \([1, 2000]\)</p></li>
+<li>Initial release.</li>
 </ul>
-
-    <h2 class="hasAnchor" id="rpart-tuning-space"><a class="anchor" href="#rpart-tuning-space"></a>rpart tuning space</h2>
-
-    
-
-<ul>
-<li><p>minsplit \([2, 128]\)</p></li>
-<li><p>minbucket \([1, 64]\)</p></li>
-<li><p>cp \([1e-04, 0.1]\)</p></li>
-</ul>
-
-    <h2 class="hasAnchor" id="svm-tuning-space"><a class="anchor" href="#svm-tuning-space"></a>svm tuning space</h2>
-
-    
-
-<ul>
-<li><p>cost \([1e-04, 10000]\)</p></li>
-<li><p>kernel [&#8220;polynomial&#8221;, &#8220;radial&#8221;, &#8220;sigmoid&#8221;, &#8220;linear&#8221;]</p></li>
-<li><p>degree \([2, 5]\)</p></li>
-<li><p>gamma \([1e-04, 10000]\)</p></li>
-</ul>
-
-    <h2 class="hasAnchor" id="xgboost-tuning-space"><a class="anchor" href="#xgboost-tuning-space"></a>xgboost tuning space</h2>
-
-    
-
-<ul>
-<li><p>eta \([1e-04, 1]\)</p></li>
-<li><p>nrounds \([1, 5000]\)</p></li>
-<li><p>max_depth \([1, 20]\)</p></li>
-<li><p>colsample_bytree \([0.1, 1]\)</p></li>
-<li><p>colsample_bylevel \([0.1, 1]\)</p></li>
-<li><p>lambda \([0.1, 1]\)</p></li>
-<li><p>gamma \([1e-04, 1000]\)</p></li>
-<li><p>alpha \([1e-04, 1000]\)</p></li>
-<li><p>subsample \([0.1, 1]\)</p></li>
-</ul>
-
-
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 
