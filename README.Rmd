@@ -11,7 +11,7 @@ options(datatable.print.class = FALSE, datatable.print.keys = FALSE)
 
 # mlr3tuningspaces
 
-Package website: [release](https://mlr3tuningspaces.mlr-org.com/) | [dev](https://mlr3tuningspaces.mlr-org.com/dev/)
+Package website: [release](https://mlr3tuningspaces.mlr-org.com/)
 
 <!-- badges: start -->
 [![tic](https://github.com/mlr-org/mlr3tuningspaces/workflows/tic/badge.svg?branch=main)](https://github.com/mlr-org/mlr3tuningspaces/actions)

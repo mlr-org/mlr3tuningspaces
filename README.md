@@ -1,8 +1,7 @@
 
 # mlr3tuningspaces
 
-Package website: [release](https://mlr3tuningspaces.mlr-org.com/) |
-[dev](https://mlr3tuningspaces.mlr-org.com/dev/)
+Package website: [release](https://mlr3tuningspaces.mlr-org.com/)
 
 <!-- badges: start -->
 
@@ -58,15 +57,27 @@ library("data.table")
 as.data.table(mlr_tuning_spaces)
 ```
 
-    ##                        key         learner n_values
-    ## 1:  classif.ranger.default  classif.ranger        3
-    ## 2:   classif.rpart.default   classif.rpart        3
-    ## 3:     classif.svm.default     classif.svm        4
-    ## 4: classif.xgboost.default classif.xgboost        9
-    ## 5:     regr.ranger.default     regr.ranger        3
-    ## 6:      regr.rpart.default      regr.rpart        3
-    ## 7:        regr.svm.default        regr.svm        4
-    ## 8:    regr.xgboost.default    regr.xgboost        9
+    ##                         key         learner n_values
+    ##  1:     classif.glmnet.rbv2  classif.glmnet        2
+    ##  2:       classif.kknn.rbv2    classif.kknn        1
+    ##  3:  classif.ranger.default  classif.ranger        3
+    ##  4:     classif.ranger.rbv2  classif.ranger        7
+    ##  5:   classif.rpart.default   classif.rpart        3
+    ##  6:      classif.rpart.rbv2   classif.rpart        4
+    ##  7:     classif.svm.default     classif.svm        4
+    ##  8:        classif.svm.rbv2     classif.svm        5
+    ##  9: classif.xgboost.default classif.xgboost        9
+    ## 10:    classif.xgboost.rbv2 classif.xgboost       13
+    ## 11:        regr.glmnet.rbv2     regr.glmnet        2
+    ## 12:          regr.kknn.rbv2       regr.kknn        1
+    ## 13:     regr.ranger.default     regr.ranger        3
+    ## 14:        regr.ranger.rbv2     regr.ranger        6
+    ## 15:      regr.rpart.default      regr.rpart        3
+    ## 16:         regr.rpart.rbv2      regr.rpart        4
+    ## 17:        regr.svm.default        regr.svm        4
+    ## 18:           regr.svm.rbv2        regr.svm        5
+    ## 19:    regr.xgboost.default    regr.xgboost        9
+    ## 20:       regr.xgboost.rbv2    regr.xgboost       13
 
 ``` r
 # get tuning space and view tune token
