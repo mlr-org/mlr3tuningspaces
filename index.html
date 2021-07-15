@@ -98,7 +98,7 @@
 <div id="mlr3tuningspaces" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#mlr3tuningspaces" class="anchor"></a>mlr3tuningspaces</h1></div>
-<p>Package website: <a href="https://mlr3tuningspaces.mlr-org.com/">release</a> | <a href="https://mlr3tuningspaces.mlr-org.com/dev/">dev</a></p>
+<p>Package website: <a href="https://mlr3tuningspaces.mlr-org.com/">release</a></p>
 <!-- badges: start -->
 <p><a href="https://github.com/mlr-org/mlr3tuningspaces/actions"><img src="https://github.com/mlr-org/mlr3tuningspaces/workflows/tic/badge.svg?branch=main" alt="tic"></a> <a href="https://cran.r-project.org/package=mlr3tuningspaces"><img src="https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces" alt="CRAN Status"></a> <a href="https://stackoverflow.com/questions/tagged/mlr3"><img src="https://img.shields.io/badge/stackoverflow-mlr3-orange.svg" alt="StackOverflow"></a> <a href="https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/"><img src="https://img.shields.io/badge/chat-mattermost-orange.svg" alt="Mattermost"></a> <!-- badges: end --></p>
 <p>Collection of search spaces for hyperparameter tuning. Includes various search spaces that can be directly applied to an <code>mlr3</code> learner. Additionally, meta information about the search space can be queried.</p>
@@ -141,15 +141,27 @@
 
 <span class="co"># print keys and learners</span>
 <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">##                        key         learner n_values</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="co">## 1:  classif.ranger.default  classif.ranger        3</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">## 2:   classif.rpart.default   classif.rpart        3</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">## 3:     classif.svm.default     classif.svm        4</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co">## 4: classif.xgboost.default classif.xgboost        9</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">## 5:     regr.ranger.default     regr.ranger        3</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">## 6:      regr.rpart.default      regr.rpart        3</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co">## 7:        regr.svm.default        regr.svm        4</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">## 8:    regr.xgboost.default    regr.xgboost        9</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">##                         key         learner n_values</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co">##  1:     classif.glmnet.rbv2  classif.glmnet        2</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">##  2:       classif.kknn.rbv2    classif.kknn        1</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">##  3:  classif.ranger.default  classif.ranger        3</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">##  4:     classif.ranger.rbv2  classif.ranger        7</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">##  5:   classif.rpart.default   classif.rpart        3</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">##  6:      classif.rpart.rbv2   classif.rpart        4</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="co">##  7:     classif.svm.default     classif.svm        4</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">##  8:        classif.svm.rbv2     classif.svm        5</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="co">##  9: classif.xgboost.default classif.xgboost        9</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="co">## 10:    classif.xgboost.rbv2 classif.xgboost       13</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co">## 11:        regr.glmnet.rbv2     regr.glmnet        2</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="co">## 12:          regr.kknn.rbv2       regr.kknn        1</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="co">## 13:     regr.ranger.default     regr.ranger        3</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co">## 14:        regr.ranger.rbv2     regr.ranger        6</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="co">## 15:      regr.rpart.default      regr.rpart        3</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="co">## 16:         regr.rpart.rbv2      regr.rpart        4</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="co">## 17:        regr.svm.default        regr.svm        4</span></span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="co">## 18:           regr.svm.rbv2        regr.svm        5</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="co">## 19:    regr.xgboost.default    regr.xgboost        9</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="co">## 20:       regr.xgboost.rbv2    regr.xgboost       13</span></span></code></pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># get tuning space and view tune token</span>
 <span class="va">tuning_space</span> <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="st">"classif.rpart.default"</span><span class="op">)</span>
