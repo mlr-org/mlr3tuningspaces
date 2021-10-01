@@ -13,8 +13,8 @@
 \title{Default Tuning Spaces}
 \source{
 Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A, Deng D, Lindauer M (2021).
-\dQuote{A Practical Introduction into Hyperparameter Optimization: Algorithms, Software, Best Practices and Open Challenges.}
-2107.05847.
+\dQuote{Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges.}
+2107.05847, \url{https://arxiv.org/abs/2107.05847}.
 }
 \description{
 Tuning spaces from the Bischl (2021) article.
