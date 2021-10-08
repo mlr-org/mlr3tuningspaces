@@ -1,7 +1,7 @@
 Package: mlr3tuningspaces
 Title: Search Spaces for Hyperparameter Tuning
 Version: 0.0.1
-Authors@R:c(
+Authors@R: c(
     person("Marc", "Becker", , "marcbecker@posteo.de", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-8115-0400")),
     person("Michel", "Lang", , "michellang@gmail.com", role = "ctb",
@@ -12,6 +12,9 @@ Description: Collection of search spaces for hyperparameter tuning.
     `mlr3` learner. Additionally, meta information about the search space
     can be queried.
 License: LGPL-3
+URL: https://mlr3tuningspaces.mlr-org.com,
+    https://github.com/mlr-org/mlr3tuningspaces
+BugReports: https://github.com/mlr-org/mlr3tuningspaces/issues
 Depends:
     mlr3tuning (>= 0.8.0),
     R (>= 3.1.0)
