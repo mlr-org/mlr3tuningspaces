@@ -63,7 +63,7 @@ TuningSpace = R6Class("TuningSpace",
       self$learner = assert_string(learner, min.chars = 1L)
       self$values = assert_list(values, names = "unique")
       self$tags = assert_character(tags, any.missing = FALSE)
-      self$package = assert_character(package, any.missing = FALSE)
+      self$package = union("mlr3tuningspaces", assert_character(package, any.missing = FALSE, min.chars = 1L))
     },
 
     #' @description
@@ -94,7 +94,7 @@ rd_info.TuningSpace = function(obj) { # nolint
   ps = lrn(obj$learner)$param_set
   c("",
     imap_chr(obj$values, function(space, name) {
- 
+
       switch(ps$params[[name]]$class,
         "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$param$levels)),
         "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$param$levels)),
