@@ -30,6 +30,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -42,7 +44,7 @@
       </button>
 
       <div class="navbar-brand-container">
-        <a href="https://mlr-org.com"><img src="https://raw.githubusercontent.com/mlr-org/mlr3/master/man/figures/logo.png" id="hexlogo" alt="mlr-org"></a>
+        <a href="https://mlr-org.com" class="external-link"><img src="https://raw.githubusercontent.com/mlr-org/mlr3/master/reference/figures/logo.png" id="hexlogo" alt="mlr-org"></a>
         <a class="navbar-brand" href="index.html">mlr3tuningspaces <small>v0.0.1</small></a>
       </div>
     </div>
@@ -59,32 +61,32 @@
   <a href="news/index.html">Changelog</a>
 </li>
 <li>
-  <a href="https://mlr3book.mlr-org.com">
+  <a href="https://mlr3book.mlr-org.com" class="external-link">
     <span class="fa fa-link"></span>
      
     mlr3book
   </a>
 </li>
         <li>
-  <a href="https://github.com/mlr-org/mlr3tuningspaces/">
+  <a href="https://github.com/mlr-org/mlr3tuningspaces/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/">
+  <a href="https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/" class="external-link">
     <span class="fa fa-comments"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://stackoverflow.com/questions/tagged/mlr">
+  <a href="https://stackoverflow.com/questions/tagged/mlr" class="external-link">
     <span class="fab fa-stack-overflow"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://mlr-org.com/">
+  <a href="https://mlr-org.com/" class="external-link">
     <span class="fa fa-rss"></span>
      
   </a>
@@ -101,31 +103,31 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="mlr3tuningspaces" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#mlr3tuningspaces" class="anchor"></a>mlr3tuningspaces</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="mlr3tuningspaces">mlr3tuningspaces<a class="anchor" aria-label="anchor" href="#mlr3tuningspaces"></a>
+</h1></div>
 <p>Package website: <a href="https://mlr3tuningspaces.mlr-org.com/">release</a></p>
 <!-- badges: start -->
-<p><a href="https://github.com/mlr-org/mlr3tuningspaces/actions"><img src="https://github.com/mlr-org/mlr3tuningspaces/workflows/tic/badge.svg?branch=main" alt="tic"></a> <a href="https://cran.r-project.org/package=mlr3tuningspaces"><img src="https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces" alt="CRAN Status"></a> <a href="https://stackoverflow.com/questions/tagged/mlr3"><img src="https://img.shields.io/badge/stackoverflow-mlr3-orange.svg" alt="StackOverflow"></a> <a href="https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/"><img src="https://img.shields.io/badge/chat-mattermost-orange.svg" alt="Mattermost"></a> <!-- badges: end --></p>
+
 <p>Collection of search spaces for hyperparameter tuning. Includes various search spaces that can be directly applied to an <code>mlr3</code> learner. Additionally, meta information about the search space can be queried.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>Install the development version from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"mlr-org/mlr3tuningspaces"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mlr-org/mlr3tuningspaces"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<div id="quick-tuning" class="section level3">
-<h3 class="hasAnchor">
-<a href="#quick-tuning" class="anchor"></a>Quick tuning</h3>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<div class="section level3">
+<h3 id="quick-tuning">Quick tuning<a class="anchor" aria-label="anchor" href="#quick-tuning"></a>
+</h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mlr3tuningspaces.mlr-org.com">mlr3tuningspaces</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mlr3tuningspaces.mlr-org.com">mlr3tuningspaces</a></span><span class="op">)</span>
 
 <span class="co"># tune learner with default search space</span>
-<span class="va">instance</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/tune.html">tune</a></span><span class="op">(</span>
+<span class="va">instance</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/tune.html" class="external-link">tune</a></span><span class="op">(</span>
   method <span class="op">=</span> <span class="st">"random_search"</span>,
   task <span class="op">=</span> <span class="fu">tsk</span><span class="op">(</span><span class="st">"pima"</span><span class="op">)</span>,
   learner <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="fu">lrn</span><span class="op">(</span><span class="st">"classif.rpart"</span><span class="op">)</span><span class="op">)</span>,
@@ -139,14 +141,14 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="co">## 1: 4.174471 0.5070691 -4.542023          &lt;list[4]&gt; &lt;list[3]&gt;  0.1953125</span></span></code></pre></div>
 </div>
-<div id="tuning-search-spaces" class="section level3">
-<h3 class="hasAnchor">
-<a href="#tuning-search-spaces" class="anchor"></a>Tuning search spaces</h3>
+<div class="section level3">
+<h3 id="tuning-search-spaces">Tuning search spaces<a class="anchor" aria-label="anchor" href="#tuning-search-spaces"></a>
+</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://r-datatable.com">"data.table"</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://r-datatable.com" class="external-link">"data.table"</a></span><span class="op">)</span>
 
 <span class="co"># print keys and learners</span>
-<span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">##                         key         learner n_values</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="co">##  1:     classif.glmnet.rbv2  classif.glmnet        2</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="co">##  2:       classif.kknn.rbv2    classif.kknn        1</span></span>
@@ -190,7 +192,7 @@
 <span class="va">learner</span> <span class="op">=</span> <span class="va">tuning_space</span><span class="op">$</span><span class="fu">get_learner</span><span class="op">(</span><span class="op">)</span>
 
 <span class="co"># tune learner</span>
-<span class="va">instance</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/tune.html">tune</a></span><span class="op">(</span>
+<span class="va">instance</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/tune.html" class="external-link">tune</a></span><span class="op">(</span>
   method <span class="op">=</span> <span class="st">"random_search"</span>,
   task <span class="op">=</span> <span class="fu">tsk</span><span class="op">(</span><span class="st">"pima"</span><span class="op">)</span>,
   learner <span class="op">=</span> <span class="va">learner</span>,
@@ -208,27 +210,44 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=mlr3tuningspaces">https://​cloud.r-project.org/​package=mlr3tuningspaces</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/mlr-org/mlr3tuningspaces/">https://​github.com/​mlr-org/​mlr3tuningspaces/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/mlr-org/mlr3tuningspaces/issues">https://​github.com/​mlr-org/​mlr3tuningspaces/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=mlr3tuningspaces" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/mlr-org/mlr3tuningspaces/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/mlr-org/mlr3tuningspaces/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/LGPL-3">LGPL-3</a></li>
+<li><a href="https://www.r-project.org/Licenses/LGPL-3" class="external-link">LGPL-3</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Marc Becker <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-8115-0400" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing mlr3tuningspaces</a></li>
+</ul>
+</div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Marc Becker <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-8115-0400" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/mlr-org/mlr3tuningspaces/actions" class="external-link"><img src="https://github.com/mlr-org/mlr3tuningspaces/workflows/tic/badge.svg?branch=main" alt="tic"></a></li>
+<li><a href="https://cran.r-project.org/package=mlr3tuningspaces" class="external-link"><img src="https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces" alt="CRAN Status"></a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/mlr3" class="external-link"><img src="https://img.shields.io/badge/stackoverflow-mlr3-orange.svg" alt="StackOverflow"></a></li>
+<li><a href="https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/" class="external-link"><img src="https://img.shields.io/badge/chat-mattermost-orange.svg" alt="Mattermost"></a></li>
 </ul>
 </div>
 
@@ -237,11 +256,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Marc Becker.</p>
+  <p></p>
+<p>Developed by Marc Becker.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.0.</p>
 </div>
 
       </footer>
@@ -249,6 +270,8 @@
 
   
 
+
+  
 
   </body>
 </html>
