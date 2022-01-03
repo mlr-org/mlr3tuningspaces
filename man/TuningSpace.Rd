@@ -5,9 +5,11 @@
 \title{Tuning Spaces}
 \description{
 This is the abstract base class for tuning spaces which define a search space
-for hyperparameter tuning. \code{TuningSpace} objects store a list of
-\link[paradox:to_tune]{paradox::TuneToken} which can assigned to the values slot of learner's
-\link[paradox:ParamSet]{paradox::ParamSet}.
+for hyperparameter tuning.
+
+\code{TuningSpace} objects store a list of \link[paradox:to_tune]{paradox::TuneToken} and additional
+meta information. These tokens can be assigned to the \verb{$values} slot of
+a learner's \link[paradox:ParamSet]{paradox::ParamSet}.
 }
 \examples{
 library(mlr3tuning)

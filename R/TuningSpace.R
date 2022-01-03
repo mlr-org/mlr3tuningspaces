@@ -2,9 +2,11 @@
 #'
 #' @description
 #' This is the abstract base class for tuning spaces which define a search space
-#' for hyperparameter tuning. `TuningSpace` objects store a list of
-#' [paradox::TuneToken] which can assigned to the values slot of learner's
-#' [paradox::ParamSet].
+#' for hyperparameter tuning.
+#'
+#' `TuningSpace` objects store a list of [paradox::TuneToken] and additional
+#' meta information. These tokens can be assigned to the `$values` slot of
+#' a learner's [paradox::ParamSet].
 #'
 #' @export
 #' @examples
