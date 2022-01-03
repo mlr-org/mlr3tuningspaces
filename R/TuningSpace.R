@@ -78,6 +78,25 @@ TuningSpace = R6Class("TuningSpace",
       learner = lrn(self$learner, ...)
       learner$param_set$values = insert_named(learner$param_set$values, lts(self$id)$values)
       learner
+    },
+
+    format = function(...) {
+       sprintf("<%s:%s>", class(self)[1L], self$id)
+    },
+
+    print = function(...) {
+      tab = imap_dtr(self$values, function(value, name) {
+        data.table(
+            id = name,
+            lower = value$content$lower,
+            upper = value$content$upper,
+            levels = list(value$content$param$levels),
+            logscale = isTRUE(value$content$logscale)
+          )
+        }, .fill = TRUE)
+      setcolorder(tab, c("id", "lower", "upper", "levels", "logscale"))
+      cat(format(self), sep = "\n")
+      print(tab)
     }
   )
 )
