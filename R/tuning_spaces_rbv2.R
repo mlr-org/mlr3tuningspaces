@@ -1,35 +1,37 @@
 #' @title RandomBot Tuning Spaces
-#' 
+#'
 #' @description
 #' Tuning spaces from the `r cite_bib("kuehn_2018")` article.
-#' 
+#'
 #' @name tuning_spaces_rbv2
-#' 
+#'
 #' @source
 #' `r format_bib("kuehn_2018")`
-#' 
-#' @aliases classif.ranger.rbv2 classif.rpart.rbv2 classif.svm.rbv2 
+#'
+#' @aliases classif.ranger.rbv2 classif.rpart.rbv2 classif.svm.rbv2
 #' classif.xgboost.rbv2 regr.ranger.rbv2 regr.rpart.rbv2
 #' regr.svm.rbv2 regr.xgboost.rbv2
-#' 
+#'
 #' @section glmnet tuning space:
 #' `r rd_info(lts("classif.glmnet.rbv2"))`
-#' 
+#'
 #' @section kknn tuning space:
 #' `r rd_info(lts("classif.kknn.rbv2"))`
-#' 
+#'
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.rbv2"))`
-#' 
+#'
+#' `mtry.power` is replaced by `mtry.ratio`.
+#'
 #' @section rpart tuning space:
 #' `r rd_info(lts("classif.rpart.rbv2"))`
-#' 
+#'
 #' @section svm tuning space:
 #' `r rd_info(lts("classif.svm.rbv2"))`
-#' 
+#'
 #' @section xgboost tuning space:
 #' `r rd_info(lts("classif.xgboost.rbv2"))`
-#' 
+#'
 #' @include mlr_tuning_spaces.R
 NULL
 
@@ -81,7 +83,7 @@ vals = list(
   num.trees = to_tune(1, 2000),
   replace = to_tune(p_lgl()),
   sample.fraction = to_tune(0.1, 1),
-  #mtry.power = to_tune(0, 1),
+  mtry.ratio = to_tune(0, 1),
   respect.unordered.factors = to_tune(c("ignore", "order", "partition")),
   min.node.size = to_tune(1, 100),
   splitrule = to_tune(c("gini", "extratrees")),
@@ -100,7 +102,7 @@ vals = list(
   num.trees = to_tune(1, 2000),
   replace = to_tune(p_lgl()),
   sample.fraction = to_tune(0.1, 1),
-  #mtry.power = to_tune(0, 1),
+  mtry.ratio = to_tune(0, 1),
   respect.unordered.factors = to_tune(c("ignore", "order", "partition")),
   min.node.size = to_tune(1, 100),
   num.random.splits = to_tune(1, 100)
@@ -138,7 +140,7 @@ add_tuning_space(
   package = "mlr3learners"
 )
 
-# svm 
+# svm
 vals = list(
   kernel = to_tune(c("linear", "polynomial", "radial")),
   cost =  to_tune(1e-4, 1e3, logscale = TRUE),
