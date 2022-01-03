@@ -25,6 +25,7 @@ Tuning spaces from the Bischl (2021) article.
 \item replace [TRUE,FALSE]
 \item sample.fraction \eqn{[0.1, 1]}{[0.1, 1]}
 \item num.trees \eqn{[1, 2000]}{[1, 2000]}
+\item mtry.ratio \eqn{[0, 1]}{[0, 1]}
 }
 }
 

@@ -1,28 +1,28 @@
 #' @title Default Tuning Spaces
-#' 
+#'
 #' @description
 #' Tuning spaces from the `r cite_bib("bischl_2021")` article.
-#' 
+#'
 #' @name tuning_spaces_default
-#' 
+#'
 #' @source
 #' `r format_bib("bischl_2021")`
-#' @aliases classif.ranger.default classif.rpart.default classif.svm.default  
-#' classif.xgboost.default regr.ranger.default regr.rpart.default 
-#' regr.svm.default regr.xgboost.default 
-#' 
+#' @aliases classif.ranger.default classif.rpart.default classif.svm.default
+#' classif.xgboost.default regr.ranger.default regr.rpart.default
+#' regr.svm.default regr.xgboost.default
+#'
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.default"))`
-#' 
+#'
 #' @section rpart tuning space:
 #' `r rd_info(lts("classif.rpart.default"))`
-#' 
+#'
 #' @section svm tuning space:
 #' `r rd_info(lts("classif.svm.default"))`
-#' 
+#'
 #' @section xgboost tuning space:
 #' `r rd_info(lts("classif.xgboost.default"))`
-#' 
+#'
 #' @include mlr_tuning_spaces.R
 NULL
 
@@ -30,7 +30,8 @@ NULL
 vals = list(
   replace = to_tune(p_lgl()),
   sample.fraction = to_tune(0.1, 1),
-  num.trees = to_tune(1, 2000)
+  num.trees = to_tune(1, 2000),
+  mtry.ratio = to_tune(0, 1)
 )
 
 add_tuning_space(
