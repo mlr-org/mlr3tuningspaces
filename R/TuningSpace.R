@@ -82,10 +82,16 @@ TuningSpace = R6Class("TuningSpace",
       learner
     },
 
-    format = function(...) {
+    #' @description
+    #' Helper for print outputs.
+    format = function() {
        sprintf("<%s:%s>", class(self)[1L], self$id)
     },
 
+    #' @description
+    #' Printer.
+    #'
+    #' @param ... (ignored).
     print = function(...) {
       tab = imap_dtr(self$values, function(value, name) {
         data.table(

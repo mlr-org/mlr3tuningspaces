@@ -56,9 +56,8 @@ Tuning spaces from the Bischl (2021) article.
 \item max_depth \eqn{[1, 20]}{[1, 20]}
 \item colsample_bytree \eqn{[0.1, 1]}{[0.1, 1]}
 \item colsample_bylevel \eqn{[0.1, 1]}{[0.1, 1]}
-\item lambda \eqn{[0.1, 1]}{[0.1, 1]}
-\item gamma \eqn{[1e-04, 1000]}{[1e-04, 1000]}
-\item alpha \eqn{[1e-04, 1000]}{[1e-04, 1000]}
+\item lambda \eqn{[0.001, 1000]}{[0.001, 1000]}
+\item alpha \eqn{[0.001, 1000]}{[0.001, 1000]}
 \item subsample \eqn{[0.1, 1]}{[0.1, 1]}
 }
 }
