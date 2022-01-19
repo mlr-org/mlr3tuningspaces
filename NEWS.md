@@ -1,3 +1,7 @@
+# mlr3tuningspaces 0.1.1
+
+* Fix `xgboost.default` search space.
+
 # mlr3tuningspaces 0.1.0
 
 * Fixed citations.

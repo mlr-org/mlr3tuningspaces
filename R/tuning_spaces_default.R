@@ -100,12 +100,11 @@ vals = list(
   eta = to_tune(1e-4, 1, logscale = TRUE),
   nrounds = to_tune(1, 5000),
   max_depth = to_tune(1, 20),
-  colsample_bytree = to_tune(0.1, 1),
-  colsample_bylevel = to_tune(0.1, 1),
-  lambda = to_tune(0.1, 1),
-  gamma = to_tune(1e-4, 1e3, logscale = TRUE),
-  alpha = to_tune(1e-4, 1e3, logscale = TRUE),
-  subsample = to_tune(1e-1, 1, logscale = TRUE)
+  colsample_bytree = to_tune(1e-1, 1),
+  colsample_bylevel = to_tune(1e-1, 1),
+  lambda = to_tune(1e-3, 1e3, logscale = TRUE),
+  alpha = to_tune(1e-3, 1e3, logscale = TRUE),
+  subsample = to_tune(1e-1, 1)
 )
 
 add_tuning_space(
