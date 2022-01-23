@@ -45,5 +45,6 @@ Collate:
     'bibentries.R'
     'sugar.R'
     'tuning_spaces_default.R'
+    'tuning_spaces_package.R'
     'tuning_spaces_rbv2.R'
     'zzz.R'
