@@ -10,6 +10,9 @@
 #' classif.svm.package classif.xgboost.package regr.kknn.package
 #' regr.ranger.package regr.rpart.package regr.svm.package regr.xgboost.package
 #'
+#' @section kknn tuning space:
+#' `r rd_info(lts("classif.kknn.package"))`
+#'
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.package"))`
 #'
@@ -54,7 +57,7 @@ vals = list(
   num.trees = 500,
   mtry = NULL, # floor(sqrt(p))
   min.node.size = NULL, # 5 for classification but 10 for probability
-  max.depth = NULL,
+  max.depth = 0,
   replace = TRUE,
   sample.fraction = 1,
   splitrule = "gini"
@@ -72,7 +75,7 @@ vals = list(
   num.trees = 500,
   mtry = NULL, # floor(sqrt(p))
   min.node.size = 5,
-  max.depth = NULL,
+  max.depth = 0,
   replace = TRUE,
   sample.fraction = 1,
   splitrule = "variance"
@@ -118,7 +121,7 @@ vals = list(
   scale = TRUE,
   type = "C-classification",
   kernel = "radial",
-  # gamma = 1/(data dimension,
+  # gamma = 1/(data dimension),
   cost = 1,
   tolerance = 0.001,
   epsilon = 0.1,
@@ -137,7 +140,7 @@ vals = list(
   scale = TRUE,
   type = "eps-regression",
   kernel = "radial",
-  # gamma = 1/(data dimension,
+  # gamma = 1/(data dimension),
   cost = 1,
   tolerance = 0.001,
   epsilon = 0.1,

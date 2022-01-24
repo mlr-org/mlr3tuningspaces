@@ -17,13 +17,23 @@
 This tuning space contains only default parameter values from the
 upstream learner packages.
 }
+\section{kknn tuning space}{
+
+\itemize{
+\item k [7]
+\item distance [2]
+\item kernel ["optimal"]
+\item scale [TRUE]
+}
+}
+
 \section{ranger tuning space}{
 
 \itemize{
 \item num.trees [500]
 \item mtry [NULL]
 \item min.node.size [NULL]
-\item max.depth [NULL]
+\item max.depth [0]
 \item replace [TRUE]
 \item sample.fraction [1]
 \item splitrule ["gini"]
