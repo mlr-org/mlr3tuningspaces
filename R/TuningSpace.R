@@ -132,3 +132,8 @@ rd_info.TuningSpace = function(obj) { # nolint
     })
   )
 }
+
+#' @export
+as_search_space.TuningSpace = function(x, ...) { # nolint
+  x$get_learner()$param_set$search_space()
+}

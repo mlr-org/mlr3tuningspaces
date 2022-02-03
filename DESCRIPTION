@@ -16,7 +16,7 @@ URL: https://mlr3tuningspaces.mlr-org.com,
     https://github.com/mlr-org/mlr3tuningspaces
 BugReports: https://github.com/mlr-org/mlr3tuningspaces/issues
 Depends:
-    mlr3tuning (>= 0.8.0),
+    mlr3tuning (>= 0.11.0.9000),
     R (>= 3.1.0)
 Imports:
     checkmate (>= 2.0.0),
