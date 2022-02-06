@@ -7,9 +7,14 @@
 #'
 #' @source
 #' `r format_bib("bischl_2021")`
-#' @aliases classif.ranger.default classif.rpart.default classif.svm.default
-#' classif.xgboost.default regr.ranger.default regr.rpart.default
+#'
+#' @aliases classif.glmnet.default classif.kknn.default classif.ranger.default
+#' classif.rpart.default classif.svm.default classif.xgboost.default
+#' regr.glmnet.default regr.kknn.default regr.ranger.default regr.rpart.default
 #' regr.svm.default regr.xgboost.default
+#'
+#' @section kknn tuning space:
+#' `r rd_info(lts("classif.kknn.default"))`
 #'
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.default"))`
@@ -26,12 +31,57 @@
 #' @include mlr_tuning_spaces.R
 NULL
 
+# glmnet
+vals = list(
+  s     = to_tune(1e-4, 1e4, logscale = TRUE),
+  alpha = to_tune(0, 1)
+)
+
+add_tuning_space(
+  id = "classif.glmnet.default",
+  values = vals,
+  tags = c("default", "classification"),
+  learner = "classif.glmnet",
+  package = "mlr3learners"
+)
+
+add_tuning_space(
+  id = "regr.glmnet.default",
+  values = vals,
+  tags = c("default", "regression"),
+  learner = "regr.glmnet",
+  package = "mlr3learners"
+)
+
+# kknn
+vals = list(
+  k = to_tune(1, 50, logscale = TRUE),
+  distance = to_tune(1, 5),
+  kernel = to_tune(c("rectangular", "optimal", "epanechnikov", "biweight", "triweight", "cos",  "inv",  "gaussian", "rank"))
+)
+
+add_tuning_space(
+  id = "classif.kknn.default",
+  values = vals,
+  tags = c("default", "classification"),
+  learner = "classif.kknn",
+  package = "mlr3learners"
+)
+
+add_tuning_space(
+  id = "regr.kknn.default",
+  values = vals,
+  tags = c("default", "regression"),
+  learner = "regr.kknn",
+  package = "mlr3learners"
+)
+
 # ranger
 vals = list(
+  mtry.ratio      = to_tune(0, 1),
   replace         = to_tune(p_lgl()),
-  sample.fraction = to_tune(0.1, 1),
-  num.trees       = to_tune(1, 2000),
-  mtry.ratio      = to_tune(0, 1)
+  sample.fraction = to_tune(1e-1, 1),
+  num.trees       = to_tune(1, 2000)
 )
 
 add_tuning_space(

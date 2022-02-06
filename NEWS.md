@@ -1,7 +1,9 @@
 # mlr3tuningspaces 0.1.1.9000
 
-* feat: `as_search_space()` function to create search spaces from `TuningSpace` objects. Allows to pass
-  `TuningSpace` objects as `search_space` in `TuningInstanceSingleCrit` and `TuningInstanceMultiCrit`.
+* feat: add default search space for `glmnet` and `kknn`.
+* feat: `as_search_space()` function to create search spaces from `TuningSpace`
+  objects. Allows to pass `TuningSpace` objects as `search_space` in
+  `TuningInstanceSingleCrit` and `TuningInstanceMultiCrit`.
 
 # mlr3tuningspaces 0.1.1
 
