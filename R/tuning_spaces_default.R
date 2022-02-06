@@ -28,10 +28,10 @@ NULL
 
 # ranger
 vals = list(
-  replace = to_tune(p_lgl()),
+  replace         = to_tune(p_lgl()),
   sample.fraction = to_tune(0.1, 1),
-  num.trees = to_tune(1, 2000),
-  mtry.ratio = to_tune(0, 1)
+  num.trees       = to_tune(1, 2000),
+  mtry.ratio      = to_tune(0, 1)
 )
 
 add_tuning_space(
@@ -52,9 +52,9 @@ add_tuning_space(
 
 # rpart
 vals = list(
-  minsplit = to_tune(2, 128, logscale = TRUE),
+  minsplit  = to_tune(2, 128, logscale = TRUE),
   minbucket = to_tune(1, 64, logscale = TRUE),
-  cp = to_tune(1e-04, 1e-1, logscale = TRUE)
+  cp        = to_tune(1e-04, 1e-1, logscale = TRUE)
 )
 
 add_tuning_space(
@@ -73,10 +73,10 @@ add_tuning_space(
 
 # svm
 vals = list(
-  cost = to_tune(1e-4, 1e4, logscale = TRUE),
-  kernel = to_tune(c("polynomial", "radial", "sigmoid", "linear")),
-  degree = to_tune(2, 5),
-  gamma = to_tune(1e-4, 1e4, logscale = TRUE)
+  cost    = to_tune(1e-4, 1e4, logscale = TRUE),
+  kernel  = to_tune(c("polynomial", "radial", "sigmoid", "linear")),
+  degree  = to_tune(2, 5),
+  gamma   = to_tune(1e-4, 1e4, logscale = TRUE)
 )
 
 add_tuning_space(
@@ -97,14 +97,14 @@ add_tuning_space(
 
 # xgboost
 vals = list(
-  eta = to_tune(1e-4, 1, logscale = TRUE),
-  nrounds = to_tune(1, 5000),
-  max_depth = to_tune(1, 20),
-  colsample_bytree = to_tune(1e-1, 1),
+  eta               = to_tune(1e-4, 1, logscale = TRUE),
+  nrounds           = to_tune(1, 5000),
+  max_depth         = to_tune(1, 20),
+  colsample_bytree  = to_tune(1e-1, 1),
   colsample_bylevel = to_tune(1e-1, 1),
-  lambda = to_tune(1e-3, 1e3, logscale = TRUE),
-  alpha = to_tune(1e-3, 1e3, logscale = TRUE),
-  subsample = to_tune(1e-1, 1)
+  lambda            = to_tune(1e-3, 1e3, logscale = TRUE),
+  alpha             = to_tune(1e-3, 1e3, logscale = TRUE),
+  subsample         = to_tune(1e-1, 1)
 )
 
 add_tuning_space(
