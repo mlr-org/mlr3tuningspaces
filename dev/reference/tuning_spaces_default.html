@@ -86,13 +86,21 @@
 2107.05847, <a href="https://arxiv.org/abs/2107.05847" class="external-link">https://arxiv.org/abs/2107.05847</a>.</p>
     </div>
     <div class="section level2">
+    <h2 id="kknn-tuning-space">kknn tuning space<a class="anchor" aria-label="anchor" href="#kknn-tuning-space"></a></h2>
+    
+
+<ul><li><p>k \([1, 50]\)</p></li>
+<li><p>distance \([1, 5]\)</p></li>
+<li><p>kernel [“rectangular”, “optimal”, “epanechnikov”, “biweight”, “triweight”, “cos”, “inv”, “gaussian”, “rank”]</p></li>
+</ul></div>
+    <div class="section level2">
     <h2 id="ranger-tuning-space">ranger tuning space<a class="anchor" aria-label="anchor" href="#ranger-tuning-space"></a></h2>
     
 
-<ul><li><p>replace [TRUE,FALSE]</p></li>
+<ul><li><p>mtry.ratio \([0, 1]\)</p></li>
+<li><p>replace [TRUE,FALSE]</p></li>
 <li><p>sample.fraction \([0.1, 1]\)</p></li>
 <li><p>num.trees \([1, 2000]\)</p></li>
-<li><p>mtry.ratio \([0, 1]\)</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="rpart-tuning-space">rpart tuning space<a class="anchor" aria-label="anchor" href="#rpart-tuning-space"></a></h2>

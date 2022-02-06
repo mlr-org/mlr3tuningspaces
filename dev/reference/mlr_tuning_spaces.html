@@ -106,33 +106,38 @@ Returns a <code><a href="https://Rdatatable.gitlab.io/data.table/reference/data.
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com" class="external-link">data.table</a></span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                         key         learner n_values</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:     classif.glmnet.rbv2  classif.glmnet        2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:       classif.kknn.rbv2    classif.kknn        1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:  classif.ranger.default  classif.ranger        4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:     classif.ranger.rbv2  classif.ranger        8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:   classif.rpart.default   classif.rpart        3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:      classif.rpart.rbv2   classif.rpart        4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:     classif.svm.default     classif.svm        4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:        classif.svm.rbv2     classif.svm        5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: classif.xgboost.default classif.xgboost        8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:    classif.xgboost.rbv2 classif.xgboost       13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:        regr.glmnet.rbv2     regr.glmnet        2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:          regr.kknn.rbv2       regr.kknn        1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:     regr.ranger.default     regr.ranger        4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        regr.ranger.rbv2     regr.ranger        7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:      regr.rpart.default      regr.rpart        3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:         regr.rpart.rbv2      regr.rpart        4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:        regr.svm.default        regr.svm        4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:           regr.svm.rbv2        regr.svm        5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:    regr.xgboost.default    regr.xgboost        8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:       regr.xgboost.rbv2    regr.xgboost       13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  classif.glmnet.default  classif.glmnet        2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:     classif.glmnet.rbv2  classif.glmnet        2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:    classif.kknn.default    classif.kknn        3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:       classif.kknn.rbv2    classif.kknn        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:  classif.ranger.default  classif.ranger        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:     classif.ranger.rbv2  classif.ranger        8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:   classif.rpart.default   classif.rpart        3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:      classif.rpart.rbv2   classif.rpart        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:     classif.svm.default     classif.svm        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        classif.svm.rbv2     classif.svm        5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: classif.xgboost.default classif.xgboost        8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:    classif.xgboost.rbv2 classif.xgboost       13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:     regr.glmnet.default     regr.glmnet        2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        regr.glmnet.rbv2     regr.glmnet        2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:       regr.kknn.default       regr.kknn        3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:          regr.kknn.rbv2       regr.kknn        1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:     regr.ranger.default     regr.ranger        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        regr.ranger.rbv2     regr.ranger        7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:      regr.rpart.default      regr.rpart        3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:         regr.rpart.rbv2      regr.rpart        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        regr.svm.default        regr.svm        4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:           regr.svm.rbv2        regr.svm        5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:    regr.xgboost.default    regr.xgboost        8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24:       regr.xgboost.rbv2    regr.xgboost       13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                         key         learner n_values</span>
 <span class="r-in"><span class="va">mlr_tuning_spaces</span><span class="op">$</span><span class="fu">get</span><span class="op">(</span><span class="st">"classif.ranger.default"</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.ranger.default&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 id lower upper      levels logscale</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:         replace    NA    NA  TRUE,FALSE    FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: sample.fraction   0.1     1                FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:       num.trees   1.0  2000                FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:      mtry.ratio   0.0     1                FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1:      mtry.ratio   0.0     1                FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2:         replace    NA    NA  TRUE,FALSE    FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: sample.fraction   0.1     1                FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4:       num.trees   1.0  2000                FALSE</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
