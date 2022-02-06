@@ -2,10 +2,14 @@
 % Please edit documentation in R/tuning_spaces_default.R
 \name{tuning_spaces_default}
 \alias{tuning_spaces_default}
+\alias{classif.glmnet.default}
+\alias{classif.kknn.default}
 \alias{classif.ranger.default}
 \alias{classif.rpart.default}
 \alias{classif.svm.default}
 \alias{classif.xgboost.default}
+\alias{regr.glmnet.default}
+\alias{regr.kknn.default}
 \alias{regr.ranger.default}
 \alias{regr.rpart.default}
 \alias{regr.svm.default}
@@ -19,13 +23,22 @@ Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, B
 \description{
 Tuning spaces from the Bischl (2021) article.
 }
+\section{kknn tuning space}{
+
+\itemize{
+\item k \eqn{[1, 50]}{[1, 50]}
+\item distance \eqn{[1, 5]}{[1, 5]}
+\item kernel [\dQuote{rectangular}, \dQuote{optimal}, \dQuote{epanechnikov}, \dQuote{biweight}, \dQuote{triweight}, \dQuote{cos}, \dQuote{inv}, \dQuote{gaussian}, \dQuote{rank}]
+}
+}
+
 \section{ranger tuning space}{
 
 \itemize{
+\item mtry.ratio \eqn{[0, 1]}{[0, 1]}
 \item replace [TRUE,FALSE]
 \item sample.fraction \eqn{[0.1, 1]}{[0.1, 1]}
 \item num.trees \eqn{[1, 2000]}{[1, 2000]}
-\item mtry.ratio \eqn{[0, 1]}{[0, 1]}
 }
 }
 
