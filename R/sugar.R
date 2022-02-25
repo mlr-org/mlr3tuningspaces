@@ -21,13 +21,13 @@ lts = function(x) {
 #' @rdname lts
 #' @export
 lts.character = function(x) {
-  dictionary_sugar(mlr_tuning_spaces, x)
+  dictionary_sugar_get(mlr_tuning_spaces, x)
 }
 
 #' @rdname lts
 #' @export
 lts.Learner = function(x) {
-  tuning_space = dictionary_sugar(mlr_tuning_spaces, paste0(x$id, ".default"))
+  tuning_space = dictionary_sugar_get(mlr_tuning_spaces, paste0(x$id, ".default"))
   x$param_set$values = insert_named(x$param_set$values, tuning_space$values)
   x
 }
