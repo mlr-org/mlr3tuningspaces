@@ -31,6 +31,7 @@
 #' instance$result
 TuningSpace = R6Class("TuningSpace",
   public = list(
+
     #' @field id (`character(1)`).
     id = NULL,
 
@@ -46,26 +47,50 @@ TuningSpace = R6Class("TuningSpace",
     #' @field learner (`character(1)`).
     learner = NULL,
 
+    #' @field label (`character(1)`)\cr
+    #'   Label for this object.
+    #'   Can be used in tables, plot and text output instead of the ID.
+    label = NULL,
+
+    #' @field man (`character(1)`)\cr
+    #'   String in the format `[pkg]::[topic]` pointing to a manual page for this object.
+    #'   The referenced help package can be opened via method `$help()`.
+    man = NULL,
+
     #' @description
     #' Creates a new instance of this [R6][R6::R6Class] class.
     #'
     #' @param id (`character(1)`)\cr
     #'   Identifier for the new instance.
+    #'
     #' @param values (`list()`)\cr
     #'   List of [paradox::TuneToken] and parameter values.
+    #'
     #' @param tags (`character()`)\cr
     #'   Tags to group and filter tuning spaces.
+    #'
     #' @param learner (`character(1)`)\cr
     #'   [mlr3::Learner] identifier in [mlr3::mlr_learners].
+    #'
     #' @param package (`character()`)\cr
     #'   Packages which provide the [Learner], e.g. \CRANpkg{mlr3learners} for the learner
     #'   [mlr3learners::LearnerClassifRanger] which interfaces the \CRANpkg{ranger} package.
-    initialize = function(id, values, tags, learner, package = character()) {
+    #'
+    #' @param label (`character(1)`)\cr
+    #'   Label for this object.
+    #'   Can be used in tables, plot and text output instead of the ID.
+    #'
+    #' @param man (`character(1)`)\cr
+    #'   String in the format `[pkg]::[topic]` pointing to a manual page for this object.
+    #'   The referenced help package can be opened via method `$help()`.
+    initialize = function(id, values, tags, learner, package = character(), label = NA_character_, man = NA_character_) {
       self$id = assert_string(id, min.chars = 1L)
       self$learner = assert_string(learner, min.chars = 1L)
       self$values = assert_list(values, names = "unique")
       self$tags = assert_character(tags, any.missing = FALSE)
       self$package = union("mlr3tuningspaces", assert_character(package, any.missing = FALSE, min.chars = 1L))
+      self$label = assert_string(label, na.ok = TRUE)
+      self$man = assert_string(man, na.ok = TRUE)
     },
 
     #' @description
@@ -89,6 +114,12 @@ TuningSpace = R6Class("TuningSpace",
     },
 
     #' @description
+    #' Opens the corresponding help page referenced by field `$man`.
+    help = function() {
+      open_help(self$man)
+    },
+
+    #' @description
     #' Printer.
     #'
     #' @param ... (ignored).
@@ -103,15 +134,15 @@ TuningSpace = R6Class("TuningSpace",
           )
         }, .fill = TRUE)
       setcolorder(tab, c("id", "lower", "upper", "levels", "logscale"))
-      cat(format(self), sep = "\n")
+      catn(format(self), if (is.na(self$label)) "" else paste0(": ", self$label))
       print(tab)
     }
   )
 )
 
 #' @include mlr_tuning_spaces.R
-add_tuning_space = function(id, values, tags, learner, package = character()) { # nolint
-  tuning_space = TuningSpace$new(id, values, tags, learner, package)
+add_tuning_space = function(id, values, tags, learner, package = character(), label = NA_character_, man = NA_character_) { # nolint
+  tuning_space = TuningSpace$new(id, values, tags, learner, package, label = label, man = paste0("mlr3tuningspaces::", id))
   mlr_tuning_spaces$add(id, tuning_space)
 }
 
