@@ -113,6 +113,18 @@ a learner's <a href="https://paradox.mlr-org.com/reference/ParamSet.html" class=
 <dd><p>(<code>character(1)</code>).</p></dd>
 
 
+<dt><code>label</code></dt>
+<dd><p>(<code>character(1)</code>)<br>
+Label for this object.
+Can be used in tables, plot and text output instead of the ID.</p></dd>
+
+
+<dt><code>man</code></dt>
+<dd><p>(<code>character(1)</code>)<br>
+String in the format <code>[pkg]::[topic]</code> pointing to a manual page for this object.
+The referenced help package can be opened via method <code>$help()</code>.</p></dd>
+
+
 </dl><p></p></div>
     </div>
     <div class="section level2">
@@ -124,13 +136,22 @@ a learner's <a href="https://paradox.mlr-org.com/reference/ParamSet.html" class=
 <ul><li><p><a href="#method-new"><code>TuningSpace$new()</code></a></p></li>
 <li><p><a href="#method-get_learner"><code>TuningSpace$get_learner()</code></a></p></li>
 <li><p><a href="#method-format"><code>TuningSpace$format()</code></a></p></li>
+<li><p><a href="#method-help"><code>TuningSpace$help()</code></a></p></li>
 <li><p><a href="#method-print"><code>TuningSpace$print()</code></a></p></li>
 <li><p><a href="#method-clone"><code>TuningSpace$clone()</code></a></p></li>
 </ul></div><p></p><hr><a id="method-new"></a><div class="section">
 <h3 id="method-new-">Method <code>new()</code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
 <p>Creates a new instance of this <a href="https://r6.r-lib.org/reference/R6Class.html" class="external-link">R6</a> class.</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va"><a href="../reference/TuningSpace.html">TuningSpace</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="va">id</span>, <span class="va">values</span>, <span class="va">tags</span>, <span class="va">learner</span>, package <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va"><a href="../reference/TuningSpace.html">TuningSpace</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>
+  <span class="va">id</span>,
+  <span class="va">values</span>,
+  <span class="va">tags</span>,
+  <span class="va">learner</span>,
+  package <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span>,
+  label <span class="op">=</span> <span class="cn">NA_character_</span>,
+  man <span class="op">=</span> <span class="cn">NA_character_</span>
+<span class="op">)</span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -158,6 +179,18 @@ Tags to group and filter tuning spaces.</p></dd>
 <dd><p>(<code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code>)<br>
 Packages which provide the <a href="https://mlr3.mlr-org.com/reference/Learner.html" class="external-link">Learner</a>, e.g. <a href="https://CRAN.R-project.org/package=mlr3learners" class="external-link"><span class="pkg">mlr3learners</span></a> for the learner
 <a href="https://mlr3learners.mlr-org.com/reference/mlr_learners_classif.ranger.html" class="external-link">mlr3learners::LearnerClassifRanger</a> which interfaces the <a href="https://CRAN.R-project.org/package=ranger" class="external-link"><span class="pkg">ranger</span></a> package.</p></dd>
+
+
+<dt><code>label</code></dt>
+<dd><p>(<code>character(1)</code>)<br>
+Label for this object.
+Can be used in tables, plot and text output instead of the ID.</p></dd>
+
+
+<dt><code>man</code></dt>
+<dd><p>(<code>character(1)</code>)<br>
+String in the format <code>[pkg]::[topic]</code> pointing to a manual page for this object.
+The referenced help package can be opened via method <code>$help()</code>.</p></dd>
 
 
 </dl><p></p></div>
@@ -194,10 +227,18 @@ field. See <code><a href="https://mlr3misc.mlr-org.com/reference/dictionary_suga
 </div>
 
 
+</div><p></p><hr><a id="method-help"></a><div class="section">
+<h3 id="method-help-">Method <code>help()</code><a class="anchor" aria-label="anchor" href="#method-help-"></a></h3>
+<p>Opens the corresponding help page referenced by field <code>$man</code>.</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">TuningSpace</span><span class="op">$</span><span class="fu">help</span><span class="op">(</span><span class="op">)</span></code></pre></div><p></p></div>
+</div>
+
+
 </div><p></p><hr><a id="method-print"></a><div class="section">
 <h3 id="method-print-">Method <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code><a class="anchor" aria-label="anchor" href="#method-print-"></a></h3>
 <p>Printer.</p><div class="section">
-<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">TuningSpace</span><span class="op">$</span><span class="fu">print</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></code></pre></div><p></p></div>
 </div>
 
@@ -213,7 +254,7 @@ field. See <code><a href="https://mlr3misc.mlr-org.com/reference/dictionary_suga
 </div><p></p><hr><a id="method-clone"></a><div class="section">
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
-<h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
+<h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">TuningSpace</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div><p></p></div>
 </div>
 
@@ -252,7 +293,7 @@ field. See <code><a href="https://mlr3misc.mlr-org.com/reference/dictionary_suga
 <span class="r-in"></span>
 <span class="r-in"><span class="va">instance</span><span class="op">$</span><span class="va">result</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    minsplit minbucket        cp learner_param_vals  x_domain classif.ce</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 4.637666  1.336691 -8.433434          &lt;list[3]&gt; &lt;list[3]&gt;  0.2695312</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 2.497766  2.358354 -7.050461          &lt;list[3]&gt; &lt;list[3]&gt;   0.234375</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
