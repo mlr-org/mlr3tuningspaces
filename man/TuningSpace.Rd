@@ -44,6 +44,14 @@ instance$result
 \item{\code{package}}{(\code{character()}).}
 
 \item{\code{learner}}{(\code{character(1)}).}
+
+\item{\code{label}}{(\code{character(1)})\cr
+Label for this object.
+Can be used in tables, plot and text output instead of the ID.}
+
+\item{\code{man}}{(\code{character(1)})\cr
+String in the format \verb{[pkg]::[topic]} pointing to a manual page for this object.
+The referenced help package can be opened via method \verb{$help()}.}
 }
 \if{html}{\out{</div>}}
 }
@@ -53,6 +61,7 @@ instance$result
 \item \href{#method-new}{\code{TuningSpace$new()}}
 \item \href{#method-get_learner}{\code{TuningSpace$get_learner()}}
 \item \href{#method-format}{\code{TuningSpace$format()}}
+\item \href{#method-help}{\code{TuningSpace$help()}}
 \item \href{#method-print}{\code{TuningSpace$print()}}
 \item \href{#method-clone}{\code{TuningSpace$clone()}}
 }
@@ -63,7 +72,15 @@ instance$result
 \subsection{Method \code{new()}}{
 Creates a new instance of this \link[R6:R6Class]{R6} class.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{TuningSpace$new(id, values, tags, learner, package = character())}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{TuningSpace$new(
+  id,
+  values,
+  tags,
+  learner,
+  package = character(),
+  label = NA_character_,
+  man = NA_character_
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -84,6 +101,14 @@ Tags to group and filter tuning spaces.}
 \item{\code{package}}{(\code{character()})\cr
 Packages which provide the \link{Learner}, e.g. \CRANpkg{mlr3learners} for the learner
 \link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners::LearnerClassifRanger} which interfaces the \CRANpkg{ranger} package.}
+
+\item{\code{label}}{(\code{character(1)})\cr
+Label for this object.
+Can be used in tables, plot and text output instead of the ID.}
+
+\item{\code{man}}{(\code{character(1)})\cr
+String in the format \verb{[pkg]::[topic]} pointing to a manual page for this object.
+The referenced help package can be opened via method \verb{$help()}.}
 }
 \if{html}{\out{</div>}}
 }
@@ -118,6 +143,16 @@ field. See \code{mlr3misc::dictionary_sugar_get()} for more details.}
 Helper for print outputs.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{TuningSpace$format()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-help"></a>}}
+\if{latex}{\out{\hypertarget{method-help}{}}}
+\subsection{Method \code{help()}}{
+Opens the corresponding help page referenced by field \verb{$man}.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{TuningSpace$help()}\if{html}{\out{</div>}}
 }
 
 }

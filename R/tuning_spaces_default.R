@@ -1,9 +1,9 @@
 #' @title Default Tuning Spaces
 #'
+#' @name tuning_spaces_default
+#'
 #' @description
 #' Tuning spaces from the `r cite_bib("bischl_2021")` article.
-#'
-#' @name tuning_spaces_default
 #'
 #' @source
 #' `r format_bib("bischl_2021")`
@@ -42,7 +42,8 @@ add_tuning_space(
   values = vals,
   tags = c("default", "classification"),
   learner = "classif.glmnet",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default GLM with Elastic Net Regularization Classification"
 )
 
 add_tuning_space(
@@ -50,7 +51,8 @@ add_tuning_space(
   values = vals,
   tags = c("default", "regression"),
   learner = "regr.glmnet",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default GLM with Elastic Net Regularization Regression"
 )
 
 # kknn
@@ -65,7 +67,8 @@ add_tuning_space(
   values = vals,
   tags = c("default", "classification"),
   learner = "classif.kknn",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default k-Nearest-Neighbor Classification"
 )
 
 add_tuning_space(
@@ -73,7 +76,8 @@ add_tuning_space(
   values = vals,
   tags = c("default", "regression"),
   learner = "regr.kknn",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default k-Nearest-Neighbor Regression"
 )
 
 # ranger
@@ -89,7 +93,7 @@ add_tuning_space(
   values = vals,
   tags = c("default", "classification"),
   learner = "classif.ranger",
-  package = "mlr3learners"
+  label = "Default Ranger Classification"
 )
 
 add_tuning_space(
@@ -97,7 +101,7 @@ add_tuning_space(
   values = vals,
   tags = c("default", "regression"),
   learner = "regr.ranger",
-  package = "mlr3learners"
+  label = "Default Ranger Regression"
 )
 
 # rpart
@@ -111,14 +115,16 @@ add_tuning_space(
   id = "classif.rpart.default",
   values = vals,
   tags = c("default", "classification"),
-  learner = "classif.rpart"
+  learner = "classif.rpart",
+  label = "Default Classification Tree"
 )
 
 add_tuning_space(
   id = "regr.rpart.default",
   values = vals,
   tags = c("default", "regression"),
-  learner = "regr.rpart"
+  learner = "regr.rpart",
+  label = "Default Regression Tree"
 )
 
 # svm
@@ -134,7 +140,8 @@ add_tuning_space(
   values = vals,
   tags = c("default", "classification"),
   learner = "classif.svm",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default Support Vector Machine Classification"
 )
 
 add_tuning_space(
@@ -142,7 +149,8 @@ add_tuning_space(
   values = vals,
   tags = c("default", "regression"),
   learner = "regr.svm",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default Support Vector Machine Regression"
 )
 
 # xgboost
@@ -162,7 +170,8 @@ add_tuning_space(
   values = vals,
   tags = c("default", "classification"),
   learner = "classif.xgboost",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default Extreme Gradient Boosting Classification"
 )
 
 add_tuning_space(
@@ -170,5 +179,6 @@ add_tuning_space(
   values = vals,
   tags = c("default", "regression"),
   learner = "regr.xgboost",
-  package = "mlr3learners"
+  package = "mlr3learners",
+  label = "Default Extreme Gradient Boosting Regression"
 )

@@ -16,7 +16,7 @@ URL: https://mlr3tuningspaces.mlr-org.com,
     https://github.com/mlr-org/mlr3tuningspaces
 BugReports: https://github.com/mlr-org/mlr3tuningspaces/issues
 Depends:
-    mlr3tuning (>= 0.11.0.9000),
+    mlr3tuning (>= 0.12.0),
     R (>= 3.1.0)
 Imports:
     checkmate (>= 2.0.0),
@@ -45,6 +45,7 @@ Collate:
     'mlr_tuning_spaces.R'
     'TuningSpace.R'
     'bibentries.R'
+    'helper.R'
     'sugar.R'
     'tuning_spaces_default.R'
     'tuning_spaces_rbv2.R'
