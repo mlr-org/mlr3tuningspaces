@@ -17,11 +17,13 @@ bytree
 cloneable
 colsample
 cp
+epanechnikov
 extratrees
 gblinear
 gbtree
 gini
 glmnet
+inv
 kknn
 maxdepth
 minbucket
@@ -34,6 +36,7 @@ rpart
 sigmoid
 splitrule
 svm
+triweight
 tuningspaces
 xgboost
 ’
