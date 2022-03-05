@@ -1,19 +1,21 @@
 #' @title Tuning Spaces
 #'
 #' @description
-#' This is the abstract base class for tuning spaces which define a search space
-#' for hyperparameter tuning.
+#' This class defines a tuning space for hyperparameter tuning.
 #'
-#' `TuningSpace` objects store a list of [paradox::TuneToken] and additional
-#' meta information. These tokens can be assigned to the `$values` slot of
-#' a learner's [paradox::ParamSet].
+#' For tuning, it is important to create a search space that defines the range over which hyperparameters should be tuned.
+#' `TuningSpace` object consists of search spaces from peer-reviewed articles which work well for a wide range of data sets.
+#'
+#' The `$values` field stores a list of [paradox::TuneToken] which define the search space.
+#' These tokens can be assigned to the `$values` slot of a learner's [paradox::ParamSet].
+#' When the learner is tuned, the tokens are used to create the search space.
 #'
 #' @export
 #' @examples
 #' library(mlr3tuning)
 #'
 #' # get default tuning space of rpart learner
-#' tuning_space = mlr_tuning_spaces$get("classif.rpart.default")
+#' tuning_space = lts("classif.rpart.default")
 #'
 #' # get learner and set tuning space
 #' learner = lrn("classif.rpart")
@@ -32,20 +34,26 @@
 TuningSpace = R6Class("TuningSpace",
   public = list(
 
-    #' @field id (`character(1)`).
+    #' @field id (`character(1)`)\cr
+    #'   Identifier of the object.
     id = NULL,
 
-    #' @field values (`list()`).
+    #' @field values (`list()`)\cr
+    #'   List of [paradox::TuneToken] that describe the tuning space and fixed parameter values.
     values = NULL,
 
-    #' @field tags (`character()`).
+    #' @field tags (`character()`)\cr
+    #'   Arbitrary tags to group and filter tuning space e.g. `"classification"` or "`regression`".
     tags = NULL,
 
-    #' @field package (`character()`).
-    package = NULL,
-
-    #' @field learner (`character(1)`).
+    #' @field learner (`character(1)`)\cr
+    #'   [mlr3::Learner] of the tuning space.
     learner = NULL,
+
+    #' @field package (`character(1)`)\cr
+    #'   Packages which provide the [Learner], e.g. \CRANpkg{mlr3learners} for the learner
+    #'   [mlr3learners::LearnerClassifRanger] which interfaces the \CRANpkg{ranger} package.
+    package = NULL,
 
     #' @field label (`character(1)`)\cr
     #'   Label for this object.
@@ -64,24 +72,24 @@ TuningSpace = R6Class("TuningSpace",
     #'   Identifier for the new instance.
     #'
     #' @param values (`list()`)\cr
-    #'   List of [paradox::TuneToken] and parameter values.
+    #'    List of [paradox::TuneToken] that describe the tuning space and fixed parameter values.
     #'
     #' @param tags (`character()`)\cr
-    #'   Tags to group and filter tuning spaces.
+    #'   Tags to group and filter tuning spaces e.g. `"classification"` or "`regression`".
     #'
     #' @param learner (`character(1)`)\cr
-    #'   [mlr3::Learner] identifier in [mlr3::mlr_learners].
+    #'   [mlr3::Learner] of the tuning space.
     #'
     #' @param package (`character()`)\cr
     #'   Packages which provide the [Learner], e.g. \CRANpkg{mlr3learners} for the learner
     #'   [mlr3learners::LearnerClassifRanger] which interfaces the \CRANpkg{ranger} package.
     #'
     #' @param label (`character(1)`)\cr
-    #'   Label for this object.
+    #'   Label for the new instance.
     #'   Can be used in tables, plot and text output instead of the ID.
     #'
     #' @param man (`character(1)`)\cr
-    #'   String in the format `[pkg]::[topic]` pointing to a manual page for this object.
+    #'   String in the format `[pkg]::[topic]` pointing to a manual page for for the new instance.
     #'   The referenced help package can be opened via method `$help()`.
     initialize = function(id, values, tags, learner, package = character(), label = NA_character_, man = NA_character_) {
       self$id = assert_string(id, min.chars = 1L)

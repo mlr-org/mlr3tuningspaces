@@ -4,18 +4,20 @@
 \alias{TuningSpace}
 \title{Tuning Spaces}
 \description{
-This is the abstract base class for tuning spaces which define a search space
-for hyperparameter tuning.
+This class defines a tuning space for hyperparameter tuning.
 
-\code{TuningSpace} objects store a list of \link[paradox:to_tune]{paradox::TuneToken} and additional
-meta information. These tokens can be assigned to the \verb{$values} slot of
-a learner's \link[paradox:ParamSet]{paradox::ParamSet}.
+For tuning, it is important to create a search space that defines the range over which hyperparameters should be tuned.
+\code{TuningSpace} object consists of search spaces from peer-reviewed articles which work well for a wide range of data sets.
+
+The \verb{$values} field stores a list of \link[paradox:to_tune]{paradox::TuneToken} which define the search space.
+These tokens can be assigned to the \verb{$values} slot of a learner's \link[paradox:ParamSet]{paradox::ParamSet}.
+When the learner is tuned, the tokens are used to create the search space.
 }
 \examples{
 library(mlr3tuning)
 
 # get default tuning space of rpart learner
-tuning_space = mlr_tuning_spaces$get("classif.rpart.default")
+tuning_space = lts("classif.rpart.default")
 
 # get learner and set tuning space
 learner = lrn("classif.rpart")
@@ -35,15 +37,21 @@ instance$result
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{id}}{(\code{character(1)}).}
+\item{\code{id}}{(\code{character(1)})\cr
+Identifier of the object.}
 
-\item{\code{values}}{(\code{list()}).}
+\item{\code{values}}{(\code{list()})\cr
+List of \link[paradox:to_tune]{paradox::TuneToken} that describe the tuning space and fixed parameter values.}
 
-\item{\code{tags}}{(\code{character()}).}
+\item{\code{tags}}{(\code{character()})\cr
+Arbitrary tags to group and filter tuning space e.g. \code{"classification"} or "\code{regression}".}
 
-\item{\code{package}}{(\code{character()}).}
+\item{\code{learner}}{(\code{character(1)})\cr
+\link[mlr3:Learner]{mlr3::Learner} of the tuning space.}
 
-\item{\code{learner}}{(\code{character(1)}).}
+\item{\code{package}}{(\code{character(1)})\cr
+Packages which provide the \link{Learner}, e.g. \CRANpkg{mlr3learners} for the learner
+\link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners::LearnerClassifRanger} which interfaces the \CRANpkg{ranger} package.}
 
 \item{\code{label}}{(\code{character(1)})\cr
 Label for this object.
@@ -90,24 +98,24 @@ Creates a new instance of this \link[R6:R6Class]{R6} class.
 Identifier for the new instance.}
 
 \item{\code{values}}{(\code{list()})\cr
-List of \link[paradox:to_tune]{paradox::TuneToken} and parameter values.}
+List of \link[paradox:to_tune]{paradox::TuneToken} that describe the tuning space and fixed parameter values.}
 
 \item{\code{tags}}{(\code{character()})\cr
-Tags to group and filter tuning spaces.}
+Tags to group and filter tuning spaces e.g. \code{"classification"} or "\code{regression}".}
 
 \item{\code{learner}}{(\code{character(1)})\cr
-\link[mlr3:Learner]{mlr3::Learner} identifier in \link[mlr3:mlr_learners]{mlr3::mlr_learners}.}
+\link[mlr3:Learner]{mlr3::Learner} of the tuning space.}
 
 \item{\code{package}}{(\code{character()})\cr
 Packages which provide the \link{Learner}, e.g. \CRANpkg{mlr3learners} for the learner
 \link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners::LearnerClassifRanger} which interfaces the \CRANpkg{ranger} package.}
 
 \item{\code{label}}{(\code{character(1)})\cr
-Label for this object.
+Label for the new instance.
 Can be used in tables, plot and text output instead of the ID.}
 
 \item{\code{man}}{(\code{character(1)})\cr
-String in the format \verb{[pkg]::[topic]} pointing to a manual page for this object.
+String in the format \verb{[pkg]::[topic]} pointing to a manual page for for the new instance.
 The referenced help package can be opened via method \verb{$help()}.}
 }
 \if{html}{\out{</div>}}
