@@ -36,7 +36,7 @@ as.data.table.DictionaryTuningSpaces = function(x, ..., objects = FALSE) {
     t = withCallingHandlers(x$get(key),
       packageNotFoundWarning = function(w) invokeRestart("muffleWarning"))
     insert_named(
-      list(key = key, label = t$label, learner = list(t$learner), n_values = length(t$values)),
+      list(key = key, label = t$label, learner = t$learner, n_values = length(t$values)),
       if (objects) list(object = list(t))
     )
   }, .fill = TRUE), "key")[]
