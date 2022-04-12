@@ -1,4 +1,4 @@
-# mlr3tuningspaces 0.1.1.9000
+# mlr3tuningspaces 0.2.0
 
 * feat: Add a `as.data.table.TuningSpace()` function.
 * feat: `TuningSpace` objects have the optional field `$label` now.
