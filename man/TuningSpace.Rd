@@ -13,6 +13,18 @@ The \verb{$values} field stores a list of \link[paradox:to_tune]{paradox::TuneTo
 These tokens can be assigned to the \verb{$values} slot of a learner's \link[paradox:ParamSet]{paradox::ParamSet}.
 When the learner is tuned, the tokens are used to create the search space.
 }
+\section{S3 Methods}{
+
+\itemize{
+\item \code{as.data.table.TuningSpace(x)}\cr
+Returns a tabular view of the tuning space.\cr
+\link{TuningSpace} -> \code{\link[data.table:data.table]{data.table::data.table()}}\cr
+\itemize{
+\item \code{x} (\link{TuningSpace})
+}
+}
+}
+
 \examples{
 library(mlr3tuning)
 

@@ -28,6 +28,7 @@ lts.character = function(x) {
 #' @export
 lts.Learner = function(x) {
   tuning_space = dictionary_sugar_get(mlr_tuning_spaces, paste0(x$id, ".default"))
+  browser()
   x$param_set$values = insert_named(x$param_set$values, tuning_space$values)
   x
 }

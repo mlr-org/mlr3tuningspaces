@@ -1,5 +1,6 @@
 # mlr3tuningspaces 0.1.1.9000
 
+* feat: Add a `as.data.table.TuningSpace()` function.
 * feat: `TuningSpace` objects have the optional field `$label` now.
 * feat: New `$help()` method which opens the manual page of a `TuningSpace`.
 * feat: Add search space for `glmnet` and `kknn` to default collection.
@@ -20,4 +21,4 @@
 
 # mlr3tuningspaces 0.0.1
 
-* feat: Initial release.
+* First release of the tuning spaces package.

@@ -10,6 +10,12 @@
 #' These tokens can be assigned to the `$values` slot of a learner's [paradox::ParamSet].
 #' When the learner is tuned, the tokens are used to create the search space.
 #'
+#' @section S3 Methods:
+#' * `as.data.table.TuningSpace(x)`\cr
+#' Returns a tabular view of the tuning space.\cr
+#' [TuningSpace] -> [data.table::data.table()]\cr
+#'     * `x` ([TuningSpace])
+#'
 #' @export
 #' @examples
 #' library(mlr3tuning)
@@ -175,4 +181,19 @@ rd_info.TuningSpace = function(obj) { # nolint
 #' @export
 as_search_space.TuningSpace = function(x, ...) { # nolint
   x$get_learner()$param_set$search_space()
+}
+
+#' @export
+as.data.table.TuningSpace = function(x, ...) {
+  tab = map_dtr(x$values, function(value) {
+    if (test_class(value, "ObjectTuneToken")) {
+      as.data.table(value$content$param)[, c("lower", "upper", "levels")]
+    } else {
+      as.data.table(value$content)
+    }
+  }, .fill = TRUE)
+  tab[, "id" := names(x$values)]
+  setcolorder(tab, intersect(c("id", "lower", "upper", "levels", "logscale"), names(tab)))
+  if ("logscale" %in% names(tab)) tab[is.na(get("logscale")), "logscale" := FALSE]
+  tab[]
 }
