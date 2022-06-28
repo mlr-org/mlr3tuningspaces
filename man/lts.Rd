@@ -62,5 +62,5 @@ lts(lrn("classif.rpart"))
 lts(lrn("classif.rpart"), minsplit = to_tune(32, 128))
 
 # load multiple tuning spaces
-ltss(list("classif.rpart", "classif.ranger"))
+ltss(c("classif.rpart.default", "classif.ranger.default"))
 }

@@ -34,7 +34,7 @@
 #' lts(lrn("classif.rpart"), minsplit = to_tune(32, 128))
 #'
 #' # load multiple tuning spaces
-#' ltss(list("classif.rpart", "classif.ranger"))
+#' ltss(c("classif.rpart.default", "classif.ranger.default"))
 lts = function(x, ...) {
   if (missing(x)) return(lts.missing(x))
   UseMethod("lts")
@@ -72,7 +72,6 @@ lts.Learner = function(x, ...) {
 #' @return a `list()`, list of [TuningSpace] or [mlr3::Learner]
 #' @export
 ltss = function(x) {
-  assert_list(x, types = c("Learner", "character"))
   map(x, function(key) {
     lts(key)
   })
