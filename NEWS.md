@@ -1,3 +1,8 @@
+# mlr3tuningspaces 0.3.0
+
+* feat: Pass `paradox::TuneToken` to `lts()` to add, remove or overwrite parameters in tuning spaces and learners.
+* fix: Remove debugging from `lts()`.
+
 # mlr3tuningspaces 0.2.0
 
 * feat: Add a `as.data.table.TuningSpace()` function.

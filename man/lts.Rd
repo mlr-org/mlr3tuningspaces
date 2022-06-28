@@ -2,16 +2,19 @@
 % Please edit documentation in R/sugar.R
 \name{lts}
 \alias{lts}
+\alias{lts.missing}
 \alias{lts.character}
 \alias{lts.Learner}
 \alias{ltss}
 \title{Syntactic Sugar for Tuning Space Construction}
 \usage{
-lts(x)
+lts(x, ...)
 
-\method{lts}{character}(x)
+\method{lts}{missing}(x, ...)
 
-\method{lts}{Learner}(x)
+\method{lts}{character}(x, ...)
+
+\method{lts}{Learner}(x, ...)
 
 ltss(x)
 }
@@ -19,17 +22,45 @@ ltss(x)
 \item{x}{(\code{character()} | \link[mlr3:Learner]{mlr3::Learner})\cr
 If \code{character}, key passed the dictionary to retrieve the tuning space.
 If \link[mlr3:Learner]{mlr3::Learner}, default tuning space is added to the learner.}
+
+\item{...}{(named list of \link[paradox:to_tune]{paradox::TuneToken} | \code{NULL})\cr
+Pass \link[paradox:to_tune]{paradox::TuneToken} to add or overwrite parameters in the tuning space.
+Use \code{NULL} to remove parameters (see examples).}
 }
 \value{
-\itemize{
-\item \link{TuningSpace} for \code{lts()}
-\item list of \link{TuningSpace} for \code{ltss()}
-}
+If \code{x} is
+
+missing, \link{mlr_tuning_spaces} dictionary
+
+a \code{character}, \link{TuningSpace}
+
+a \link[mlr3:Learner]{mlr3::Learner}, \link[mlr3:Learner]{mlr3::Learner} with \link[paradox:to_tune]{paradox::TuneToken}
+
+a \code{list()}, list of \link{TuningSpace} or \link[mlr3:Learner]{mlr3::Learner}
 }
 \description{
-This function complements \link{mlr_tuning_spaces} with functions in the spirit
-of \link[mlr3:mlr_sugar]{mlr3::mlr_sugar}.
+Function to retrieve \link{TuningSpace} objects from \link{mlr_tuning_spaces} and further, allows a \link[mlr3:Learner]{mlr3::Learner} to be directly configured with a search space.
+This function belongs to \link[mlr3:mlr_sugar]{mlr3::mlr_sugar} family.
 }
 \examples{
-lts("classif.ranger.default")
+# load tuning space
+lts("classif.rpart.default")
+
+# load tuning space and add parameter
+lts("classif.rpart.default", maxdepth = to_tune(1, 15))
+
+# load tuning space and remove parameter
+lts("classif.rpart.default", minsplit = NULL)
+
+# load tuning space and overwrite parameter
+lts("classif.rpart.default", minsplit = to_tune(32, 128))
+
+# load learner and apply tuning space in one go
+lts(lrn("classif.rpart"))
+
+# load learner, overwrite parameter and apply tuning space
+lts(lrn("classif.rpart"), minsplit = to_tune(32, 128))
+
+# load multiple tuning spaces
+ltss(c("classif.rpart.default", "classif.ranger.default"))
 }
