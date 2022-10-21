@@ -42,7 +42,6 @@ Collate:
     'mlr_tuning_spaces.R'
     'TuningSpace.R'
     'bibentries.R'
-    'helper.R'
     'sugar.R'
     'tuning_spaces_default.R'
     'tuning_spaces_rbv2.R'
