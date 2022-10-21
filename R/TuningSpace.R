@@ -164,7 +164,7 @@ add_tuning_space = function(id, values, tags, learner, package = character(), la
 rd_info.TuningSpace = function(obj) { # nolint
   require_namespaces(obj$package)
   ps = lrn(obj$learner)$param_set
-  c("",
+  x = c("",
     imap_chr(obj$values, function(space, name) {
 
       switch(ps$params[[name]]$class,
@@ -176,6 +176,7 @@ rd_info.TuningSpace = function(obj) { # nolint
       )
     })
   )
+  paste(x, collapse = "\n")
 }
 
 #' @export

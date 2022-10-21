@@ -78,17 +78,17 @@ The referenced help package can be opened via method \verb{$help()}.}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{TuningSpace$new()}}
-\item \href{#method-get_learner}{\code{TuningSpace$get_learner()}}
-\item \href{#method-format}{\code{TuningSpace$format()}}
-\item \href{#method-help}{\code{TuningSpace$help()}}
-\item \href{#method-print}{\code{TuningSpace$print()}}
-\item \href{#method-clone}{\code{TuningSpace$clone()}}
+\item \href{#method-TuningSpace-new}{\code{TuningSpace$new()}}
+\item \href{#method-TuningSpace-get_learner}{\code{TuningSpace$get_learner()}}
+\item \href{#method-TuningSpace-format}{\code{TuningSpace$format()}}
+\item \href{#method-TuningSpace-help}{\code{TuningSpace$help()}}
+\item \href{#method-TuningSpace-print}{\code{TuningSpace$print()}}
+\item \href{#method-TuningSpace-clone}{\code{TuningSpace$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-TuningSpace-new"></a>}}
+\if{latex}{\out{\hypertarget{method-TuningSpace-new}{}}}
 \subsection{Method \code{new()}}{
 Creates a new instance of this \link[R6:R6Class]{R6} class.
 \subsection{Usage}{
@@ -134,8 +134,8 @@ The referenced help package can be opened via method \verb{$help()}.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_learner"></a>}}
-\if{latex}{\out{\hypertarget{method-get_learner}{}}}
+\if{html}{\out{<a id="method-TuningSpace-get_learner"></a>}}
+\if{latex}{\out{\hypertarget{method-TuningSpace-get_learner}{}}}
 \subsection{Method \code{get_learner()}}{
 Returns a learner with \link{TuneToken} set in parameter set.
 \subsection{Usage}{
@@ -157,8 +157,8 @@ field. See \code{mlr3misc::dictionary_sugar_get()} for more details.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-format"></a>}}
-\if{latex}{\out{\hypertarget{method-format}{}}}
+\if{html}{\out{<a id="method-TuningSpace-format"></a>}}
+\if{latex}{\out{\hypertarget{method-TuningSpace-format}{}}}
 \subsection{Method \code{format()}}{
 Helper for print outputs.
 \subsection{Usage}{
@@ -167,8 +167,8 @@ Helper for print outputs.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-help"></a>}}
-\if{latex}{\out{\hypertarget{method-help}{}}}
+\if{html}{\out{<a id="method-TuningSpace-help"></a>}}
+\if{latex}{\out{\hypertarget{method-TuningSpace-help}{}}}
 \subsection{Method \code{help()}}{
 Opens the corresponding help page referenced by field \verb{$man}.
 \subsection{Usage}{
@@ -177,8 +177,8 @@ Opens the corresponding help page referenced by field \verb{$man}.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
+\if{html}{\out{<a id="method-TuningSpace-print"></a>}}
+\if{latex}{\out{\hypertarget{method-TuningSpace-print}{}}}
 \subsection{Method \code{print()}}{
 Printer.
 \subsection{Usage}{
@@ -194,8 +194,8 @@ Printer.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-TuningSpace-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-TuningSpace-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{
