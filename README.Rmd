@@ -1,8 +1,14 @@
 ---
 output: github_document
+bibliography: references.bib
 ---
 
 ```{r, include = FALSE}
+library(mlr3misc)
+library(utils)
+source("R/bibentries.R")
+writeLines(toBibtex(bibentries), "references.bib")
+
 lgr::get_logger("mlr3")$set_threshold("warn")
 lgr::get_logger("bbotk")$set_threshold("warn")
 set.seed(1)
@@ -23,6 +29,7 @@ Package website: [release](https://mlr3tuningspaces.mlr-org.com/)
 Collection of search spaces for hyperparameter tuning.
 Includes various search spaces that can be directly applied to an `mlr3` learner.
 Additionally, meta information about the search space can be queried.
+Tuning spaces by @bischl_2021 and @kuehn_2018.
 
 ## Installation
 
@@ -85,3 +92,5 @@ instance = tune(
 
 instance$result
 ```
+
+# References
