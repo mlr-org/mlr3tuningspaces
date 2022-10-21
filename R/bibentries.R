@@ -1,6 +1,7 @@
 #' @importFrom utils bibentry
 bibentries = c(
   bischl_2021 = bibentry("misc",
+    key           = "bischl_2021",
     title         = "Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges",
     author        = "Bernd Bischl and Martin Binder and Michel Lang and Tobias Pielok and Jakob Richter and Stefan Coors and Janek Thomas and Theresa Ullmann and Marc Becker and Anne-Laure Boulesteix and Difan Deng and Marius Lindauer",
     year          = "2021",
@@ -11,6 +12,7 @@ bibentries = c(
   ),
 
   kuehn_2018 = bibentry("misc",
+    key           = "kuehn_2018",
     title         = "Automatic Exploration of Machine Learning Experiments on OpenML",
     author        = "Daniel Kuehn and Philipp Probst and Janek Thomas and Bernd Bischl",
     year          = "2018",
