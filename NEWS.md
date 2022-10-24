@@ -1,3 +1,7 @@
+# mlr3tuningspaces 0.3.1
+
+* docs: Add glmnet description.
+
 # mlr3tuningspaces 0.3.0
 
 * feat: Pass `paradox::TuneToken` to `lts()` to add, remove or overwrite parameters in tuning spaces and learners.
