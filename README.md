@@ -12,10 +12,24 @@ Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran
 [![Mattermost](https://img.shields.io/badge/chat-mattermost-orange.svg)](https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/)
 <!-- badges: end -->
 
-Collection of search spaces for hyperparameter tuning. Includes various
-search spaces that can be directly applied to an `mlr3` learner.
-Additionally, meta information about the search space can be queried.
-Tuning spaces by (Bischl et al. 2021) and (Kuehn et al. 2018).
+Collection of search spaces for hyperparameter tuning in the
+[mlr3](https://github.com/mlr-org/mlr3/) ecosystem. Currently, we offer
+tuning spaces from two publications.
+
+| Publication          | Learner | n Hyperparameter |
+| -------------------- | ------- | ---------------- |
+| Bischl et al. (2021) | glmnet  | 2                |
+|                      | kknn    | 3                |
+|                      | ranger  | 4                |
+|                      | rpart   | 3                |
+|                      | svm     | 4                |
+|                      | xgboost | 8                |
+| Kuehn et al. (2018)  | glmnet  | 2                |
+|                      | kknn    | 1                |
+|                      | ranger  | 8                |
+|                      | rpart   | 4                |
+|                      | svm     | 5                |
+|                      | xgboost | 13               |
 
 ## Installation
 
@@ -35,15 +49,20 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 
 ### Quick Tuning
 
+A learner passed to the `lts()` function arguments the learner with the
+default tuning space from Bischl et al. (2021).
+
 ``` r
 library(mlr3tuningspaces)
 
-# tune learner with default search space
+learner = lts(lrn("classif.rpart"))
+
+# tune learner on pima data set
 instance = tune(
-  method = "random_search",
+  method = tnr("random_search"),
   task = tsk("pima"),
-  learner = lts(lrn("classif.rpart")),
-  resampling = rsmp ("holdout"),
+  learner = learner,
+  resampling = rsmp("holdout"),
   measure = msr("classif.ce"),
   term_evals = 10
 )
@@ -57,130 +76,44 @@ instance$result
 
 ### Tuning Search Spaces
 
+The `mlr_tuning_spaces` dictionary contains all tuning spaces.
+
 ``` r
 library("data.table")
 
-# print keys and learners
+# print keys and tuning spaces
 as.data.table(mlr_tuning_spaces)
 ```
 
-    ##                         key
-    ##  1:  classif.glmnet.default
-    ##  2:     classif.glmnet.rbv2
-    ##  3:    classif.kknn.default
-    ##  4:       classif.kknn.rbv2
-    ##  5:  classif.ranger.default
-    ##  6:     classif.ranger.rbv2
-    ##  7:   classif.rpart.default
-    ##  8:      classif.rpart.rbv2
-    ##  9:     classif.svm.default
-    ## 10:        classif.svm.rbv2
-    ## 11: classif.xgboost.default
-    ## 12:    classif.xgboost.rbv2
-    ## 13:     regr.glmnet.default
-    ## 14:        regr.glmnet.rbv2
-    ## 15:       regr.kknn.default
-    ## 16:          regr.kknn.rbv2
-    ## 17:     regr.ranger.default
-    ## 18:        regr.ranger.rbv2
-    ## 19:      regr.rpart.default
-    ## 20:         regr.rpart.rbv2
-    ## 21:        regr.svm.default
-    ## 22:           regr.svm.rbv2
-    ## 23:    regr.xgboost.default
-    ## 24:       regr.xgboost.rbv2
-    ##                         key
-    ##                                                            label
-    ##  1:   Default GLM with Elastic Net Regularization Classification
-    ##  2: RandomBot GLM with Elastic Net Regularization Classification
-    ##  3:                    Default k-Nearest-Neighbor Classification
-    ##  4:                  RandomBot k-Nearest-Neighbor Classification
-    ##  5:                                Default Ranger Classification
-    ##  6:                              RandomBot Ranger Classification
-    ##  7:                                  Default Classification Tree
-    ##  8:                                RandomBot Classification Tree
-    ##  9:                Default Support Vector Machine Classification
-    ## 10:              RandomBot Support Vector Machine Classification
-    ## 11:             Default Extreme Gradient Boosting Classification
-    ## 12:           RandomBot Extreme Gradient Boosting Classification
-    ## 13:       Default GLM with Elastic Net Regularization Regression
-    ## 14:     RandomBot GLM with Elastic Net Regularization Regression
-    ## 15:                        Default k-Nearest-Neighbor Regression
-    ## 16:                      RandomBot k-Nearest-Neighbor Regression
-    ## 17:                                    Default Ranger Regression
-    ## 18:                                  RandomBot Ranger Regression
-    ## 19:                                      Default Regression Tree
-    ## 20:                                    RandomBot Regression Tree
-    ## 21:                    Default Support Vector Machine Regression
-    ## 22:                  RandomBot Support Vector Machine Regression
-    ## 23:                 Default Extreme Gradient Boosting Regression
-    ## 24:               RandomBot Extreme Gradient Boosting Regression
-    ##                                                            label
-    ##             learner n_values
-    ##  1:  classif.glmnet        2
-    ##  2:  classif.glmnet        2
-    ##  3:    classif.kknn        3
-    ##  4:    classif.kknn        1
-    ##  5:  classif.ranger        4
-    ##  6:  classif.ranger        8
-    ##  7:   classif.rpart        3
-    ##  8:   classif.rpart        4
-    ##  9:     classif.svm        4
-    ## 10:     classif.svm        5
-    ## 11: classif.xgboost        8
-    ## 12: classif.xgboost       13
-    ## 13:     regr.glmnet        2
-    ## 14:     regr.glmnet        2
-    ## 15:       regr.kknn        3
-    ## 16:       regr.kknn        1
-    ## 17:     regr.ranger        4
-    ## 18:     regr.ranger        7
-    ## 19:      regr.rpart        3
-    ## 20:      regr.rpart        4
-    ## 21:        regr.svm        4
-    ## 22:        regr.svm        5
-    ## 23:    regr.xgboost        8
-    ## 24:    regr.xgboost       13
-    ##             learner n_values
+A key passed to the `lts()` function returns the `TuningSpace`.
 
 ``` r
-# get tuning space and view tune token
-tuning_space = lts("classif.rpart.default")
-tuning_space$values
+tuning_space = lts("classif.rpart.rbv2")
+tuning_space
 ```
 
-    ## $minsplit
-    ## Tuning over:
-    ## range [2, 128] (log scale)
-    ## 
-    ## 
-    ## $minbucket
-    ## Tuning over:
-    ## range [1, 64] (log scale)
-    ## 
-    ## 
-    ## $cp
-    ## Tuning over:
-    ## range [1e-04, 0.1] (log scale)
+    ## <TuningSpace:classif.rpart.rbv2>: RandomBot Classification Tree
+    ##           id lower upper levels logscale
+    ## 1:        cp 1e-04     1            TRUE
+    ## 2:  maxdepth 1e+00    30           FALSE
+    ## 3: minbucket 1e+00   100           FALSE
+    ## 4:  minsplit 1e+00   100           FALSE
+
+Get learner argumented with tuning space.
 
 ``` r
-# get learner with tuning space
-learner = tuning_space$get_learner()
-
-# tune learner
-instance = tune(
-  method = "random_search",
-  task = tsk("pima"),
-  learner = learner,
-  resampling = rsmp ("holdout"),
-  measure = msr("classif.ce"),
-  term_evals = 10)
-
-instance$result
+tuning_space$get_learner()
 ```
 
-    ##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce
-    ## 1: 3.009338  2.506336 -8.291878          <list[4]> <list[3]>  0.2421875
+    ## <LearnerClassifRpart:classif.rpart>: Classification Tree
+    ## * Model: -
+    ## * Parameters: xval=0, cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>,
+    ##   minbucket=<RangeTuneToken>, minsplit=<RangeTuneToken>
+    ## * Packages: mlr3, rpart
+    ## * Predict Types:  [response], prob
+    ## * Feature Types: logical, integer, numeric, factor, ordered
+    ## * Properties: importance, missings, multiclass, selected_features,
+    ##   twoclass, weights
 
 ### Adding New Tuning Spaces
 
@@ -227,7 +160,8 @@ bischl_2021 = bibentry("misc",
 )
 ```
 
-We are happy to help you with the pull request if you have any question.
+We are happy to help you with the pull request if you have any
+questions.
 
 ## References
 
