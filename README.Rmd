@@ -27,10 +27,23 @@ Package website: [release](https://mlr3tuningspaces.mlr-org.com/)
 [![Mattermost](https://img.shields.io/badge/chat-mattermost-orange.svg)](https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/)
 <!-- badges: end -->
 
-Collection of search spaces for hyperparameter tuning.
-Includes various search spaces that can be directly applied to an `mlr3` learner.
-Additionally, meta information about the search space can be queried.
-Tuning spaces by @bischl_2021 and @kuehn_2018.
+Collection of search spaces for hyperparameter tuning in the [mlr3](https://github.com/mlr-org/mlr3/) ecosystem.
+Currently, we offer tuning spaces from two publications.
+
+| Publication  | Learner | n Hyperparameter |
+| ------------ | ------- | ---------------- |
+| @bischl_2021 | glmnet  | 2                |
+|              | kknn    | 3                |
+|              | ranger  | 4                |
+|              | rpart   | 3                |
+|              | svm     | 4                |
+|              | xgboost | 8                |
+| @kuehn_2018  | glmnet  | 2                |
+|              | kknn    | 1                |
+|              | ranger  | 8                |
+|              | rpart   | 4                |
+|              | svm     | 5                |
+|              | xgboost | 13               |
 
 ## Installation
 
@@ -56,18 +69,19 @@ library(data.table)
 
 ### Quick Tuning
 
-
-A learner passed to the `lts()` arguments the learner with the default tuning space from
+A learner passed to the `lts()` function arguments the learner with the default tuning space from @bischl_2021.
 
 ```{r}
 library(mlr3tuningspaces)
 
-# tune learner with default search space
+learner = lts(lrn("classif.rpart"))
+
+# tune learner on pima data set
 instance = tune(
-  method = "random_search",
+  method = tnr("random_search"),
   task = tsk("pima"),
-  learner = lts(lrn("classif.rpart")),
-  resampling = rsmp ("holdout"),
+  learner = learner,
+  resampling = rsmp("holdout"),
   measure = msr("classif.ce"),
   term_evals = 10
 )
@@ -78,31 +92,26 @@ instance$result
 
 ### Tuning Search Spaces
 
+The `mlr_tuning_spaces` dictionary contains all tuning spaces.
 
-
-```{r, message = FALSE}
+```{r, eval=FALSE}
 library("data.table")
 
-# print keys and learners
+# print keys and tuning spaces
 as.data.table(mlr_tuning_spaces)
+```
 
-# get tuning space and view tune token
-tuning_space = lts("classif.rpart.default")
-tuning_space$values
+A key passed to the `lts()` function returns the `TuningSpace`.
 
-# get learner with tuning space
-learner = tuning_space$get_learner()
+```{r}
+tuning_space = lts("classif.rpart.rbv2")
+tuning_space
+```
 
-# tune learner
-instance = tune(
-  method = "random_search",
-  task = tsk("pima"),
-  learner = learner,
-  resampling = rsmp ("holdout"),
-  measure = msr("classif.ce"),
-  term_evals = 10)
+Get learner argumented with tuning space.
 
-instance$result
+```{r}
+tuning_space$get_learner()
 ```
 
 ### Adding New Tuning Spaces
@@ -145,6 +154,6 @@ bischl_2021 = bibentry("misc",
 )
 ```
 
-We are happy to help you with the pull request if you have any question.
+We are happy to help you with the pull request if you have any questions.
 
 ## References
