@@ -13,6 +13,9 @@
 #' regr.glmnet.default regr.kknn.default regr.ranger.default regr.rpart.default
 #' regr.svm.default regr.xgboost.default
 #'
+#' @section glmnet tuning space:
+#' `r rd_info(lts("classif.glmnet.default"))`
+#'
 #' @section kknn tuning space:
 #' `r rd_info(lts("classif.kknn.default"))`
 #'
