@@ -15,9 +15,15 @@ Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran
 Collection of search spaces for hyperparameter tuning. Includes various
 search spaces that can be directly applied to an `mlr3` learner.
 Additionally, meta information about the search space can be queried.
-Tuning spaces by Bischl et al. (2021) and Kuehn et al. (2018).
+Tuning spaces by (Bischl et al. 2021) and (Kuehn et al. 2018).
 
 ## Installation
+
+Install the last release from CRAN:
+
+``` r
+install.packages("mlr3tuningspaces")
+```
 
 Install the development version from GitHub:
 
@@ -27,7 +33,7 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 
 ## Example
 
-### Quick tuning
+### Quick Tuning
 
 ``` r
 library(mlr3tuningspaces)
@@ -49,7 +55,7 @@ instance$result
     ##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce
     ## 1: 4.174471 0.5070691 -4.542023          <list[4]> <list[3]>  0.1953125
 
-### Tuning search spaces
+### Tuning Search Spaces
 
 ``` r
 library("data.table")
@@ -176,7 +182,54 @@ instance$result
     ##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce
     ## 1: 3.009338  2.506336 -8.291878          <list[4]> <list[3]>  0.2421875
 
-# References
+### Adding New Tuning Spaces
+
+We are looking forward to new collections of tuning spaces from
+peer-reviewed articles. You can suggest new tuning spaces in an issue or
+contribute a new collection yourself in a pull request. Take a look at
+an already implemented collection e.g. our [default tuning
+spaces](https://github.com/mlr-org/mlr3tuningspaces/blob/main/R/tuning_spaces_default.R)
+from Bischl et al. (2021). A `TuningSpace` is added to the
+`mlr_tuning_spaces` dictionary with the `add_tuning_space()` function.
+Create a tuning space for each variant of the learner e.g. for
+`LearnerClassifRpart` and `LearnerRegrRpart`.
+
+``` r
+vals = list(
+  minsplit  = to_tune(2, 64, logscale = TRUE),
+  cp        = to_tune(1e-04, 1e-1, logscale = TRUE)
+)
+
+add_tuning_space(
+  id = "classif.rpart.example",
+  values = vals,
+  tags = c("default", "classification"),
+  learner = "classif.rpart",
+  label = "Classification Tree Example"
+)
+```
+
+Choose a name that is related to the publication and adjust the
+documentation.
+
+The reference is added to the `bibentries.R` file
+
+``` r
+bischl_2021 = bibentry("misc",
+  key           = "bischl_2021",
+  title         = "Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges",
+  author        = "Bernd Bischl and Martin Binder and Michel Lang and Tobias Pielok and Jakob Richter and Stefan Coors and Janek Thomas and Theresa Ullmann and Marc Becker and Anne-Laure Boulesteix and Difan Deng and Marius Lindauer",
+  year          = "2021",
+  eprint        = "2107.05847",
+  archivePrefix = "arXiv",
+  primaryClass  = "stat.ML",
+  url           = "https://arxiv.org/abs/2107.05847"
+)
+```
+
+We are happy to help you with the pull request if you have any question.
+
+## References
 
 <div id="refs" class="references hanging-indent">
 
