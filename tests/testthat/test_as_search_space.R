@@ -24,3 +24,14 @@ test_that("search space from TuningSpace works", {
   expect_r6(instance$search_space, "ParamSet")
   expect_set_equal(instance$search_space$ids(), c("minsplit", "minbucket", "cp"))
 })
+
+test_that("search space from TuningSpace works", {
+  tuning_space = lts("classif.rpart.default")
+  at = AutoTuner$new(learner = lrn("classif.rpart"), resampling = rsmp("holdout"),
+    measure = msr("classif.ce"), terminator = trm("evals", n_evals = 1),
+    search_space = tuning_space, tuner = tnr("random_search"))
+
+  expect_r6(at$instance_args$search_space, "ParamSet")
+  expect_set_equal(at$instance_args$search_space$ids(), c("minsplit", "minbucket", "cp"))
+})
+
