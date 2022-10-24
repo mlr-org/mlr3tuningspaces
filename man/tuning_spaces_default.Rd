@@ -23,6 +23,14 @@ Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, B
 \description{
 Tuning spaces from the Bischl (2021) article.
 }
+\section{glmnet tuning space}{
+
+\itemize{
+\item s \eqn{[1e-04, 10000]}{[1e-04, 10000]}
+\item alpha \eqn{[0, 1]}{[0, 1]}
+}
+}
+
 \section{kknn tuning space}{
 
 \itemize{
