@@ -41,7 +41,7 @@
     
     <a class="navbar-brand me-2" href="index.html">mlr3tuningspaces</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.0</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -109,169 +109,187 @@
 </h1></div>
 <p>Package website: <a href="https://mlr3tuningspaces.mlr-org.com/">release</a></p>
 <!-- badges: start -->
-<p>Collection of search spaces for hyperparameter tuning. Includes various search spaces that can be directly applied to an <code>mlr3</code> learner. Additionally, meta information about the search space can be queried. Tuning spaces by Bischl et al. (2021) and Kuehn et al. (2018).</p>
+<p>Collection of search spaces for hyperparameter tuning in the <a href="https://github.com/mlr-org/mlr3/" class="external-link">mlr3</a> ecosystem. Currently, we offer tuning spaces from two publications.</p>
+<table class="table">
+<thead><tr class="header">
+<th>Publication</th>
+<th>Learner</th>
+<th>n Hyperparameter</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Bischl et al. (2021)</td>
+<td>glmnet</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>kknn</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>ranger</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>rpart</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>svm</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>xgboost</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>Kuehn et al. (2018)</td>
+<td>glmnet</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>kknn</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>ranger</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>rpart</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>svm</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>xgboost</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Install the development version from GitHub:</p>
+<p>Install the last release from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"mlr3tuningspaces"</span><span class="op">)</span></span></code></pre></div>
+<p>Install the development version from GitHub:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"mlr-org/mlr3tuningspaces"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <div class="section level3">
-<h3 id="quick-tuning">Quick tuning<a class="anchor" aria-label="anchor" href="#quick-tuning"></a>
+<h3 id="quick-tuning">Quick Tuning<a class="anchor" aria-label="anchor" href="#quick-tuning"></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<p>A learner passed to the <code><a href="reference/lts.html">lts()</a></code> function arguments the learner with the default tuning space from Bischl et al. (2021).</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mlr3tuningspaces.mlr-org.com">mlr3tuningspaces</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># tune learner with default search space</span></span>
+<span><span class="va">learner</span> <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="fu">lrn</span><span class="op">(</span><span class="st">"classif.rpart"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># tune learner on pima data set</span></span>
 <span><span class="va">instance</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/tune.html" class="external-link">tune</a></span><span class="op">(</span></span>
-<span>  method <span class="op">=</span> <span class="st">"random_search"</span>,</span>
+<span>  method <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/mlr_sugar.html" class="external-link">tnr</a></span><span class="op">(</span><span class="st">"random_search"</span><span class="op">)</span>,</span>
 <span>  task <span class="op">=</span> <span class="fu">tsk</span><span class="op">(</span><span class="st">"pima"</span><span class="op">)</span>,</span>
-<span>  learner <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="fu">lrn</span><span class="op">(</span><span class="st">"classif.rpart"</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>  resampling <span class="op">=</span> <span class="fu">rsmp</span> <span class="op">(</span><span class="st">"holdout"</span><span class="op">)</span>,</span>
+<span>  learner <span class="op">=</span> <span class="va">learner</span>,</span>
+<span>  resampling <span class="op">=</span> <span class="fu">rsmp</span><span class="op">(</span><span class="st">"holdout"</span><span class="op">)</span>,</span>
 <span>  measure <span class="op">=</span> <span class="fu">msr</span><span class="op">(</span><span class="st">"classif.ce"</span><span class="op">)</span>,</span>
 <span>  term_evals <span class="op">=</span> <span class="fl">10</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># best performing hyperparameter configuration</span></span>
 <span><span class="va">instance</span><span class="op">$</span><span class="va">result</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1: 4.174471 0.5070691 -4.542023          &lt;list[4]&gt; &lt;list[3]&gt;  0.1953125</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1: 4.174471 0.5070691 -4.542023          &lt;list[4]&gt; &lt;list[3]&gt;  0.1953125</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="tuning-search-spaces">Tuning search spaces<a class="anchor" aria-label="anchor" href="#tuning-search-spaces"></a>
+<h3 id="tuning-search-spaces">Tuning Search Spaces<a class="anchor" aria-label="anchor" href="#tuning-search-spaces"></a>
 </h3>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<p>The <code>mlr_tuning_spaces</code> dictionary contains all tuning spaces.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://r-datatable.com" class="external-link">"data.table"</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># print keys and learners</span></span>
+<span><span class="co"># print keys and tuning spaces</span></span>
 <span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">##                         key</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  1:  classif.glmnet.default</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  2:     classif.glmnet.rbv2</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  3:    classif.kknn.default</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  4:       classif.kknn.rbv2</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  5:  classif.ranger.default</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  6:     classif.ranger.rbv2</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  7:   classif.rpart.default</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  8:      classif.rpart.rbv2</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  9:     classif.svm.default</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 10:        classif.svm.rbv2</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 11: classif.xgboost.default</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 12:    classif.xgboost.rbv2</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 13:     regr.glmnet.default</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 14:        regr.glmnet.rbv2</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 15:       regr.kknn.default</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 16:          regr.kknn.rbv2</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 17:     regr.ranger.default</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 18:        regr.ranger.rbv2</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 19:      regr.rpart.default</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 20:         regr.rpart.rbv2</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 21:        regr.svm.default</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 22:           regr.svm.rbv2</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 23:    regr.xgboost.default</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 24:       regr.xgboost.rbv2</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="do">##                         key</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="do">##                                                            label</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="do">##  1:   Default GLM with Elastic Net Regularization Classification</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="do">##  2: RandomBot GLM with Elastic Net Regularization Classification</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="do">##  3:                    Default k-Nearest-Neighbor Classification</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  4:                  RandomBot k-Nearest-Neighbor Classification</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  5:                                Default Ranger Classification</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  6:                              RandomBot Ranger Classification</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  7:                                  Default Classification Tree</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  8:                                RandomBot Classification Tree</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="do">##  9:                Default Support Vector Machine Classification</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="do">## 10:              RandomBot Support Vector Machine Classification</span></span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="do">## 11:             Default Extreme Gradient Boosting Classification</span></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 12:           RandomBot Extreme Gradient Boosting Classification</span></span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="do">## 13:       Default GLM with Elastic Net Regularization Regression</span></span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="do">## 14:     RandomBot GLM with Elastic Net Regularization Regression</span></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="do">## 15:                        Default k-Nearest-Neighbor Regression</span></span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="do">## 16:                      RandomBot k-Nearest-Neighbor Regression</span></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="do">## 17:                                    Default Ranger Regression</span></span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="do">## 18:                                  RandomBot Ranger Regression</span></span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="do">## 19:                                      Default Regression Tree</span></span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="do">## 20:                                    RandomBot Regression Tree</span></span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="do">## 21:                    Default Support Vector Machine Regression</span></span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="do">## 22:                  RandomBot Support Vector Machine Regression</span></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="do">## 23:                 Default Extreme Gradient Boosting Regression</span></span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="do">## 24:               RandomBot Extreme Gradient Boosting Regression</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="do">##                                                            label</span></span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="do">##             learner n_values</span></span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="do">##  1:  classif.glmnet        2</span></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="do">##  2:  classif.glmnet        2</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="do">##  3:    classif.kknn        3</span></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="do">##  4:    classif.kknn        1</span></span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="do">##  5:  classif.ranger        4</span></span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="do">##  6:  classif.ranger        8</span></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a><span class="do">##  7:   classif.rpart        3</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="do">##  8:   classif.rpart        4</span></span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="do">##  9:     classif.svm        4</span></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="do">## 10:     classif.svm        5</span></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="do">## 11: classif.xgboost        8</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="do">## 12: classif.xgboost       13</span></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="do">## 13:     regr.glmnet        2</span></span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a><span class="do">## 14:     regr.glmnet        2</span></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="do">## 15:       regr.kknn        3</span></span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a><span class="do">## 16:       regr.kknn        1</span></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="do">## 17:     regr.ranger        4</span></span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="do">## 18:     regr.ranger        7</span></span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="do">## 19:      regr.rpart        3</span></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="do">## 20:      regr.rpart        4</span></span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="do">## 21:        regr.svm        4</span></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="do">## 22:        regr.svm        5</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="do">## 23:    regr.xgboost        8</span></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="do">## 24:    regr.xgboost       13</span></span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="do">##             learner n_values</span></span></code></pre></div>
+<p>A key passed to the <code><a href="reference/lts.html">lts()</a></code> function returns the <code>TuningSpace</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># get tuning space and view tune token</span></span>
-<span><span class="va">tuning_space</span> <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="st">"classif.rpart.default"</span><span class="op">)</span></span>
-<span><span class="va">tuning_space</span><span class="op">$</span><span class="va">values</span></span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## $minsplit</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Tuning over:</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">## range [2, 128] (log scale)</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="do">## $minbucket</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Tuning over:</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="do">## range [1, 64] (log scale)</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="do">## $cp</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Tuning over:</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="do">## range [1e-04, 0.1] (log scale)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">tuning_space</span> <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="st">"classif.rpart.rbv2"</span><span class="op">)</span></span>
+<span><span class="va">tuning_space</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## &lt;TuningSpace:classif.rpart.rbv2&gt;: RandomBot Classification Tree</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="do">##           id lower upper levels logscale</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1:        cp 1e-04     1            TRUE</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2:  maxdepth 1e+00    30           FALSE</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 3: minbucket 1e+00   100           FALSE</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 4:  minsplit 1e+00   100           FALSE</span></span></code></pre></div>
+<p>Get learner argumented with tuning space.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># get learner with tuning space</span></span>
-<span><span class="va">learner</span> <span class="op">=</span> <span class="va">tuning_space</span><span class="op">$</span><span class="fu">get_learner</span><span class="op">(</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">tuning_space</span><span class="op">$</span><span class="fu">get_learner</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">## &lt;LearnerClassifRpart:classif.rpart&gt;: Classification Tree</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## * Model: -</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="do">## * Parameters: xval=0, cp=&lt;RangeTuneToken&gt;, maxdepth=&lt;RangeTuneToken&gt;,</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="do">##   minbucket=&lt;RangeTuneToken&gt;, minsplit=&lt;RangeTuneToken&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="do">## * Packages: mlr3, rpart</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="do">## * Predict Types:  [response], prob</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="do">## * Feature Types: logical, integer, numeric, factor, ordered</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="do">## * Properties: importance, missings, multiclass, selected_features,</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="do">##   twoclass, weights</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="adding-new-tuning-spaces">Adding New Tuning Spaces<a class="anchor" aria-label="anchor" href="#adding-new-tuning-spaces"></a>
+</h3>
+<p>We are looking forward to new collections of tuning spaces from peer-reviewed articles. You can suggest new tuning spaces in an issue or contribute a new collection yourself in a pull request. Take a look at an already implemented collection e.g. our <a href="https://github.com/mlr-org/mlr3tuningspaces/blob/main/R/tuning_spaces_default.R" class="external-link">default tuning spaces</a> from Bischl et al. (2021). A <code>TuningSpace</code> is added to the <code>mlr_tuning_spaces</code> dictionary with the <code>add_tuning_space()</code> function. Create a tuning space for each variant of the learner e.g. for <code>LearnerClassifRpart</code> and <code>LearnerRegrRpart</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">vals</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>  minsplit  <span class="op">=</span> <span class="fu">to_tune</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">64</span>, logscale <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>  cp        <span class="op">=</span> <span class="fu">to_tune</span><span class="op">(</span><span class="fl">1e-04</span>, <span class="fl">1e-1</span>, logscale <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># tune learner</span></span>
-<span><span class="va">instance</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/tune.html" class="external-link">tune</a></span><span class="op">(</span></span>
-<span>  method <span class="op">=</span> <span class="st">"random_search"</span>,</span>
-<span>  task <span class="op">=</span> <span class="fu">tsk</span><span class="op">(</span><span class="st">"pima"</span><span class="op">)</span>,</span>
-<span>  learner <span class="op">=</span> <span class="va">learner</span>,</span>
-<span>  resampling <span class="op">=</span> <span class="fu">rsmp</span> <span class="op">(</span><span class="st">"holdout"</span><span class="op">)</span>,</span>
-<span>  measure <span class="op">=</span> <span class="fu">msr</span><span class="op">(</span><span class="st">"classif.ce"</span><span class="op">)</span>,</span>
-<span>  term_evals <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">instance</span><span class="op">$</span><span class="va">result</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1: 3.009338  2.506336 -8.291878          &lt;list[4]&gt; &lt;list[3]&gt;  0.2421875</span></span></code></pre></div>
+<span><span class="fu">add_tuning_space</span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="st">"classif.rpart.example"</span>,</span>
+<span>  values <span class="op">=</span> <span class="va">vals</span>,</span>
+<span>  tags <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"default"</span>, <span class="st">"classification"</span><span class="op">)</span>,</span>
+<span>  learner <span class="op">=</span> <span class="st">"classif.rpart"</span>,</span>
+<span>  label <span class="op">=</span> <span class="st">"Classification Tree Example"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Choose a name that is related to the publication and adjust the documentation.</p>
+<p>The reference is added to the <code>bibentries.R</code> file</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">bischl_2021</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/bibentry.html" class="external-link">bibentry</a></span><span class="op">(</span><span class="st">"misc"</span>,</span>
+<span>  key           <span class="op">=</span> <span class="st">"bischl_2021"</span>,</span>
+<span>  title         <span class="op">=</span> <span class="st">"Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges"</span>,</span>
+<span>  author        <span class="op">=</span> <span class="st">"Bernd Bischl and Martin Binder and Michel Lang and Tobias Pielok and Jakob Richter and Stefan Coors and Janek Thomas and Theresa Ullmann and Marc Becker and Anne-Laure Boulesteix and Difan Deng and Marius Lindauer"</span>,</span>
+<span>  year          <span class="op">=</span> <span class="st">"2021"</span>,</span>
+<span>  eprint        <span class="op">=</span> <span class="st">"2107.05847"</span>,</span>
+<span>  archivePrefix <span class="op">=</span> <span class="st">"arXiv"</span>,</span>
+<span>  primaryClass  <span class="op">=</span> <span class="st">"stat.ML"</span>,</span>
+<span>  url           <span class="op">=</span> <span class="st">"https://arxiv.org/abs/2107.05847"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>We are happy to help you with the pull request if you have any questions.</p>
 </div>
 </div>
-</div>
-<div class="section level1">
-<h1 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
-</h1>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
 <div id="refs" class="references hanging-indent">
 <div id="ref-bischl_2021"><p>Bischl, Bernd, Martin Binder, Michel Lang, Tobias Pielok, Jakob Richter, Stefan Coors, Janek Thomas, et al. 2021. “Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges.” <a href="https://arxiv.org/abs/2107.05847" class="external-link uri">https://arxiv.org/abs/2107.05847</a>.</p></div>
 <div id="ref-kuehn_2018"><p>Kuehn, Daniel, Philipp Probst, Janek Thomas, and Bernd Bischl. 2018. “Automatic Exploration of Machine Learning Experiments on Openml.” <a href="https://arxiv.org/abs/1806.10961" class="external-link uri">https://arxiv.org/abs/1806.10961</a>.</p></div>
 </div>
 </div>
-
+</div>
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
