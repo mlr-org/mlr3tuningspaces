@@ -7,13 +7,18 @@ bibliography: references.bib
 library(mlr3misc)
 library(utils)
 library(mlr3tuningspaces)
+library(data.table)
 source("R/bibentries.R")
 writeLines(toBibtex(bibentries), "references.bib")
 
 lgr::get_logger("mlr3")$set_threshold("warn")
 lgr::get_logger("bbotk")$set_threshold("warn")
 set.seed(1)
-options(datatable.print.class = FALSE, datatable.print.keys = FALSE)
+options(
+    datatable.print.nrows = 10,
+    datatable.print.class = FALSE,
+    datatable.print.keys = FALSE,
+    width = 100)
 ```
 
 # mlr3tuningspaces
@@ -21,7 +26,7 @@ options(datatable.print.class = FALSE, datatable.print.keys = FALSE)
 Package website: [release](https://mlr3tuningspaces.mlr-org.com/)
 
 <!-- badges: start -->
-[![tic](https://github.com/mlr-org/mlr3tuningspaces/workflows/tic/badge.svg?branch=main)](https://github.com/mlr-org/mlr3tuningspaces/actions)
+[![r-cmd-check](https://github.com/mlr-org/mlr3tuningspaces/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/mlr-org/mlr3tuningspaces/actions/workflows/r-cmd-check.yml)
 [![CRAN Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran.r-project.org/package=mlr3tuningspaces)
 [![StackOverflow](https://img.shields.io/badge/stackoverflow-mlr3-orange.svg)](https://stackoverflow.com/questions/tagged/mlr3)
 [![Mattermost](https://img.shields.io/badge/chat-mattermost-orange.svg)](https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/)
@@ -60,12 +65,6 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 ```
 
 ## Example
-
-```{r, include = FALSE}
-# mute load messages
-library(mlr3tuningspaces)
-library(data.table)
-```
 
 ### Quick Tuning
 

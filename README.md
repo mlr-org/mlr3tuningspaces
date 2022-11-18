@@ -5,7 +5,7 @@ Package website: [release](https://mlr3tuningspaces.mlr-org.com/)
 
 <!-- badges: start -->
 
-[![tic](https://github.com/mlr-org/mlr3tuningspaces/workflows/tic/badge.svg?branch=main)](https://github.com/mlr-org/mlr3tuningspaces/actions)
+[![r-cmd-check](https://github.com/mlr-org/mlr3tuningspaces/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/mlr-org/mlr3tuningspaces/actions/workflows/r-cmd-check.yml)
 [![CRAN
 Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran.r-project.org/package=mlr3tuningspaces)
 [![StackOverflow](https://img.shields.io/badge/stackoverflow-mlr3-orange.svg)](https://stackoverflow.com/questions/tagged/mlr3)
@@ -112,8 +112,7 @@ tuning_space$get_learner()
     ## * Packages: mlr3, rpart
     ## * Predict Types:  [response], prob
     ## * Feature Types: logical, integer, numeric, factor, ordered
-    ## * Properties: importance, missings, multiclass, selected_features,
-    ##   twoclass, weights
+    ## * Properties: importance, missings, multiclass, selected_features, twoclass, weights
 
 ### Adding New Tuning Spaces
 
