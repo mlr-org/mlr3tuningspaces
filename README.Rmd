@@ -23,7 +23,7 @@ options(
 
 # mlr3tuningspaces
 
-Package website: [release](https://mlr3tuningspaces.mlr-org.com/)
+Package website: [release](https://mlr3tuningspaces.mlr-org.com/) | [dev](https://mlr3tuningspaces.mlr-org.com/dev/)
 
 <!-- badges: start -->
 [![r-cmd-check](https://github.com/mlr-org/mlr3tuningspaces/actions/workflows/r-cmd-check.yml/badge.svg)](https://github.com/mlr-org/mlr3tuningspaces/actions/workflows/r-cmd-check.yml)
