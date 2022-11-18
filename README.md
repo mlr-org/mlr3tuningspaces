@@ -12,9 +12,9 @@ Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran
 [![Mattermost](https://img.shields.io/badge/chat-mattermost-orange.svg)](https://lmmisld-lmu-stats-slds.srv.mwn.de/mlr_invite/)
 <!-- badges: end -->
 
-Collection of search spaces for hyperparameter tuning in the
-[mlr3](https://github.com/mlr-org/mlr3/) ecosystem. Currently, we offer
-tuning spaces from two publications.
+*mlr3tuningspaces* is a collection of search spaces for hyperparameter
+optimization in the [mlr3](https://github.com/mlr-org/mlr3/) ecosystem.
+Currently, we offer tuning spaces from two publications.
 
 | Publication          | Learner | n Hyperparameter |
 | -------------------- | ------- | ---------------- |
