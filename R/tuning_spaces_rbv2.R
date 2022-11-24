@@ -10,11 +10,13 @@
 #'
 #' @aliases
 #' mlr_tuning_spaces_classif.glmnet.rbv2
+#' mlr_tuning_spaces_classif.kknn.rbv2
 #' mlr_tuning_spaces_classif.ranger.rbv2
 #' mlr_tuning_spaces_classif.rpart.rbv2
 #' mlr_tuning_spaces_classif.svm.rbv2
 #' mlr_tuning_spaces_classif.xgboost.rbv2
 #' mlr_tuning_spaces_regr.glmnet.rbv2
+#' mlr_tuning_spaces_regr.kknn.rbv2
 #' mlr_tuning_spaces_regr.ranger.rbv2
 #' mlr_tuning_spaces_regr.rpart.rbv2
 #' mlr_tuning_spaces_regr.svm.rbv2
