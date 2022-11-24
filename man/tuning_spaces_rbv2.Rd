@@ -2,14 +2,16 @@
 % Please edit documentation in R/tuning_spaces_rbv2.R
 \name{tuning_spaces_rbv2}
 \alias{tuning_spaces_rbv2}
-\alias{classif.ranger.rbv2}
-\alias{classif.rpart.rbv2}
-\alias{classif.svm.rbv2}
-\alias{classif.xgboost.rbv2}
-\alias{regr.ranger.rbv2}
-\alias{regr.rpart.rbv2}
-\alias{regr.svm.rbv2}
-\alias{regr.xgboost.rbv2}
+\alias{mlr_tuning_spaces_classif.glmnet.rbv2}
+\alias{mlr_tuning_spaces_classif.ranger.rbv2}
+\alias{mlr_tuning_spaces_classif.rpart.rbv2}
+\alias{mlr_tuning_spaces_classif.svm.rbv2}
+\alias{mlr_tuning_spaces_classif.xgboost.rbv2}
+\alias{mlr_tuning_spaces_regr.glmnet.rbv2}
+\alias{mlr_tuning_spaces_regr.ranger.rbv2}
+\alias{mlr_tuning_spaces_regr.rpart.rbv2}
+\alias{mlr_tuning_spaces_regr.svm.rbv2}
+\alias{mlr_tuning_spaces_regr.xgboost.rbv2}
 \title{RandomBot Tuning Spaces}
 \source{
 Kuehn D, Probst P, Thomas J, Bischl B (2018).

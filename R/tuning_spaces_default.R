@@ -8,10 +8,19 @@
 #' @source
 #' `r format_bib("bischl_2021")`
 #'
-#' @aliases classif.glmnet.default classif.kknn.default classif.ranger.default
-#' classif.rpart.default classif.svm.default classif.xgboost.default
-#' regr.glmnet.default regr.kknn.default regr.ranger.default regr.rpart.default
-#' regr.svm.default regr.xgboost.default
+#' @aliases
+#' mlr_tuning_spaces_classif.glmnet.default
+#' mlr_tuning_spaces_classif.kknn.default
+#' mlr_tuning_spaces_classif.ranger.default
+#' mlr_tuning_spaces_classif.rpart.default
+#' mlr_tuning_spaces_classif.svm.default
+#' mlr_tuning_spaces_classif.xgboost.default
+#' mlr_tuning_spaces_regr.glmnet.default
+#' mlr_tuning_spaces_regr.kknn.default
+#' mlr_tuning_spaces_regr.ranger.default
+#' mlr_tuning_spaces_regr.rpart.default
+#' mlr_tuning_spaces_regr.svm.default
+#' mlr_tuning_spaces_regr.xgboost.default
 #'
 #' @section glmnet tuning space:
 #' `r rd_info(lts("classif.glmnet.default"))`

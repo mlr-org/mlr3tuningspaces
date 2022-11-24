@@ -2,18 +2,18 @@
 % Please edit documentation in R/tuning_spaces_default.R
 \name{tuning_spaces_default}
 \alias{tuning_spaces_default}
-\alias{classif.glmnet.default}
-\alias{classif.kknn.default}
-\alias{classif.ranger.default}
-\alias{classif.rpart.default}
-\alias{classif.svm.default}
-\alias{classif.xgboost.default}
-\alias{regr.glmnet.default}
-\alias{regr.kknn.default}
-\alias{regr.ranger.default}
-\alias{regr.rpart.default}
-\alias{regr.svm.default}
-\alias{regr.xgboost.default}
+\alias{mlr_tuning_spaces_classif.glmnet.default}
+\alias{mlr_tuning_spaces_classif.kknn.default}
+\alias{mlr_tuning_spaces_classif.ranger.default}
+\alias{mlr_tuning_spaces_classif.rpart.default}
+\alias{mlr_tuning_spaces_classif.svm.default}
+\alias{mlr_tuning_spaces_classif.xgboost.default}
+\alias{mlr_tuning_spaces_regr.glmnet.default}
+\alias{mlr_tuning_spaces_regr.kknn.default}
+\alias{mlr_tuning_spaces_regr.ranger.default}
+\alias{mlr_tuning_spaces_regr.rpart.default}
+\alias{mlr_tuning_spaces_regr.svm.default}
+\alias{mlr_tuning_spaces_regr.xgboost.default}
 \title{Default Tuning Spaces}
 \source{
 Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A, Deng D, Lindauer M (2021).

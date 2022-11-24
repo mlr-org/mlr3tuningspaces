@@ -8,9 +8,17 @@
 #' @source
 #' `r format_bib("kuehn_2018")`
 #'
-#' @aliases classif.ranger.rbv2 classif.rpart.rbv2 classif.svm.rbv2
-#' classif.xgboost.rbv2 regr.ranger.rbv2 regr.rpart.rbv2
-#' regr.svm.rbv2 regr.xgboost.rbv2
+#' @aliases
+#' mlr_tuning_spaces_classif.glmnet.rbv2
+#' mlr_tuning_spaces_classif.ranger.rbv2
+#' mlr_tuning_spaces_classif.rpart.rbv2
+#' mlr_tuning_spaces_classif.svm.rbv2
+#' mlr_tuning_spaces_classif.xgboost.rbv2
+#' mlr_tuning_spaces_regr.glmnet.rbv2
+#' mlr_tuning_spaces_regr.ranger.rbv2
+#' mlr_tuning_spaces_regr.rpart.rbv2
+#' mlr_tuning_spaces_regr.svm.rbv2
+#' mlr_tuning_spaces_regr.xgboost.rbv2
 #'
 #' @section glmnet tuning space:
 #' `r rd_info(lts("classif.glmnet.rbv2"))`
