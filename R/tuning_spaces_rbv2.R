@@ -57,7 +57,7 @@ add_tuning_space(
   tags = c("rbv2", "classification"),
   learner = "classif.glmnet",
   package = "mlr3learners",
-  label = "RandomBot GLM with Elastic Net Regularization Classification"
+  label = "Classification GLM with RandomBot"
 )
 
 add_tuning_space(
@@ -66,7 +66,7 @@ add_tuning_space(
   tags = c("rbv2", "regression"),
   learner = "regr.glmnet",
   package = "mlr3learners",
-  label = "RandomBot GLM with Elastic Net Regularization Regression"
+  label = "Regression GLM with RandomBot"
 )
 
 # kknn
@@ -80,7 +80,7 @@ add_tuning_space(
   tags = c("rbv2", "classification"),
   learner = "classif.kknn",
   package = "mlr3learners",
-  label = "RandomBot k-Nearest-Neighbor Classification"
+  label = "Classification KKNN with RandomBot"
 )
 
 add_tuning_space(
@@ -89,7 +89,7 @@ add_tuning_space(
   tags = c("rbv2", "regression"),
   learner = "regr.kknn",
   package = "mlr3learners",
-  label = "RandomBot k-Nearest-Neighbor Regression"
+  label = "Regression KKNN with RandomBot"
 )
 
 # ranger
@@ -110,7 +110,7 @@ add_tuning_space(
   tags = c("rbv2", "classification"),
   learner = "classif.ranger",
   package = "mlr3learners",
-  label = "RandomBot Ranger Classification"
+  label = "Classification Ranger with RandomBot"
 )
 
 vals = list(
@@ -129,7 +129,7 @@ add_tuning_space(
   tags = c("rbv2", "regression"),
   learner = "regr.ranger",
   package = "mlr3learners",
-  label = "RandomBot Ranger Regression"
+  label = "Regression Ranger with RandomBot"
 )
 
 # rpart
@@ -146,7 +146,7 @@ add_tuning_space(
   tags = c("rbv2", "classification"),
   learner = "classif.rpart",
   package = "mlr3learners",
-  label = "RandomBot Classification Tree"
+  label = "Classification Rpart with RandomBot"
 )
 
 add_tuning_space(
@@ -155,7 +155,7 @@ add_tuning_space(
   tags = c("rbv2", "regression"),
   learner = "regr.rpart",
   package = "mlr3learners",
-  label = "RandomBot Regression Tree"
+  label = "Regression Rpart with RandomBot"
 )
 
 # svm
@@ -173,7 +173,7 @@ add_tuning_space(
   tags = c("rbv2", "classification"),
   learner = "classif.svm",
   package = "mlr3learners",
-  label = "RandomBot Support Vector Machine Classification"
+  label = "Classification SVM with RandomBot"
 )
 
 add_tuning_space(
@@ -182,7 +182,7 @@ add_tuning_space(
   tags = c("rbv2", "regression"),
   learner = "regr.svm",
   package = "mlr3learners",
-  label = "RandomBot Support Vector Machine Regression"
+  label = "Regression SVM with RandomBot"
 )
 
 # xgboost
@@ -208,7 +208,7 @@ add_tuning_space(
   tags = c("rbv2", "classification"),
   learner = "classif.xgboost",
   package = "mlr3learners",
-  label = "RandomBot Extreme Gradient Boosting Classification"
+  label = "Classification XGBoost with RandomBot"
 )
 
 add_tuning_space(
@@ -217,5 +217,5 @@ add_tuning_space(
   tags = c("rbv2", "regression"),
   learner = "regr.xgboost",
   package = "mlr3learners",
-  label = "RandomBot Extreme Gradient Boosting Regression"
+  label = "Regression XGBoost with RandomBot"
 )
