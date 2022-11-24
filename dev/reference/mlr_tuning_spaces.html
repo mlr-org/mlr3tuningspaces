@@ -104,58 +104,32 @@ If <code>objects</code> is set to <code>TRUE</code>, the constructed objects are
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                         key</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  classif.glmnet.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:     classif.glmnet.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:    classif.kknn.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:       classif.kknn.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:  classif.ranger.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:     classif.ranger.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:   classif.rpart.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:      classif.rpart.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:     classif.svm.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        classif.svm.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11: classif.xgboost.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:    classif.xgboost.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:     regr.glmnet.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        regr.glmnet.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:       regr.kknn.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:          regr.kknn.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:     regr.ranger.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        regr.ranger.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:      regr.rpart.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:         regr.rpart.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        regr.svm.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:           regr.svm.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:    regr.xgboost.default</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:       regr.xgboost.rbv2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                         key</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                            label</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:   Default GLM with Elastic Net Regularization Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: RandomBot GLM with Elastic Net Regularization Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                    Default k-Nearest-Neighbor Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                  RandomBot k-Nearest-Neighbor Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                Default Ranger Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                              RandomBot Ranger Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                  Default Classification Tree</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                RandomBot Classification Tree</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                Default Support Vector Machine Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:              RandomBot Support Vector Machine Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:             Default Extreme Gradient Boosting Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12:           RandomBot Extreme Gradient Boosting Classification</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:       Default GLM with Elastic Net Regularization Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:     RandomBot GLM with Elastic Net Regularization Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:                        Default k-Nearest-Neighbor Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:                      RandomBot k-Nearest-Neighbor Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:                                    Default Ranger Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:                                  RandomBot Ranger Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:                                      Default Regression Tree</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:                                    RandomBot Regression Tree</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:                    Default Support Vector Machine Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:                  RandomBot Support Vector Machine Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:                 Default Extreme Gradient Boosting Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24:               RandomBot Extreme Gradient Boosting Regression</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                            label</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                         key                                 label</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  classif.glmnet.default       Classification GLM with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:     classif.glmnet.rbv2     Classification GLM with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:    classif.kknn.default      Classification KKNN with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:       classif.kknn.rbv2    Classification KKNN with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:  classif.ranger.default    Classification Ranger with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:     classif.ranger.rbv2  Classification Ranger with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:   classif.rpart.default     Classification Rpart with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:      classif.rpart.rbv2   Classification Rpart with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:     classif.svm.default       Classification SVM with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:        classif.svm.rbv2     Classification SVM with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11: classif.xgboost.default   Classification XGBoost with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:    classif.xgboost.rbv2 Classification XGBoost with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:     regr.glmnet.default           Regression GLM with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:        regr.glmnet.rbv2         Regression GLM with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:       regr.kknn.default          Regression KKNN with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:          regr.kknn.rbv2        Regression KKNN with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:     regr.ranger.default        Regression Ranger with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18:        regr.ranger.rbv2      Regression Ranger with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19:      regr.rpart.default         Regression Rpart with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:         regr.rpart.rbv2       Regression Rpart with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:        regr.svm.default           Regression SVM with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:           regr.svm.rbv2         Regression SVM with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:    regr.xgboost.default       Regression XGBoost with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24:       regr.xgboost.rbv2     Regression XGBoost with RandomBot</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                         key                                 label</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             learner n_values</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  1:  classif.glmnet        2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2:  classif.glmnet        2</span>
@@ -183,14 +157,14 @@ If <code>objects</code> is set to <code>TRUE</code>, the constructed objects are
 <span class="r-out co"><span class="r-pr">#&gt;</span> 24:    regr.xgboost       13</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             learner n_values</span>
 <span class="r-in"><span><span class="va">mlr_tuning_spaces</span><span class="op">$</span><span class="fu">get</span><span class="op">(</span><span class="st">"classif.ranger.default"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.ranger.default&gt;: Default Ranger Classification</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.ranger.default&gt;: Classification Ranger with Default</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 id lower upper      levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1:      mtry.ratio   0.0     1                FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2:         replace    NA    NA  TRUE,FALSE    FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3: sample.fraction   0.1     1                FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4:       num.trees   1.0  2000                FALSE</span>
 <span class="r-in"><span><span class="fu"><a href="lts.html">lts</a></span><span class="op">(</span><span class="st">"classif.ranger.default"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.ranger.default&gt;: Default Ranger Classification</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.ranger.default&gt;: Classification Ranger with Default</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 id lower upper      levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1:      mtry.ratio   0.0     1                FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2:         replace    NA    NA  TRUE,FALSE    FALSE</span>
