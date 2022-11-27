@@ -43,6 +43,8 @@ reference:
       - lts
       - ltss
       - mlr_tuning_spaces
+      - mlr_tuning_spaces_default
+      - mlr_tuning_spaces_rbv2
       - starts_with("mlr_tuning_spaces_default")
       - starts_with("mlr_tuning_spaces_rbv2")
   - title: Package

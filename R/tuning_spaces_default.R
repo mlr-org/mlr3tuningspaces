@@ -1,6 +1,6 @@
 #' @title Default Tuning Spaces
 #'
-#' @name tuning_spaces_default
+#' @name mlr_tuning_spaces_default
 #'
 #' @description
 #' Tuning spaces from the `r cite_bib("bischl_2021")` article.
