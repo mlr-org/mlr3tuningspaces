@@ -1,4 +1,6 @@
-# mlr3tuningspaces 0.3.1.9000
+# mlr3tuningspaces 0.3.2
+
+ docs: Add `mlr_tuning_spaces` prefix to aliases.
 
 # mlr3tuningspaces 0.3.1
 

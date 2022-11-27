@@ -1,9 +1,9 @@
 #' @title RandomBot Tuning Spaces
 #'
+#' @name mlr_tuning_spaces_rbv2
+#'
 #' @description
 #' Tuning spaces from the `r cite_bib("kuehn_2018")` article.
-#'
-#' @name tuning_spaces_rbv2
 #'
 #' @source
 #' `r format_bib("kuehn_2018")`
