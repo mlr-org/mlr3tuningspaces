@@ -15,7 +15,10 @@ Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran
 
 *mlr3tuningspaces* is a collection of search spaces for hyperparameter
 optimization in the [mlr3](https://github.com/mlr-org/mlr3/) ecosystem.
-Currently, we offer tuning spaces from two publications.
+It features ready-to-use search spaces for many popular machine learning
+algorithms. The search spaces are from scientific articles and work for
+a wide range of data sets. Currently, we offer tuning spaces from two
+publications.
 
 | Publication          | Learner | n Hyperparameter |
 | -------------------- | ------- | ---------------- |
@@ -100,7 +103,7 @@ tuning_space
     ## 3: minbucket 1e+00   100           FALSE
     ## 4:  minsplit 1e+00   100           FALSE
 
-Get learner argumented with tuning space.
+Get the learner with tuning space.
 
 ``` r
 tuning_space$get_learner()
