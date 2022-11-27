@@ -33,6 +33,8 @@ Package website: [release](https://mlr3tuningspaces.mlr-org.com/) | [dev](https:
 <!-- badges: end -->
 
 *mlr3tuningspaces* is a collection of search spaces for hyperparameter optimization in the [mlr3](https://github.com/mlr-org/mlr3/) ecosystem.
+It features ready-to-use search spaces for many popular machine learning algorithms.
+The search spaces are from scientific articles and work for a wide range of data sets.
 Currently, we offer tuning spaces from two publications.
 
 | Publication  | Learner | n Hyperparameter |
@@ -107,7 +109,7 @@ tuning_space = lts("classif.rpart.rbv2")
 tuning_space
 ```
 
-Get learner argumented with tuning space.
+Get the learner with tuning space.
 
 ```{r}
 tuning_space$get_learner()
