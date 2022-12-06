@@ -117,7 +117,7 @@ TuningSpace = R6Class("TuningSpace",
     #' @return [mlr3::Learner]
     get_learner = function(...) {
       learner = lrn(self$learner, ...)
-      learner$param_set$values = insert_named(learner$param_set$values, lts(self$id)$values)
+      learner$param_set$values = insert_named(learner$param_set$values, self$values)
       learner
     },
 
