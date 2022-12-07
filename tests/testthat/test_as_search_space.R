@@ -35,3 +35,14 @@ test_that("search space from TuningSpace works", {
   expect_set_equal(at$instance_args$search_space$ids(), c("minsplit", "minbucket", "cp"))
 })
 
+test_that("as_search_space works with added parameters", {
+  search_space = lts("classif.xgboost.default", min_child_weight = to_tune(0, 10))
+
+  expect_names(as_search_space(search_space)$ids(), must.include = "min_child_weight")
+})
+
+test_that("as_search_space works with changed parameters", {
+  search_space = lts("classif.xgboost.default", nrounds = to_tune(1, 10000))
+
+  expect_equal(as_search_space(search_space)$params$nrounds$upper, 10000)
+})
