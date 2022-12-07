@@ -1,8 +1,10 @@
 # mlr3tuningspaces 0.3.2.9000
 
+* fix: Extra `paradox::TuneToken` in `lts()` were not passed to learner created with `$get_learner()`.
+
 # mlr3tuningspaces 0.3.2
 
- docs: Add `mlr_tuning_spaces` prefix to aliases.
+* docs: Add `mlr_tuning_spaces` prefix to aliases.
 
 # mlr3tuningspaces 0.3.1
 
