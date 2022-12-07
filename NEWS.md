@@ -1,6 +1,7 @@
-# mlr3tuningspaces 0.3.2.9000
+# mlr3tuningspaces 0.3.3
 
-* fix: Extra `paradox::TuneToken` in `lts()` were not passed to learner created with `$get_learner()`.
+* fix: Extra `paradox::TuneToken` in `lts()` were not passed to learners created with `$get_learner()`.
+* docs: Add `lts()` return.
 
 # mlr3tuningspaces 0.3.2
 
