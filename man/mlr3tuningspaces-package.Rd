@@ -4,9 +4,9 @@
 \name{mlr3tuningspaces-package}
 \alias{mlr3tuningspaces}
 \alias{mlr3tuningspaces-package}
-\title{mlr3tuningspaces: Search Spaces for Hyperparameter Tuning}
+\title{mlr3tuningspaces: Search Spaces for 'mlr3'}
 \description{
-Collection of search spaces for hyperparameter tuning. Includes various search spaces that can be directly applied on an `mlr3` learner. Additionally, meta information about the search space can be queried.
+Collection of search spaces for hyperparameter optimization in the mlr3 ecosystem. It features ready-to-use search spaces for many popular machine learning algorithms. The search spaces are from scientific articles and work for a wide range of data sets.
 }
 \seealso{
 Useful links:

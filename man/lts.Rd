@@ -28,7 +28,9 @@ Pass \link[paradox:to_tune]{paradox::TuneToken} to add or overwrite parameters i
 Use \code{NULL} to remove parameters (see examples).}
 }
 \value{
-If \code{x} is
+\link{TuningSpace} if \code{x} is \code{character()}.
+\link[mlr3:Learner]{mlr3::Learner} if \code{x} is \link[mlr3:Learner]{mlr3::Learner}.
+Or a list of objects for the \code{ltss()} function.
 
 missing, \link{mlr_tuning_spaces} dictionary
 

@@ -12,7 +12,10 @@
 #'   Use `NULL` to remove parameters (see examples).
 #'
 #' @return
-#' If `x` is
+#' [TuningSpace] if `x` is `character()`.
+#' [mlr3::Learner] if `x` is [mlr3::Learner].
+#' Or a list of objects for the `ltss()` function.
+#'
 #' @export
 #' @examples
 #' # load tuning space
