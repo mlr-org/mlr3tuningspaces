@@ -8,7 +8,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-9754-0393"))
   )
 Description: Collection of search spaces for hyperparameter optimization in the
-  mlr3 ecosystem. It features ready-to-use search spaces for many popular
+  'mlr3' ecosystem. It features ready-to-use search spaces for many popular
   machine learning algorithms. The search spaces are from scientific articles
   and work for a wide range of data sets.
 License: LGPL-3
