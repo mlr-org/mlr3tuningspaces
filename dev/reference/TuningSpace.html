@@ -4,7 +4,7 @@ For tuning, it is important to create a search space that defines the range over
 TuningSpace object consists of search spaces from peer-reviewed articles which work well for a wide range of data sets.
 The $values field stores a list of paradox::TuneToken which define the search space.
 These tokens can be assigned to the $values slot of a learner's paradox::ParamSet.
-When the learner is tuned, the tokens are used to create the search space."><title>Tuning Spaces — TuningSpace • mlr3tuningspaces</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.4/font.css" rel="stylesheet"><link href="../deps/JetBrains_Mono-0.4.4/font.css" rel="stylesheet"><link href="../deps/Roboto_Slab-0.4.4/font.css" rel="stylesheet"><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Tuning Spaces — TuningSpace"><meta property="og:description" content="This class defines a tuning space for hyperparameter tuning.
+When the learner is tuned, the tokens are used to create the search space."><title>Tuning Spaces — TuningSpace • mlr3tuningspaces</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.4/font.css" rel="stylesheet"><link href="../deps/JetBrains_Mono-0.4.4/font.css" rel="stylesheet"><link href="../deps/Roboto_Slab-0.4.4/font.css" rel="stylesheet"><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Tuning Spaces — TuningSpace"><meta property="og:description" content="This class defines a tuning space for hyperparameter tuning.
 For tuning, it is important to create a search space that defines the range over which hyperparameters should be tuned.
 TuningSpace object consists of search spaces from peer-reviewed articles which work well for a wide range of data sets.
 The $values field stores a list of paradox::TuneToken which define the search space.
@@ -88,8 +88,8 @@ When the learner is tuned, the tokens are used to create the search space."><met
     <p>This class defines a tuning space for hyperparameter tuning.</p>
 <p>For tuning, it is important to create a search space that defines the range over which hyperparameters should be tuned.
 <code>TuningSpace</code> object consists of search spaces from peer-reviewed articles which work well for a wide range of data sets.</p>
-<p>The <code>$values</code> field stores a list of <a href="https://paradox.mlr-org.com/reference/to_tune.html" class="external-link">paradox::TuneToken</a> which define the search space.
-These tokens can be assigned to the <code>$values</code> slot of a learner's <a href="https://paradox.mlr-org.com/reference/ParamSet.html" class="external-link">paradox::ParamSet</a>.
+<p>The <code>$values</code> field stores a list of <a href="https://rdrr.io/pkg/paradox/man/to_tune.html" class="external-link">paradox::TuneToken</a> which define the search space.
+These tokens can be assigned to the <code>$values</code> slot of a learner's <a href="https://rdrr.io/pkg/paradox/man/ParamSet.html" class="external-link">paradox::ParamSet</a>.
 When the learner is tuned, the tokens are used to create the search space.</p>
     </div>
 
@@ -112,7 +112,7 @@ Identifier of the object.</p></dd>
 
 <dt><code>values</code></dt>
 <dd><p>(<code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code>)<br>
-List of <a href="https://paradox.mlr-org.com/reference/to_tune.html" class="external-link">paradox::TuneToken</a> that describe the tuning space and fixed parameter values.</p></dd>
+List of <a href="https://rdrr.io/pkg/paradox/man/to_tune.html" class="external-link">paradox::TuneToken</a> that describe the tuning space and fixed parameter values.</p></dd>
 
 
 <dt><code>tags</code></dt>
@@ -121,13 +121,13 @@ Arbitrary tags to group and filter tuning space e.g. <code>"classification"</cod
 
 
 <dt><code>learner</code></dt>
-<dd><p>(<code>character(1)</code>)<br><a href="https://mlr3.mlr-org.com/reference/Learner.html" class="external-link">mlr3::Learner</a> of the tuning space.</p></dd>
+<dd><p>(<code>character(1)</code>)<br><a href="https://rdrr.io/pkg/mlr3/man/Learner.html" class="external-link">mlr3::Learner</a> of the tuning space.</p></dd>
 
 
 <dt><code>package</code></dt>
 <dd><p>(<code>character(1)</code>)<br>
-Packages which provide the <a href="https://mlr3.mlr-org.com/reference/Learner.html" class="external-link">Learner</a>, e.g. <a href="https://CRAN.R-project.org/package=mlr3learners" class="external-link"><span class="pkg">mlr3learners</span></a> for the learner
-<a href="https://mlr3learners.mlr-org.com/reference/mlr_learners_classif.ranger.html" class="external-link">mlr3learners::LearnerClassifRanger</a> which interfaces the <a href="https://CRAN.R-project.org/package=ranger" class="external-link"><span class="pkg">ranger</span></a> package.</p></dd>
+Packages which provide the <a href="https://rdrr.io/pkg/mlr3/man/Learner.html" class="external-link">Learner</a>, e.g. <a href="https://CRAN.R-project.org/package=mlr3learners" class="external-link"><span class="pkg">mlr3learners</span></a> for the learner
+<a href="https://rdrr.io/pkg/mlr3learners/man/mlr_learners_classif.ranger.html" class="external-link">mlr3learners::LearnerClassifRanger</a> which interfaces the <a href="https://CRAN.R-project.org/package=ranger" class="external-link"><span class="pkg">ranger</span></a> package.</p></dd>
 
 
 <dt><code>label</code></dt>
@@ -180,7 +180,7 @@ Identifier for the new instance.</p></dd>
 
 <dt><code>values</code></dt>
 <dd><p>(<code><a href="https://rdrr.io/r/base/list.html" class="external-link">list()</a></code>)<br>
-List of <a href="https://paradox.mlr-org.com/reference/to_tune.html" class="external-link">paradox::TuneToken</a> that describe the tuning space and fixed parameter values.</p></dd>
+List of <a href="https://rdrr.io/pkg/paradox/man/to_tune.html" class="external-link">paradox::TuneToken</a> that describe the tuning space and fixed parameter values.</p></dd>
 
 
 <dt><code>tags</code></dt>
@@ -189,13 +189,13 @@ Tags to group and filter tuning spaces e.g. <code>"classification"</code> or "<c
 
 
 <dt><code>learner</code></dt>
-<dd><p>(<code>character(1)</code>)<br><a href="https://mlr3.mlr-org.com/reference/Learner.html" class="external-link">mlr3::Learner</a> of the tuning space.</p></dd>
+<dd><p>(<code>character(1)</code>)<br><a href="https://rdrr.io/pkg/mlr3/man/Learner.html" class="external-link">mlr3::Learner</a> of the tuning space.</p></dd>
 
 
 <dt><code>package</code></dt>
 <dd><p>(<code><a href="https://rdrr.io/r/base/character.html" class="external-link">character()</a></code>)<br>
-Packages which provide the <a href="https://mlr3.mlr-org.com/reference/Learner.html" class="external-link">Learner</a>, e.g. <a href="https://CRAN.R-project.org/package=mlr3learners" class="external-link"><span class="pkg">mlr3learners</span></a> for the learner
-<a href="https://mlr3learners.mlr-org.com/reference/mlr_learners_classif.ranger.html" class="external-link">mlr3learners::LearnerClassifRanger</a> which interfaces the <a href="https://CRAN.R-project.org/package=ranger" class="external-link"><span class="pkg">ranger</span></a> package.</p></dd>
+Packages which provide the <a href="https://rdrr.io/pkg/mlr3/man/Learner.html" class="external-link">Learner</a>, e.g. <a href="https://CRAN.R-project.org/package=mlr3learners" class="external-link"><span class="pkg">mlr3learners</span></a> for the learner
+<a href="https://rdrr.io/pkg/mlr3learners/man/mlr_learners_classif.ranger.html" class="external-link">mlr3learners::LearnerClassifRanger</a> which interfaces the <a href="https://CRAN.R-project.org/package=ranger" class="external-link"><span class="pkg">ranger</span></a> package.</p></dd>
 
 
 <dt><code>label</code></dt>
@@ -215,7 +215,7 @@ The referenced help package can be opened via method <code>$help()</code>.</p></
 
 </div><p></p><hr><a id="method-TuningSpace-get_learner"></a><div class="section">
 <h3 id="method-get-learner-">Method <code>get_learner()</code><a class="anchor" aria-label="anchor" href="#method-get-learner-"></a></h3>
-<p>Returns a learner with <a href="https://paradox.mlr-org.com/reference/to_tune.html" class="external-link">TuneToken</a> set in parameter set.</p><div class="section">
+<p>Returns a learner with <a href="https://rdrr.io/pkg/paradox/man/to_tune.html" class="external-link">TuneToken</a> set in parameter set.</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">TuningSpace</span><span class="op">$</span><span class="fu">get_learner</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
@@ -224,16 +224,16 @@ The referenced help package can be opened via method <code>$help()</code>.</p></
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>...</code></dt>
 <dd><p>(named ‘list()’)<br>
-Passed to <code><a href="https://mlr3.mlr-org.com/reference/mlr_sugar.html" class="external-link">mlr3::lrn()</a></code>. Named arguments passed to the constructor, to
-be set as parameters in the <a href="https://paradox.mlr-org.com/reference/ParamSet.html" class="external-link">paradox::ParamSet</a>, or to be set as public
-field. See <code><a href="https://mlr3misc.mlr-org.com/reference/dictionary_sugar_get.html" class="external-link">mlr3misc::dictionary_sugar_get()</a></code> for more details.</p></dd>
+Passed to <code><a href="https://rdrr.io/pkg/mlr3/man/mlr_sugar.html" class="external-link">mlr3::lrn()</a></code>. Named arguments passed to the constructor, to
+be set as parameters in the <a href="https://rdrr.io/pkg/paradox/man/ParamSet.html" class="external-link">paradox::ParamSet</a>, or to be set as public
+field. See <code><a href="https://rdrr.io/pkg/mlr3misc/man/dictionary_sugar_get.html" class="external-link">mlr3misc::dictionary_sugar_get()</a></code> for more details.</p></dd>
 
 
 </dl><p></p></div>
 </div>
 <div class="section">
 <h4 id="returns">Returns<a class="anchor" aria-label="anchor" href="#returns"></a></h4>
-<p><a href="https://mlr3.mlr-org.com/reference/Learner.html" class="external-link">mlr3::Learner</a></p>
+<p><a href="https://rdrr.io/pkg/mlr3/man/Learner.html" class="external-link">mlr3::Learner</a></p>
 </div>
 
 </div><p></p><hr><a id="method-TuningSpace-format"></a><div class="section">
@@ -296,21 +296,21 @@ field. See <code><a href="https://mlr3misc.mlr-org.com/reference/dictionary_suga
 <span class="r-in"><span><span class="va">tuning_space</span> <span class="op">=</span> <span class="fu"><a href="lts.html">lts</a></span><span class="op">(</span><span class="st">"classif.rpart.default"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># get learner and set tuning space</span></span></span>
-<span class="r-in"><span><span class="va">learner</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3.mlr-org.com/reference/mlr_sugar.html" class="external-link">lrn</a></span><span class="op">(</span><span class="st">"classif.rpart"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">learner</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mlr3/man/mlr_sugar.html" class="external-link">lrn</a></span><span class="op">(</span><span class="st">"classif.rpart"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">learner</span><span class="op">$</span><span class="va">param_set</span><span class="op">$</span><span class="va">values</span> <span class="op">=</span> <span class="va">tuning_space</span><span class="op">$</span><span class="va">values</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># tune learner</span></span></span>
 <span class="r-in"><span><span class="va">instance</span> <span class="op">=</span> <span class="fu"><a href="https://mlr3tuning.mlr-org.com/reference/tune.html" class="external-link">tune</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span> method <span class="op">=</span> <span class="st">"random_search"</span>,</span></span>
-<span class="r-in"><span> task <span class="op">=</span> <span class="fu"><a href="https://mlr3.mlr-org.com/reference/mlr_sugar.html" class="external-link">tsk</a></span><span class="op">(</span><span class="st">"pima"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span> task <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mlr3/man/mlr_sugar.html" class="external-link">tsk</a></span><span class="op">(</span><span class="st">"pima"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span> learner <span class="op">=</span> <span class="va">learner</span>,</span></span>
-<span class="r-in"><span> resampling <span class="op">=</span> <span class="fu"><a href="https://mlr3.mlr-org.com/reference/mlr_sugar.html" class="external-link">rsmp</a></span> <span class="op">(</span><span class="st">"holdout"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span> measure <span class="op">=</span> <span class="fu"><a href="https://mlr3.mlr-org.com/reference/mlr_sugar.html" class="external-link">msr</a></span><span class="op">(</span><span class="st">"classif.ce"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span> resampling <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mlr3/man/mlr_sugar.html" class="external-link">rsmp</a></span> <span class="op">(</span><span class="st">"holdout"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span> measure <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/mlr3/man/mlr_sugar.html" class="external-link">msr</a></span><span class="op">(</span><span class="st">"classif.ce"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span> term_evals <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">instance</span><span class="op">$</span><span class="va">result</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    minsplit minbucket        cp learner_param_vals  x_domain classif.ce</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 2.901521  0.796465 -8.116152          &lt;list[3]&gt; &lt;list[3]&gt;   0.203125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 2.531689 0.7105396 -5.062538          &lt;list[3]&gt; &lt;list[3]&gt;   0.234375</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -322,7 +322,7 @@ field. See <code><a href="https://mlr3misc.mlr-org.com/reference/dictionary_suga
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
     </footer></div>
