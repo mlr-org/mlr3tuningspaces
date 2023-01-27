@@ -21,7 +21,7 @@ options(
     width = 100)
 ```
 
-# mlr3tuningspaces
+# mlr3tuningspaces <img src="man/figures/logo.png" align="right" width = "120" />
 
 Package website: [release](https://mlr3tuningspaces.mlr-org.com/) | [dev](https://mlr3tuningspaces.mlr-org.com/dev/)
 
@@ -51,6 +51,12 @@ Currently, we offer tuning spaces from two publications.
 |              | rpart   | 4                |
 |              | svm     | 5                |
 |              | xgboost | 13               |
+
+
+## Resources
+
+* Getting started with the [book](https://mlr3book.mlr-org.com/optimization.html#sec-tuning-spaces) section on mlr3tuningspaces.
+* [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/) a classification tree with the default tuning space from @bischl_2021.
 
 ## Installation
 

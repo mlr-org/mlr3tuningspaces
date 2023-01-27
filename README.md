@@ -1,5 +1,5 @@
 
-# mlr3tuningspaces
+# mlr3tuningspaces <img src="man/figures/logo.png" align="right" width = "120" />
 
 Package website: [release](https://mlr3tuningspaces.mlr-org.com/) |
 [dev](https://mlr3tuningspaces.mlr-org.com/dev/)
@@ -34,6 +34,15 @@ publications.
 |                      | rpart   | 4                |
 |                      | svm     | 5                |
 |                      | xgboost | 13               |
+
+## Resources
+
+  - Getting started with the
+    [book](https://mlr3book.mlr-org.com/optimization.html#sec-tuning-spaces)
+    section on mlr3tuningspaces.
+  - [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/)
+    a classification tree with the default tuning space from Bischl et
+    al. (2021).
 
 ## Installation
 
@@ -96,7 +105,7 @@ tuning_space = lts("classif.rpart.rbv2")
 tuning_space
 ```
 
-    ## <TuningSpace:classif.rpart.rbv2>: RandomBot Classification Tree
+    ## <TuningSpace:classif.rpart.rbv2>: Classification Rpart with RandomBot
     ##           id lower upper levels logscale
     ## 1:        cp 1e-04     1            TRUE
     ## 2:  maxdepth 1e+00    30           FALSE
