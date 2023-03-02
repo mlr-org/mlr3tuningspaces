@@ -1,4 +1,7 @@
-# mlr3tuningspaces 0.3.3.9000
+# mlr3tuningspaces 0.3.4
+
+* refactor: Adapt to mlr3tuning 0.18.0.
+* docs: Update resources.
 
 # mlr3tuningspaces 0.3.3
 
