@@ -1,4 +1,7 @@
-# mlr3tuningspaces 0.3.3.9000
+# mlr3tuningspaces 0.3.4
+
+* docs: Remove deprecated `method` argument of `mlr3tuning::tune()`.
+* docs: Update resources.
 
 # mlr3tuningspaces 0.3.3
 
