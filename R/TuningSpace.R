@@ -162,7 +162,7 @@ add_tuning_space = function(id, values, tags, learner, package = character(), la
 }
 
 #' @export
-rd_info.TuningSpace = function(obj) { # nolint
+rd_info.TuningSpace = function(obj, ...) { # nolint
   require_namespaces(obj$package)
   ps = lrn(obj$learner)$param_set
   x = c("",
