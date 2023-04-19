@@ -16,12 +16,12 @@
 \alias{mlr_tuning_spaces_regr.xgboost.rbv2}
 \title{RandomBot Tuning Spaces}
 \source{
-Kuehn D, Probst P, Thomas J, Bischl B (2018).
-\dQuote{Automatic Exploration of Machine Learning Experiments on OpenML.}
-1806.10961, \url{https://arxiv.org/abs/1806.10961}.
+Binder M, Pfisterer F, Bischl B (2020).
+\dQuote{Collecting Empirical Data About Hyperparameters for Data Driven AutoML.}
+\url{https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf}.
 }
 \description{
-Tuning spaces from the Kuehn (2018) article.
+Tuning spaces from the Binder (2020) article.
 }
 \section{glmnet tuning space}{
 

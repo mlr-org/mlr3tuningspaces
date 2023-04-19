@@ -35,7 +35,7 @@ Package website: [release](https://mlr3tuningspaces.mlr-org.com/) | [dev](https:
 *mlr3tuningspaces* is a collection of search spaces for hyperparameter optimization in the [mlr3](https://github.com/mlr-org/mlr3/) ecosystem.
 It features ready-to-use search spaces for many popular machine learning algorithms.
 The search spaces are from scientific articles and work for a wide range of data sets.
-Currently, we offer tuning spaces from two publications.
+Currently, we offer tuning spaces from three publications.
 
 | Publication  | Learner | n Hyperparameter |
 | ------------ | ------- | ---------------- |
@@ -51,6 +51,12 @@ Currently, we offer tuning spaces from two publications.
 |              | rpart   | 4                |
 |              | svm     | 5                |
 |              | xgboost | 13               |
+| @binder_2020 | glmnet  | 2                |
+|              | kknn    | 1                |
+|              | ranger  | 6                |
+|              | rpart   | 4                |
+|              | svm     | 4                |
+|              | xgboost | 10               |
 
 
 ## Resources

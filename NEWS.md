@@ -1,5 +1,10 @@
 # mlr3tuningspaces (development version)
 
+* fix: The source of the `rbv2` search spaces was wrong.
+  The source is Binder, Pfisterer, and Bischl (2020).
+  Thanks to @markus-schaffer.
+* feat: Add `rbv1` search spaces from the Kühn (2018) paper.
+
 # mlr3tuningspaces 0.3.5
 
 * fix: Add missing `...` parameter to `rd_info.TuningSpace()`.

@@ -17,23 +17,29 @@ Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran
 optimization in the [mlr3](https://github.com/mlr-org/mlr3/) ecosystem.
 It features ready-to-use search spaces for many popular machine learning
 algorithms. The search spaces are from scientific articles and work for
-a wide range of data sets. Currently, we offer tuning spaces from two
+a wide range of data sets. Currently, we offer tuning spaces from three
 publications.
 
-| Publication          | Learner | n Hyperparameter |
-| -------------------- | ------- | ---------------- |
-| Bischl et al. (2021) | glmnet  | 2                |
-|                      | kknn    | 3                |
-|                      | ranger  | 4                |
-|                      | rpart   | 3                |
-|                      | svm     | 4                |
-|                      | xgboost | 8                |
-| Kuehn et al. (2018)  | glmnet  | 2                |
-|                      | kknn    | 1                |
-|                      | ranger  | 8                |
-|                      | rpart   | 4                |
-|                      | svm     | 5                |
-|                      | xgboost | 13               |
+| Publication                          | Learner | n Hyperparameter |
+| ------------------------------------ | ------- | ---------------- |
+| Bischl et al. (2021)                 | glmnet  | 2                |
+|                                      | kknn    | 3                |
+|                                      | ranger  | 4                |
+|                                      | rpart   | 3                |
+|                                      | svm     | 4                |
+|                                      | xgboost | 8                |
+| Kuehn et al. (2018)                  | glmnet  | 2                |
+|                                      | kknn    | 1                |
+|                                      | ranger  | 8                |
+|                                      | rpart   | 4                |
+|                                      | svm     | 5                |
+|                                      | xgboost | 13               |
+| Binder, Pfisterer, and Bischl (2020) | glmnet  | 2                |
+|                                      | kknn    | 1                |
+|                                      | ranger  | 6                |
+|                                      | rpart   | 4                |
+|                                      | svm     | 4                |
+|                                      | xgboost | 10               |
 
 ## Resources
 
@@ -94,7 +100,7 @@ instance$result
 ```
 
     ##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce
-    ## 1: 4.174471 0.5070691 -4.542023          <list[4]> <list[3]>  0.1953125
+    ## 1: 1.966882  3.038246 -4.376785          <list[4]> <list[3]>  0.2265625
 
 ### Tuning Search Spaces
 
@@ -187,6 +193,14 @@ questions.
 ## References
 
 <div id="refs" class="references hanging-indent">
+
+<div id="ref-binder_2020">
+
+Binder, Martin, Florian Pfisterer, and Bernd Bischl. 2020. “Collecting
+Empirical Data About Hyperparameters for Data Driven Automl.”
+<https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf>.
+
+</div>
 
 <div id="ref-bischl_2021">
 
