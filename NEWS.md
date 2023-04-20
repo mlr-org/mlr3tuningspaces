@@ -1,4 +1,4 @@
-# mlr3tuningspaces (development version)
+# mlr3tuningspaces 0.4.0
 
 * fix: The source of the `rbv2` search spaces was wrong.
   The source is Binder, Pfisterer, and Bischl (2020).
