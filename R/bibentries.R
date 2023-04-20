@@ -20,5 +20,15 @@ bibentries = c(
     archivePrefix = "arXiv",
     primaryClass  = "stat.ML",
     url = "https://arxiv.org/abs/1806.10961"
+  ),
+
+  binder_2020 = bibentry("misc",
+    key       = "binder_2020",
+    title     = "Collecting Empirical Data About Hyperparameters for Data Driven AutoML",
+    author    = "Martin Binder and Florian Pfisterer and Bernd Bischl",
+    year      = "2020",
+    booktitle = "Proceedings of the 7th ICML Workshop on Automated Machine Learning (AutoML 2020)",
+    date      = "2020",
+    url       = "https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf"
   )
 )
