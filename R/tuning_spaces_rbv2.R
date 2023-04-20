@@ -1,4 +1,4 @@
-#' @title RandomBot Tuning Spaces
+#' @title RandomBot V2 Tuning Spaces
 #'
 #' @name mlr_tuning_spaces_rbv2
 #'
@@ -161,7 +161,7 @@ add_tuning_space(
 # svm
 vals = list(
   kernel    = to_tune(c("linear", "polynomial", "radial")),
-  cost      =  to_tune(1e-4, 1e3, logscale = TRUE),
+  cost      = to_tune(1e-4, 1e3, logscale = TRUE),
   gamma     = to_tune(1e-4, 1e3, logscale = TRUE),
   tolerance = to_tune(1e-4, 2, logscale = TRUE),
   degree    = to_tune(2, 5)
@@ -188,7 +188,7 @@ add_tuning_space(
 # xgboost
 vals = list(
   booster           = to_tune(c("gblinear", "gbtree", "dart")),
-  nrounds           = to_tune(p_dbl(2, 8, trafo = function(x) as.integer(round(exp(x))))),
+  nrounds           = to_tune(7, 2981, logscale = TRUE),
   eta               = to_tune(1e-4, 1, logscale = TRUE),
   gamma             = to_tune(1e-5, 7, logscale = TRUE),
   lambda            = to_tune(1e-4, 1e3, logscale = TRUE),
@@ -199,7 +199,7 @@ vals = list(
   colsample_bytree  = to_tune(0.01, 1),
   colsample_bylevel = to_tune(0.01, 1),
   rate_drop         = to_tune(0, 1),
-  skip_drop         = to_tune( 0, 1)
+  skip_drop         = to_tune(0, 1)
 )
 
 add_tuning_space(

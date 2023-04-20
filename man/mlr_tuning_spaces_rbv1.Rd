@@ -22,14 +22,13 @@ Kuehn D, Probst P, Thomas J, Bischl B (2018).
 }
 \description{
 Tuning spaces from the Kuehn (2018) article.
-
-The tuning space of the ranger learner differs from the paper in \code{respect.unordered.factors} and min.node.size`.
+The hyperparameter \code{respect.unordered.factors} and \code{min.node.size} of the ranger tuning space differ from the paper.
 }
 \section{glmnet tuning space}{
 
 \itemize{
 \item alpha \eqn{[0, 1]}{[0, 1]}
-\item s \eqn{[1e-04, 1000]}{[1e-04, 1000]}
+\item s \eqn{[1e-04, 1000]}{[1e-04, 1000]} Logscale
 }
 }
 
@@ -68,8 +67,8 @@ The tuning space of the ranger learner differs from the paper in \code{respect.u
 
 \itemize{
 \item kernel [\dQuote{linear}, \dQuote{polynomial}, \dQuote{radial}]
-\item cost \eqn{[1e-04, 1000]}{[1e-04, 1000]}
-\item gamma \eqn{[1e-04, 1000]}{[1e-04, 1000]}
+\item cost \eqn{[1e-04, 1000]}{[1e-04, 1000]} Logscale
+\item gamma \eqn{[1e-04, 1000]}{[1e-04, 1000]} Logscale
 \item degree \eqn{[2, 5]}{[2, 5]}
 }
 }
@@ -78,15 +77,15 @@ The tuning space of the ranger learner differs from the paper in \code{respect.u
 
 \itemize{
 \item nrounds \eqn{[1, 5000]}{[1, 5000]}
-\item eta \eqn{[1e-04, 1]}{[1e-04, 1]}
+\item eta \eqn{[1e-04, 1]}{[1e-04, 1]} Logscale
 \item subsample \eqn{[0, 1]}{[0, 1]}
 \item booster [\dQuote{gblinear}, \dQuote{gbtree}, \dQuote{dart}]
 \item max_depth \eqn{[1, 15]}{[1, 15]}
-\item min_child_weight \eqn{[1, 100]}{[1, 100]}
+\item min_child_weight \eqn{[1, 100]}{[1, 100]} Logscale
 \item colsample_bytree \eqn{[0, 1]}{[0, 1]}
 \item colsample_bylevel \eqn{[0, 1]}{[0, 1]}
-\item lambda \eqn{[1e-04, 1000]}{[1e-04, 1000]}
-\item alpha \eqn{[1e-04, 1000]}{[1e-04, 1000]}
+\item lambda \eqn{[1e-04, 1000]}{[1e-04, 1000]} Logscale
+\item alpha \eqn{[1e-04, 1000]}{[1e-04, 1000]} Logscale
 }
 }
 

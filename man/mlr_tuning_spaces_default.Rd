@@ -26,7 +26,7 @@ Tuning spaces from the Bischl (2021) article.
 \section{glmnet tuning space}{
 
 \itemize{
-\item s \eqn{[1e-04, 10000]}{[1e-04, 10000]}
+\item s \eqn{[1e-04, 10000]}{[1e-04, 10000]} Logscale
 \item alpha \eqn{[0, 1]}{[0, 1]}
 }
 }
@@ -34,7 +34,7 @@ Tuning spaces from the Bischl (2021) article.
 \section{kknn tuning space}{
 
 \itemize{
-\item k \eqn{[1, 50]}{[1, 50]}
+\item k \eqn{[1, 50]}{[1, 50]} Logscale
 \item distance \eqn{[1, 5]}{[1, 5]}
 \item kernel [\dQuote{rectangular}, \dQuote{optimal}, \dQuote{epanechnikov}, \dQuote{biweight}, \dQuote{triweight}, \dQuote{cos}, \dQuote{inv}, \dQuote{gaussian}, \dQuote{rank}]
 }
@@ -53,32 +53,32 @@ Tuning spaces from the Bischl (2021) article.
 \section{rpart tuning space}{
 
 \itemize{
-\item minsplit \eqn{[2, 128]}{[2, 128]}
-\item minbucket \eqn{[1, 64]}{[1, 64]}
-\item cp \eqn{[1e-04, 0.1]}{[1e-04, 0.1]}
+\item minsplit \eqn{[2, 128]}{[2, 128]} Logscale
+\item minbucket \eqn{[1, 64]}{[1, 64]} Logscale
+\item cp \eqn{[1e-04, 0.1]}{[1e-04, 0.1]} Logscale
 }
 }
 
 \section{svm tuning space}{
 
 \itemize{
-\item cost \eqn{[1e-04, 10000]}{[1e-04, 10000]}
+\item cost \eqn{[1e-04, 10000]}{[1e-04, 10000]} Logscale
 \item kernel [\dQuote{polynomial}, \dQuote{radial}, \dQuote{sigmoid}, \dQuote{linear}]
 \item degree \eqn{[2, 5]}{[2, 5]}
-\item gamma \eqn{[1e-04, 10000]}{[1e-04, 10000]}
+\item gamma \eqn{[1e-04, 10000]}{[1e-04, 10000]} Logscale
 }
 }
 
 \section{xgboost tuning space}{
 
 \itemize{
-\item eta \eqn{[1e-04, 1]}{[1e-04, 1]}
+\item eta \eqn{[1e-04, 1]}{[1e-04, 1]} Logscale
 \item nrounds \eqn{[1, 5000]}{[1, 5000]}
 \item max_depth \eqn{[1, 20]}{[1, 20]}
 \item colsample_bytree \eqn{[0.1, 1]}{[0.1, 1]}
 \item colsample_bylevel \eqn{[0.1, 1]}{[0.1, 1]}
-\item lambda \eqn{[0.001, 1000]}{[0.001, 1000]}
-\item alpha \eqn{[0.001, 1000]}{[0.001, 1000]}
+\item lambda \eqn{[0.001, 1000]}{[0.001, 1000]} Logscale
+\item alpha \eqn{[0.001, 1000]}{[0.001, 1000]} Logscale
 \item subsample \eqn{[0.1, 1]}{[0.1, 1]}
 }
 }

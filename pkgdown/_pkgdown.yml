@@ -37,17 +37,23 @@ navbar:
       href: https://mlr-org.com/
 
 reference:
-  - title: Tuning Spaces
+  - title: Tuning Space
     contents:
       - TuningSpace
       - lts
       - ltss
       - mlr_tuning_spaces
+  - title: Bischl 2021
+    contents:
       - mlr_tuning_spaces_default
-      - mlr_tuning_spaces_rbv1
-      - mlr_tuning_spaces_rbv2
       - starts_with("mlr_tuning_spaces_default")
+  - title: Kuehn 2018
+    contents:
+      - mlr_tuning_spaces_rbv1
       - starts_with("mlr_tuning_spaces_rbv1")
+  - title: Binder 2020
+    contents:
+      - mlr_tuning_spaces_rbv2
       - starts_with("mlr_tuning_spaces_rbv2")
   - title: Package
     contents:
