@@ -28,6 +28,9 @@
     <loc>https://mlr3tuningspaces.mlr-org.com/dev/reference/mlr_tuning_spaces_default.html</loc>
   </url>
   <url>
+    <loc>https://mlr3tuningspaces.mlr-org.com/dev/reference/mlr_tuning_spaces_rbv1.html</loc>
+  </url>
+  <url>
     <loc>https://mlr3tuningspaces.mlr-org.com/dev/reference/mlr_tuning_spaces_rbv2.html</loc>
   </url>
 </urlset>
