@@ -117,7 +117,7 @@ vals = list(
   replace                   = to_tune(p_lgl()),
   sample.fraction           = to_tune(0.1, 1),
   mtry.ratio                = to_tune(0, 1),
-  respect.unordered.factors = to_tune(c("ignore", "order", "partition")),
+  respect.unordered.factors = to_tune(c("ignore", "order")),
   min.node.size             = to_tune(1, 100)
 )
 
