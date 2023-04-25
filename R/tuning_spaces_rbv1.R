@@ -4,7 +4,6 @@
 #'
 #' @description
 #' Tuning spaces from the `r cite_bib("kuehn_2018")` article.
-#' The hyperparameter `respect.unordered.factors` and `min.node.size` of the ranger tuning space differ from the paper.
 #'
 #' @source
 #' `r format_bib("kuehn_2018")`
@@ -32,7 +31,8 @@
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.rbv1"))`
 #'
-#' `mtry.power` is replaced by `mtry.ratio`.
+#' The tuning space of the ranger learner is slightly different from the original paper.
+#' The hyperparameter `mtry.power` is replaced by `mtry.ratio` and `min.node.size` is explored in a range from 1 to 100.
 #'
 #' @section rpart tuning space:
 #' `r rd_info(lts("classif.rpart.rbv1"))`
@@ -99,7 +99,7 @@ vals = list(
   replace                   = to_tune(p_lgl()),
   sample.fraction           = to_tune(0.1, 1),
   mtry.ratio                = to_tune(0, 1),
-  respect.unordered.factors = to_tune(c("ignore", "order", "partition")),
+  respect.unordered.factors = to_tune(c("ignore", "order")),
   min.node.size             = to_tune(1, 100)
 )
 
@@ -117,7 +117,7 @@ vals = list(
   replace                   = to_tune(p_lgl()),
   sample.fraction           = to_tune(0.1, 1),
   mtry.ratio                = to_tune(0, 1),
-  respect.unordered.factors = to_tune(c("ignore", "order", "partition")),
+  respect.unordered.factors = to_tune(c("ignore", "order")),
   min.node.size             = to_tune(1, 100)
 )
 

@@ -22,7 +22,6 @@ Kuehn D, Probst P, Thomas J, Bischl B (2018).
 }
 \description{
 Tuning spaces from the Kuehn (2018) article.
-The hyperparameter \code{respect.unordered.factors} and \code{min.node.size} of the ranger tuning space differ from the paper.
 }
 \section{glmnet tuning space}{
 
@@ -46,11 +45,12 @@ The hyperparameter \code{respect.unordered.factors} and \code{min.node.size} of 
 \item replace [TRUE,FALSE]
 \item sample.fraction \eqn{[0.1, 1]}{[0.1, 1]}
 \item mtry.ratio \eqn{[0, 1]}{[0, 1]}
-\item respect.unordered.factors [\dQuote{ignore}, \dQuote{order}, \dQuote{partition}]
+\item respect.unordered.factors [\dQuote{ignore}, \dQuote{order}]
 \item min.node.size \eqn{[1, 100]}{[1, 100]}
 }
 
-\code{mtry.power} is replaced by \code{mtry.ratio}.
+The tuning space of the ranger learner is slightly different from the original paper.
+The hyperparameter \code{mtry.power} is replaced by \code{mtry.ratio} and \code{min.node.size} is explored in a range from 1 to 100.
 }
 
 \section{rpart tuning space}{

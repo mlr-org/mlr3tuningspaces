@@ -1,5 +1,7 @@
 # mlr3tuningspaces (development version)
 
+* Reduce levels of `respect.unordered.factors` of search space `ranger.rbv1` to `"ignore"` and `"order"`.
+
 # mlr3tuningspaces 0.4.0
 
 * fix: The source of the `rbv2` search spaces was wrong.
