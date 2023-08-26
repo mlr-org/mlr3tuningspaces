@@ -47,10 +47,10 @@ There are several sections about hyperparameter optimization in the
 [mlr3book](https://mlr3book.mlr-org.com).
 
   - Getting started with the
-    [book](https://mlr3book.mlr-org.com/optimization.html#sec-tuning-spaces)
+    [book](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-tuning-spaces)
     section on mlr3tuningspaces.
   - Learn about [search
-    space](https://mlr3book.mlr-org.com/optimization.html#sec-learner-search-space)
+    space](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-learner-search-space).
 
 The [gallery](https://mlr-org.com/gallery-all-optimization.html)
 features a collection of case studies and demos about optimization.
