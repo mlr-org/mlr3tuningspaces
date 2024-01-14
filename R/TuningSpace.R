@@ -189,7 +189,8 @@ as_search_space.TuningSpace = function(x, ...) { # nolint
 as.data.table.TuningSpace = function(x, ...) {
   tab = map_dtr(x$values, function(value) {
     if (test_class(value, "ObjectTuneToken")) {
-      as.data.table(value$content$param)[, c("lower", "upper", "levels")]
+      # old paradox: value$content$param
+      as.data.table(value$content$param %??% value$content)[, c("lower", "upper", "levels")]
     } else {
       as.data.table(value$content)
     }
