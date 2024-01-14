@@ -44,5 +44,5 @@ test_that("as_search_space works with added parameters", {
 test_that("as_search_space works with changed parameters", {
   search_space = lts("classif.xgboost.default", nrounds = to_tune(1, 10000))
 
-  expect_equal(as_search_space(search_space)$params$nrounds$upper, 10000)
+  expect_equal(as_search_space(search_space)$upper[["nrounds"]], 10000)
 })
