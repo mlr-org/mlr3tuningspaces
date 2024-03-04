@@ -1,7 +1,7 @@
 
 # mlr3tuningspaces <img src="man/figures/logo.png" align="right" width = "120" />
 
-Package website: [release](https://mlr3tuningspaces.mlr-org.com/) |
+Package website: [release](https://mlr3tuningspaces.mlr-org.com/) \|
 [dev](https://mlr3tuningspaces.mlr-org.com/dev/)
 
 <!-- badges: start -->
@@ -21,7 +21,7 @@ a wide range of data sets. Currently, we offer tuning spaces from three
 publications.
 
 | Publication                          | Learner | n Hyperparameter |
-| ------------------------------------ | ------- | ---------------- |
+|--------------------------------------|---------|------------------|
 | Bischl et al. (2021)                 | glmnet  | 2                |
 |                                      | kknn    | 3                |
 |                                      | ranger  | 4                |
@@ -46,16 +46,16 @@ publications.
 There are several sections about hyperparameter optimization in the
 [mlr3book](https://mlr3book.mlr-org.com).
 
-  - Getting started with the
+-   Getting started with the
     [book](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-tuning-spaces)
     section on mlr3tuningspaces.
-  - Learn about [search
+-   Learn about [search
     space](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-learner-search-space).
 
 The [gallery](https://mlr-org.com/gallery-all-optimization.html)
 features a collection of case studies and demos about optimization.
 
-  - [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/)
+-   [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/)
     a classification tree with the default tuning space from Bischl et
     al. (2021).
 
@@ -192,17 +192,17 @@ questions.
 
 ## References
 
-<div id="refs" class="references hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-binder_2020">
+<div id="ref-binder_2020" class="csl-entry">
 
 Binder, Martin, Florian Pfisterer, and Bernd Bischl. 2020. “Collecting
-Empirical Data About Hyperparameters for Data Driven Automl.”
+Empirical Data about Hyperparameters for Data Driven AutoML.”
 <https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf>.
 
 </div>
 
-<div id="ref-bischl_2021">
+<div id="ref-bischl_2021" class="csl-entry">
 
 Bischl, Bernd, Martin Binder, Michel Lang, Tobias Pielok, Jakob Richter,
 Stefan Coors, Janek Thomas, et al. 2021. “Hyperparameter Optimization:
@@ -211,10 +211,10 @@ Foundations, Algorithms, Best Practices and Open Challenges.”
 
 </div>
 
-<div id="ref-kuehn_2018">
+<div id="ref-kuehn_2018" class="csl-entry">
 
 Kuehn, Daniel, Philipp Probst, Janek Thomas, and Bernd Bischl. 2018.
-“Automatic Exploration of Machine Learning Experiments on Openml.”
+“Automatic Exploration of Machine Learning Experiments on OpenML.”
 <https://arxiv.org/abs/1806.10961>.
 
 </div>
