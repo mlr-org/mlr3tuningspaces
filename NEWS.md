@@ -1,5 +1,7 @@
 # mlr3tuningspaces (development version)
 
+* compatibility: Work with new mlr3tuning version 1.0.0
+
 # mlr3tuningspaces 0.5.0
 
 * fix: Reduce levels of `respect.unordered.factors` of search space `ranger.rbv1` to `"ignore"` and `"order"`.
