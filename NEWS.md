@@ -1,4 +1,4 @@
-# mlr3tuningspaces (development version)
+# mlr3tuningspaces 0.5.1
 
 * compatibility: Work with new mlr3tuning version 1.0.0
 
