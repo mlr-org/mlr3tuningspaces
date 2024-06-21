@@ -57,7 +57,7 @@ TuningSpace = R6Class("TuningSpace",
     learner = NULL,
 
     #' @field package (`character(1)`)\cr
-    #'   Packages which provide the [Learner], e.g. \CRANpkg{mlr3learners} for the learner
+    #'   Packages which provide the [mlr3::Learner], e.g. \CRANpkg{mlr3learners} for the learner
     #'   [mlr3learners::LearnerClassifRanger] which interfaces the \CRANpkg{ranger} package.
     package = NULL,
 
@@ -87,7 +87,7 @@ TuningSpace = R6Class("TuningSpace",
     #'   [mlr3::Learner] of the tuning space.
     #'
     #' @param package (`character()`)\cr
-    #'   Packages which provide the [Learner], e.g. \CRANpkg{mlr3learners} for the learner
+    #'   Packages which provide the [mlr3::Learner], e.g. \CRANpkg{mlr3learners} for the learner
     #'   [mlr3learners::LearnerClassifRanger] which interfaces the \CRANpkg{ranger} package.
     #'
     #' @param label (`character(1)`)\cr
@@ -108,7 +108,7 @@ TuningSpace = R6Class("TuningSpace",
     },
 
     #' @description
-    #' Returns a learner with [TuneToken] set in parameter set.
+    #' Returns a learner with [paradox::TuneToken] set in parameter set.
     #'
     #' @param ... (named ‘list()’)\cr
     #'   Passed to `mlr3::lrn()`. Named arguments passed to the constructor, to
