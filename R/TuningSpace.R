@@ -138,17 +138,18 @@ TuningSpace = R6Class("TuningSpace",
     #' Printer.
     #'
     #' @param ... (ignored).
-    print = function(...) {
+     print = function(...) {
       tab = imap_dtr(self$values, function(value, name) {
         data.table(
             id = name,
-            lower = value$content$lower,
-            upper = value$content$upper,
-            levels = list(value$content$param$levels),
-            logscale = isTRUE(value$content$logscale)
+            lower = if (inherits(value, "TuneToken")) value$content$lower,
+            upper = if (inherits(value, "TuneToken")) value$content$upper,
+            levels = if (inherits(value, "TuneToken")) list(value$content$param$levels),
+            logscale = if (inherits(value, "TuneToken")) isTRUE(value$content$logscale),
+            constant = if (!inherits(value, "TuneToken")) value
           )
         }, .fill = TRUE)
-      setcolorder(tab, c("id", "lower", "upper", "levels", "logscale"))
+      setcolorder(tab, c("id", "lower", "upper", "levels", "logscale", "constant"))
       catn(format(self), if (is.na(self$label)) "" else paste0(": ", self$label))
       print(tab)
     }
