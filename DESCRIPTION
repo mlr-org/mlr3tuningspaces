@@ -46,6 +46,8 @@ Suggests:
     partykit,
     aorsf,
     CoxBoost
+Additional_repositories:
+  https://mlr-org.r-universe.dev
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
