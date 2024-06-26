@@ -57,7 +57,7 @@ TuningSpace = R6Class("TuningSpace",
     learner = NULL,
 
     #' @field package (`character(1)`)\cr
-    #'   Packages which provide the [Learner], e.g. \CRANpkg{mlr3learners} for the learner
+    #'   Packages which provide the [mlr3::Learner], e.g. \CRANpkg{mlr3learners} for the learner
     #'   [mlr3learners::LearnerClassifRanger] which interfaces the \CRANpkg{ranger} package.
     package = NULL,
 
@@ -87,7 +87,7 @@ TuningSpace = R6Class("TuningSpace",
     #'   [mlr3::Learner] of the tuning space.
     #'
     #' @param package (`character()`)\cr
-    #'   Packages which provide the [Learner], e.g. \CRANpkg{mlr3learners} for the learner
+    #'   Packages which provide the [mlr3::Learner], e.g. \CRANpkg{mlr3learners} for the learner
     #'   [mlr3learners::LearnerClassifRanger] which interfaces the \CRANpkg{ranger} package.
     #'
     #' @param label (`character(1)`)\cr
@@ -108,7 +108,7 @@ TuningSpace = R6Class("TuningSpace",
     },
 
     #' @description
-    #' Returns a learner with [TuneToken] set in parameter set.
+    #' Returns a learner with [paradox::TuneToken] set in parameter set.
     #'
     #' @param ... (named ‘list()’)\cr
     #'   Passed to `mlr3::lrn()`. Named arguments passed to the constructor, to
@@ -168,9 +168,9 @@ rd_info.TuningSpace = function(obj, ...) { # nolint
   ps = lrn(obj$learner)$param_set
   x = c("",
     imap_chr(obj$values, function(space, name) {
-      switch(ps$params[[name]]$class,
-        "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$param$levels)),
-        "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$param$levels)),
+      switch(ps$params[name, , on = "id"]$cls,
+        "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$levels[[1]])),
+        "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$levels[[1]])),
         {lower = c(space$content$param$lower, space$content$lower) # one is NULL
         upper = c(space$content$upper, space$content$param$upper)
         logscale = if (space$content$logscale) "Logscale" else character(1)

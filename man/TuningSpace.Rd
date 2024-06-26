@@ -62,7 +62,7 @@ Arbitrary tags to group and filter tuning space e.g. \code{"classification"} or 
 \link[mlr3:Learner]{mlr3::Learner} of the tuning space.}
 
 \item{\code{package}}{(\code{character(1)})\cr
-Packages which provide the \link{Learner}, e.g. \CRANpkg{mlr3learners} for the learner
+Packages which provide the \link[mlr3:Learner]{mlr3::Learner}, e.g. \CRANpkg{mlr3learners} for the learner
 \link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners::LearnerClassifRanger} which interfaces the \CRANpkg{ranger} package.}
 
 \item{\code{label}}{(\code{character(1)})\cr
@@ -119,7 +119,7 @@ Tags to group and filter tuning spaces e.g. \code{"classification"} or "\code{re
 \link[mlr3:Learner]{mlr3::Learner} of the tuning space.}
 
 \item{\code{package}}{(\code{character()})\cr
-Packages which provide the \link{Learner}, e.g. \CRANpkg{mlr3learners} for the learner
+Packages which provide the \link[mlr3:Learner]{mlr3::Learner}, e.g. \CRANpkg{mlr3learners} for the learner
 \link[mlr3learners:mlr_learners_classif.ranger]{mlr3learners::LearnerClassifRanger} which interfaces the \CRANpkg{ranger} package.}
 
 \item{\code{label}}{(\code{character(1)})\cr
@@ -137,7 +137,7 @@ The referenced help package can be opened via method \verb{$help()}.}
 \if{html}{\out{<a id="method-TuningSpace-get_learner"></a>}}
 \if{latex}{\out{\hypertarget{method-TuningSpace-get_learner}{}}}
 \subsection{Method \code{get_learner()}}{
-Returns a learner with \link{TuneToken} set in parameter set.
+Returns a learner with \link[paradox:to_tune]{paradox::TuneToken} set in parameter set.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{TuningSpace$get_learner(...)}\if{html}{\out{</div>}}
 }
