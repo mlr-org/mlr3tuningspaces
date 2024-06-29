@@ -4,11 +4,12 @@ bibentries = c(
     key           = "bischl_2021",
     title         = "Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges",
     author        = "Bernd Bischl and Martin Binder and Michel Lang and Tobias Pielok and Jakob Richter and Stefan Coors and Janek Thomas and Theresa Ullmann and Marc Becker and Anne-Laure Boulesteix and Difan Deng and Marius Lindauer",
-    year          = "2021",
-    eprint        = "2107.05847",
-    archivePrefix = "arXiv",
-    primaryClass  = "stat.ML",
-    url = "https://arxiv.org/abs/2107.05847"
+    journal       = "Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery",
+    volume        = "13",
+    number        = "2",
+    pages         = "e1484",
+    year          = "2023",
+    publisher     = "Wiley Online Library"
   ),
 
   kuehn_2018 = bibentry("misc",
