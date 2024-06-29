@@ -6,3 +6,5 @@
 #' @import data.table
 #' @importFrom R6 R6Class
 "_PACKAGE"
+
+leanify_package()
