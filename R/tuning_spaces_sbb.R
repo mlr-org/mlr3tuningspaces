@@ -20,6 +20,7 @@
 #' mlr_tuning_spaces_surv.aorsf.sbb
 #' mlr_tuning_spaces_surv.rpart.sbb
 #' mlr_tuning_spaces_surv.mboost.sbb
+#' mlr_tuning_spaces_surv.cv_coxboost.sbb
 #' mlr_tuning_spaces_surv.xgboost.cox.sbb
 #' mlr_tuning_spaces_surv.xgboost.aft.sbb
 #' mlr_tuning_spaces_surv.svm.sbb
@@ -57,8 +58,8 @@
 #' @section mboost tuning space:
 #' `r rd_info(lts("surv.mboost.sbb"))`
 #'
-# @section cv_coxboost tuning space:
-# `r rd_info(lts("surv.cv_coxboost.sbb"))`
+#' @section cv_coxboost tuning space:
+#' `r rd_info(lts("surv.cv_coxboost.sbb"))`
 #'
 #' @section xgboost.cox tuning space:
 #' `r rd_info(lts("surv.xgboost.cox.sbb"))`
@@ -132,7 +133,7 @@ add_tuning_space(
 # - to pass .form to bl() for distrcompositor
 # - Tune distributions within range of what's sensible/discussed with RS
 vals = list(
-  # type = "aft",
+  type = "aft",
   # discrete = TRUE, # required at predict time, not sure if needed here?
   dist = to_tune(c("weibull", "exponential", "lognormal",  "loglogistic"))
 )
@@ -169,8 +170,8 @@ add_tuning_space(
 vals = list(
   # Fixing ntime = 150 (current default) just to be explicit, as ranger's time.interest
   # is set to a non-default value and we ensure both use 150 time points for evaluation
-  # ntree = 1000,
-  # ntime = 150,
+  ntree = 1000,
+  ntime = 150,
   splitrule = to_tune(c("bs.gradient", "logrank")),
   mtry.ratio = to_tune(0, 1),
   nodesize = to_tune(p_int(1, 50)),
@@ -192,8 +193,8 @@ add_tuning_space(
 
 vals = list(
   # Adjusting time.interest (new as of 0.16.0) to 150, same as current RFSRC default
-  # num.trees = 1000,
-  # time.interest = 150,
+  num.trees = 1000,
+  time.interest = 150,
   splitrule = to_tune(c("C", "maxstat", "logrank")),
   mtry.ratio = to_tune(0, 1),
   min.node.size = to_tune(p_int(1, 50)),
@@ -215,7 +216,7 @@ add_tuning_space(
 
 
 vals = list(
-  # ntree = 1000,
+  ntree = 1000,
   mtryratio = to_tune(0, 1),
   minsplit = to_tune(p_int(1, 50)),
   mincriterion = to_tune(0, 1),
@@ -235,16 +236,16 @@ add_tuning_space(
 
 # aorsf ---------------------------------------------------------------------------------------
 
-vals = to_tune(ps(
-  # n_tree = 1000,
-  # control_type = "fast",
-  mtry_ratio = p_dbl(0, 1),
-  leaf_min_events = p_int(5, 50),
+vals = list(
+  n_tree = 1000,
+  control_type = "fast",
+  mtry_ratio = to_tune(0, 1),
+  leaf_min_events = to_tune(p_int(5, 50)),
   .extra_trafo = function(x, param_set) {
     x$split_min_obs = x$leaf_min_events + 5L
     x
   }
-))
+)
 
 add_tuning_space(
   id = "surv.aorsf.sbb",
@@ -292,26 +293,26 @@ add_tuning_space(
 # CoxBoost ------------------------------------------------------------------------------------
 # We don't tune this explicitly but let it tune itself
 
-# vals = list(
-#   penalty = "optimCoxBoostPenalty",
-#   maxstepno = 5000
-# )
-#
-# add_tuning_space(
-#   id = "cv_coxboost.sbb",
-#   values = vals,
-#   tags = c("sbb", "survival"),
-#   learner = "cv_coxboost",
-#   package = "mlr3extralearners",
-#   label = "CV CoxBoost (SBB)"
-# )
+vals = list(
+  penalty = "optimCoxBoostPenalty",
+  maxstepno = 5000
+)
+
+add_tuning_space(
+  id = "cv_coxboost.sbb",
+  values = vals,
+  tags = c("sbb", "survival"),
+  learner = "cv_coxboost",
+  package = "mlr3extralearners",
+  label = "CV CoxBoost (SBB)"
+)
 
 
 # XGB Cox -------------------------------------------------------------------------------------
 
 vals = list(
-  # tree_method = "hist",
-  # booster = "gbtree",
+  tree_method = "hist",
+  booster = "gbtree",
   max_depth = to_tune(p_int(1, 20)),
   subsample = to_tune(0, 1),
   colsample_bytree = to_tune(0, 1),
@@ -332,8 +333,8 @@ add_tuning_space(
 # XGB AFT -------------------------------------------------------------------------------------
 
 vals = list(
-  # tree_method = "hist",
-  # booster = "gbtree",
+  tree_method = "hist",
+  booster = "gbtree",
   max_depth = to_tune(p_int(1, 20)),
   subsample = to_tune(0, 1),
   colsample_bytree = to_tune(0, 1),
@@ -355,20 +356,20 @@ add_tuning_space(
 
 # SSVM ----------------------------------------------------------------------------------------
 
-vals = to_tune(ps(
-  # type = "hybrid",
-  # gamma.mu = 0,
-  # diff.meth = "makediff3",
-  kernel = p_fct(c("lin_kernel", "rbf_kernel", "add_kernel")),
-  gamma = p_dbl(-10, 10, trafo = function(x) 10^x),
-  mu = p_dbl(-10, 10, trafo = function(x) 10^x),
-  kernel.pars = p_dbl(-5, 5, trafo = function(x) 2^x),
+vals = list(
+  type = "hybrid",
+  gamma.mu = 0,
+  diff.meth = "makediff3",
+  kernel = to_tune(p_fct(c("lin_kernel", "rbf_kernel", "add_kernel"))),
+  gamma = to_tune(p_dbl(-10, 10, trafo = function(x) 10^x)),
+  mu = to_tune(p_dbl(-10, 10, trafo = function(x) 10^x)),
+  kernel.pars = to_tune(p_dbl(-5, 5, trafo = function(x) 2^x)),
   .extra_trafo = function(x, param_set) {
     x$gamma.mu = c(x$gamma, x$mu)
     x$gamma = x$mu = NULL
     x
   }
-))
+)
 
 add_tuning_space(
   id = "surv.svm.sbb",

@@ -13,6 +13,7 @@
 \alias{mlr_tuning_spaces_surv.aorsf.sbb}
 \alias{mlr_tuning_spaces_surv.rpart.sbb}
 \alias{mlr_tuning_spaces_surv.mboost.sbb}
+\alias{mlr_tuning_spaces_surv.cv_coxboost.sbb}
 \alias{mlr_tuning_spaces_surv.xgboost.cox.sbb}
 \alias{mlr_tuning_spaces_surv.xgboost.aft.sbb}
 \alias{mlr_tuning_spaces_surv.svm.sbb}
@@ -49,9 +50,7 @@ Tuning spaces from the Burk (2024) article.
 
 \section{parametric tuning space}{
 
-\itemize{
-\item dist [\dQuote{weibull}, \dQuote{exponential}, \dQuote{lognormal}, \dQuote{loglogistic}]
-}
+\verb{r rd_info(lts("surv.parametric.sbb"))}
 }
 
 \section{flexsurv tuning space}{
@@ -63,35 +62,17 @@ Tuning spaces from the Burk (2024) article.
 
 \section{rfsrc tuning space}{
 
-\itemize{
-\item splitrule [\dQuote{bs.gradient}, \dQuote{logrank}]
-\item mtry.ratio \eqn{[0, 1]}{[0, 1]}
-\item nodesize \eqn{[1, 50]}{[1, 50]}
-\item samptype [\dQuote{swr}, \dQuote{swor}]
-\item sampsize.ratio \eqn{[0, 1]}{[0, 1]}
-}
+\verb{r rd_info(lts("surv.rfsrc.sbb"))}
 }
 
 \section{ranger tuning space}{
 
-\itemize{
-\item splitrule [\dQuote{C}, \dQuote{maxstat}, \dQuote{logrank}]
-\item mtry.ratio \eqn{[0, 1]}{[0, 1]}
-\item min.node.size \eqn{[1, 50]}{[1, 50]}
-\item replace [\if{html}{\out{<NULL>}}]
-\item sample.fraction \eqn{[0, 1]}{[0, 1]}
-}
+\verb{r rd_info(lts("surv.ranger.sbb"))}
 }
 
 \section{cforest tuning space}{
 
-\itemize{
-\item mtryratio \eqn{[0, 1]}{[0, 1]}
-\item minsplit \eqn{[1, 50]}{[1, 50]}
-\item mincriterion \eqn{[0, 1]}{[0, 1]}
-\item replace [TRUE,FALSE]
-\item fraction \eqn{[0, 1]}{[0, 1]}
-}
+\verb{r rd_info(lts("surv.cforest.sbb"))}
 }
 
 \section{aorsf tuning space}{
@@ -116,30 +97,19 @@ Tuning spaces from the Burk (2024) article.
 }
 }
 
+\section{cv_coxboost tuning space}{
+
+\verb{r rd_info(lts("surv.cv_coxboost.sbb"))}
+}
+
 \section{xgboost.cox tuning space}{
 
-\itemize{
-\item max_depth \eqn{[1, 20]}{[1, 20]}
-\item subsample \eqn{[0, 1]}{[0, 1]}
-\item colsample_bytree \eqn{[0, 1]}{[0, 1]}
-\item nrounds \eqn{[10, 5000]}{[10, 5000]}
-\item eta \eqn{[0, 1]}{[0, 1]}
-\item grow_policy [\dQuote{depthwise}, \dQuote{lossguide}]
-}
+\verb{r rd_info(lts("surv.xgboost.cox.sbb"))}
 }
 
 \section{xgboost.aft tuning space}{
 
-\itemize{
-\item max_depth \eqn{[1, 20]}{[1, 20]}
-\item subsample \eqn{[0, 1]}{[0, 1]}
-\item colsample_bytree \eqn{[0, 1]}{[0, 1]}
-\item nrounds \eqn{[10, 5000]}{[10, 5000]}
-\item eta \eqn{[0, 1]}{[0, 1]}
-\item grow_policy [\dQuote{depthwise}, \dQuote{lossguide}]
-\item aft_loss_distribution [\dQuote{normal}, \dQuote{logistic}, \dQuote{extreme}]
-\item aft_loss_distribution_scale \eqn{[0.5, 2]}{[0.5, 2]}
-}
+\verb{r rd_info(lts("surv.xgboost.aft.sbb"))}
 }
 
 \section{ssvm tuning space}{
