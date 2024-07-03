@@ -20,7 +20,6 @@
 #' mlr_tuning_spaces_surv.aorsf.sbb
 #' mlr_tuning_spaces_surv.rpart.sbb
 #' mlr_tuning_spaces_surv.mboost.sbb
-#' mlr_tuning_spaces_surv.cv_coxboost.sbb
 #' mlr_tuning_spaces_surv.xgboost.cox.sbb
 #' mlr_tuning_spaces_surv.xgboost.aft.sbb
 #' mlr_tuning_spaces_surv.svm.sbb
@@ -38,45 +37,43 @@
 #' `r rd_info(lts("surv.parametric.sbb"))`
 #'
 #' @section flexsurv tuning space:
-# `r rd_info(lts("surv.flexsurv.sbb"))`
+#' `r rd_info(lts("surv.flexible.sbb"))`
 #'
 #' @section rfsrc tuning space:
-# `r rd_info(lts("surv.rfsrc.sbb"))`
+#' `r rd_info(lts("surv.rfsrc.sbb"))`
 #'
 #' @section ranger tuning space:
-# `r rd_info(lts("surv.ranger.sbb"))`
+#' `r rd_info(lts("surv.ranger.sbb"))`
 #'
 #' @section cforest tuning space:
-# `r rd_info(lts("surv.cforest.sbb"))`
+#' `r rd_info(lts("surv.cforest.sbb"))`
 #'
 #' @section aorsf tuning space:
-# `r rd_info(lts("surv.aorsf.sbb"))`
+#' `r rd_info(lts("surv.aorsf.sbb"))`
 #'
 #' @section rpart tuning space:
-# `r rd_info(lts("surv.rpart.sbb"))`
+#' `r rd_info(lts("surv.rpart.sbb"))`
 #'
 #' @section mboost tuning space:
-# `r rd_info(lts("surv.mboost.sbb"))`
+#' `r rd_info(lts("surv.mboost.sbb"))`
 #'
-#' @section cv_coxboost tuning space:
+# @section cv_coxboost tuning space:
 # `r rd_info(lts("surv.cv_coxboost.sbb"))`
 #'
 #' @section xgboost.cox tuning space:
-# `r rd_info(lts("surv.xgboost.cox.sbb"))`
+#' `r rd_info(lts("surv.xgboost.cox.sbb"))`
 #'
 #' @section xgboost.aft tuning space:
-# `r rd_info(lts("surv.xgboost.aft.sbb"))`
+#' `r rd_info(lts("surv.xgboost.aft.sbb"))`
 #'
 #' @section ssvm tuning space:
-# `r rd_info(lts("surv.svm.sbb"))`
-#'
+#' `r rd_info(lts("surv.svm.sbb"))`
 #'
 #' @include mlr_tuning_spaces.R
 NULL
 
-
-
 # Akritas -------------------------------------------------------------------------------------
+
 
 # survivalmodels::akritas
 # https://raphaels1.github.io/survivalmodels/reference/akritas.html
@@ -112,10 +109,10 @@ add_tuning_space(
 
 # Penalized -----------------------------------------------------------------------------------
 
-vals = to_tune(ps(
-  lambda1 = p_dbl(-10, 10, trafo = function(x) 2^x),
-  lambda2 = p_dbl(-10, 10, trafo = function(x) 2^x)
-))
+vals = list(
+  lambda1 = to_tune(p_dbl(-10, 10, trafo = function(x) 2^x)),
+  lambda2 = to_tune(p_dbl(-10, 10, trafo = function(x) 2^x))
+)
 
 add_tuning_space(
   id = "surv.penalized.sbb",
