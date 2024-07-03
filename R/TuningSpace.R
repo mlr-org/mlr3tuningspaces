@@ -171,10 +171,18 @@ rd_info.TuningSpace = function(obj, ...) { # nolint
       switch(ps$params[name, , on = "id"]$cls,
         "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$levels[[1]])),
         "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$levels[[1]])),
-        {lower = c(space$content$param$lower, space$content$lower) # one is NULL
-        upper = c(space$content$upper, space$content$param$upper)
-        logscale = if (space$content$logscale) "Logscale" else character(1)
-        sprintf("* %s %s %s", name, rd_format_range(lower, upper), logscale)}
+        {
+          lower = c(space$content$param$lower, space$content$lower) # one is NULL
+          upper = c(space$content$upper, space$content$param$upper)
+          trafo = if (isTRUE(space$content$logscale)) {
+             "Logscale"
+            } else if (is.function(space$content$.trafo[[1]])) {
+              sprintf("(%s)", deparse(body(space$content$.trafo[[1]])))
+            } else {
+              character(1)
+            }
+          sprintf("* %s %s %s", name, rd_format_range(lower, upper), trafo)
+        }
       )
     })
   )
