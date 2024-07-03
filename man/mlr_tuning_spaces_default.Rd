@@ -16,12 +16,11 @@
 \alias{mlr_tuning_spaces_regr.xgboost.default}
 \title{Default Tuning Spaces}
 \source{
-Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A, Deng D, Lindauer M (2021).
+Bischl B, Binder M, Lang M, Pielok T, Richter J, Coors S, Thomas J, Ullmann T, Becker M, Boulesteix A, Deng D, Lindauer M (2023).
 \dQuote{Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges.}
-2107.05847, \url{https://arxiv.org/abs/2107.05847}.
 }
 \description{
-Tuning spaces from the Bischl (2021) article.
+Tuning spaces from the Bischl (2023) article.
 }
 \section{glmnet tuning space}{
 
