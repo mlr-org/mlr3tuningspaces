@@ -164,7 +164,7 @@ add_tuning_space(
 # - to pass .form to bl() for distrcompositor
 # - Tune distributions within range of what's sensible/discussed with RS
 vals = list(
-  type = "aft",
+  form = "aft",
   # discrete = TRUE, # required at predict time, not sure if needed here?
   dist = to_tune(c("weibull", "exponential", "lognormal",  "loglogistic"))
 )
