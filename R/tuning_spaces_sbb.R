@@ -71,6 +71,32 @@
 #' `r rd_info(lts("surv.svm.sbb"))`
 #'
 #' @include mlr_tuning_spaces.R
+#'
+#' @examples
+#' if (requireNamespace("mlr3pipelines", quietly = TRUE)) {
+#'   library(mlr3pipelines)
+#'   library(mlr3proba)
+#'
+#'   # Create survival learner ready to be tuned
+#'   lrn_aorsf = lts(lrn("surv.surv.aorsf"))
+#'   lrn_aorsf
+#'
+#'   # Create survival graph learner ready to tuned
+#'
+#'   # get the tuning space of XGB-AFT learner
+#'   tuning_space = lts("surv.xgboost.aft.sbb")
+#'
+#'   # compose graph learner that can also predict survival distribution
+#'   xgb_aft = ppl("distrcompositor", learner = lrn("surv.xgboost.aft"),
+#'                 form = "aft", overwrite = TRUE, graph_learner = TRUE)
+#'
+#'   # set tuning parameters
+#'   xgb_aft$graph$pipeops$surv.xgboost.aft$param_set$set_values(.values = tuning_space$values)
+#'
+#'   # graph learner is ready to be tuned!
+#'   xgb_aft
+#'
+#' }
 NULL
 
 # Akritas -------------------------------------------------------------------------------------
