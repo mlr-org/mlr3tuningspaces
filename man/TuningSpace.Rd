@@ -28,23 +28,29 @@ Returns a tabular view of the tuning space.\cr
 \examples{
 library(mlr3tuning)
 
-# get default tuning space of rpart learner
+# Get default tuning space of rpart learner
 tuning_space = lts("classif.rpart.default")
 
-# get learner and set tuning space
+# Set tuning space
 learner = lrn("classif.rpart")
 learner$param_set$values = tuning_space$values
 
-# tune learner
+# Tune learner
 instance = tune(
- tnr("random_search"),
- task = tsk("pima"),
- learner = learner,
- resampling = rsmp ("holdout"),
- measure = msr("classif.ce"),
- term_evals = 10)
+  tnr("random_search"),
+  task = tsk("pima"),
+  learner = learner,
+  resampling = rsmp ("holdout"),
+  measure = msr("classif.ce"),
+  term_evals = 10)
 
 instance$result
+
+library(mlr3pipelines)
+
+# Set tuning space in a pipeline
+graph_learner = as_learner(po("subsample") \%>>\%
+  lts(lrn("classif.rpart")))
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
