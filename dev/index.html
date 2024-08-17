@@ -83,7 +83,7 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Bischl et al. (2021)</td>
+<td>Bischl et al. (2023)</td>
 <td>glmnet</td>
 <td>2</td>
 </tr>
@@ -185,7 +185,7 @@
 <p>The <a href="https://mlr-org.com/gallery-all-optimization.html" class="external-link">gallery</a> features a collection of case studies and demos about optimization.</p>
 <ul>
 <li>
-<a href="https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/" class="external-link">Tune</a> a classification tree with the default tuning space from Bischl et al. (2021).</li>
+<a href="https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/" class="external-link">Tune</a> a classification tree with the default tuning space from Bischl et al. (2023).</li>
 </ul>
 </div>
 <div class="section level2">
@@ -204,7 +204,7 @@
 <div class="section level3">
 <h3 id="quick-tuning">Quick Tuning<a class="anchor" aria-label="anchor" href="#quick-tuning"></a>
 </h3>
-<p>A learner passed to the <code><a href="reference/lts.html">lts()</a></code> function arguments the learner with the default tuning space from Bischl et al. (2021).</p>
+<p>A learner passed to the <code><a href="reference/lts.html">lts()</a></code> function arguments the learner with the default tuning space from Bischl et al. (2023).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mlr3tuningspaces.mlr-org.com">mlr3tuningspaces</a></span><span class="op">)</span></span>
 <span></span>
@@ -222,8 +222,8 @@
 <span></span>
 <span><span class="co"># best performing hyperparameter configuration</span></span>
 <span><span class="va">instance</span><span class="op">$</span><span class="va">result</span></span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="do">## 1: 1.966882  3.038246 -4.376785          &lt;list[4]&gt; &lt;list[3]&gt;  0.2265625</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="do">##          cp minbucket minsplit learner_param_vals  x_domain classif.ce</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="do">## 1: -2.50293  3.110378  1.83171          &lt;list[4]&gt; &lt;list[3]&gt;  0.2148438</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="tuning-search-spaces">Tuning Search Spaces<a class="anchor" aria-label="anchor" href="#tuning-search-spaces"></a>
@@ -249,18 +249,33 @@
 <code class="sourceCode R"><span><span class="va">tuning_space</span><span class="op">$</span><span class="fu">get_learner</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="do">## &lt;LearnerClassifRpart:classif.rpart&gt;: Classification Tree</span></span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="do">## * Model: -</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="do">## * Parameters: xval=0, cp=&lt;RangeTuneToken&gt;, maxdepth=&lt;RangeTuneToken&gt;,</span></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="do">##   minbucket=&lt;RangeTuneToken&gt;, minsplit=&lt;RangeTuneToken&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="do">## * Parameters: cp=&lt;RangeTuneToken&gt;, maxdepth=&lt;RangeTuneToken&gt;, minbucket=&lt;RangeTuneToken&gt;,</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="do">##   minsplit=&lt;RangeTuneToken&gt;, xval=0</span></span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="do">## * Packages: mlr3, rpart</span></span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="do">## * Predict Types:  [response], prob</span></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="do">## * Feature Types: logical, integer, numeric, factor, ordered</span></span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="do">## * Properties: importance, missings, multiclass, selected_features, twoclass, weights</span></span></code></pre></div>
 </div>
 <div class="section level3">
+<h3 id="pipelines">Pipelines<a class="anchor" aria-label="anchor" href="#pipelines"></a>
+</h3>
+<p>Tuning spaces can be applied to the learners in a pipeline.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mlr3pipelines.mlr-org.com" class="external-link">mlr3pipelines</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># set default tuning space</span></span>
+<span><span class="va">graph_learner</span> <span class="op">=</span> <span class="fu">as_learner</span><span class="op">(</span><span class="fu"><a href="https://mlr3pipelines.mlr-org.com/reference/po.html" class="external-link">po</a></span><span class="op">(</span><span class="st">"subsample"</span><span class="op">)</span> <span class="op"><a href="https://mlr3pipelines.mlr-org.com/reference/grapes-greater-than-greater-than-grapes.html" class="external-link">%&gt;&gt;%</a></span></span>
+<span>  <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="fu">lrn</span><span class="op">(</span><span class="st">"classif.rpart"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># set rbv2 tuning space</span></span>
+<span><span class="va">tuning_space</span> <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="st">"classif.rpart.rbv2"</span><span class="op">)</span></span>
+<span><span class="va">graph_learner</span><span class="op">$</span><span class="va">graph</span><span class="op">$</span><span class="va">pipeops</span><span class="op">$</span><span class="va">classif.rpart</span><span class="op">$</span><span class="va">param_set</span><span class="op">$</span><span class="fu">set_values</span><span class="op">(</span>.values <span class="op">=</span> <span class="va">tuning_space</span><span class="op">$</span><span class="va">values</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
 <h3 id="adding-new-tuning-spaces">Adding New Tuning Spaces<a class="anchor" aria-label="anchor" href="#adding-new-tuning-spaces"></a>
 </h3>
-<p>We are looking forward to new collections of tuning spaces from peer-reviewed articles. You can suggest new tuning spaces in an issue or contribute a new collection yourself in a pull request. Take a look at an already implemented collection e.g. our <a href="https://github.com/mlr-org/mlr3tuningspaces/blob/main/R/tuning_spaces_default.R" class="external-link">default tuning spaces</a> from Bischl et al. (2021). A <code>TuningSpace</code> is added to the <code>mlr_tuning_spaces</code> dictionary with the <code>add_tuning_space()</code> function. Create a tuning space for each variant of the learner e.g. for <code>LearnerClassifRpart</code> and <code>LearnerRegrRpart</code>.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<p>We are looking forward to new collections of tuning spaces from peer-reviewed articles. You can suggest new tuning spaces in an issue or contribute a new collection yourself in a pull request. Take a look at an already implemented collection e.g. our <a href="https://github.com/mlr-org/mlr3tuningspaces/blob/main/R/tuning_spaces_default.R" class="external-link">default tuning spaces</a> from Bischl et al. (2023). A <code>TuningSpace</code> is added to the <code>mlr_tuning_spaces</code> dictionary with the <code>add_tuning_space()</code> function. Create a tuning space for each variant of the learner e.g. for <code>LearnerClassifRpart</code> and <code>LearnerRegrRpart</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">vals</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>  minsplit  <span class="op">=</span> <span class="fu">to_tune</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">64</span>, logscale <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>  cp        <span class="op">=</span> <span class="fu">to_tune</span><span class="op">(</span><span class="fl">1e-04</span>, <span class="fl">1e-1</span>, logscale <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -275,7 +290,7 @@
 <span><span class="op">)</span></span></code></pre></div>
 <p>Choose a name that is related to the publication and adjust the documentation.</p>
 <p>The reference is added to the <code>bibentries.R</code> file</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bischl_2021</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/bibentry.html" class="external-link">bibentry</a></span><span class="op">(</span><span class="st">"misc"</span>,</span>
 <span>  key           <span class="op">=</span> <span class="st">"bischl_2021"</span>,</span>
 <span>  title         <span class="op">=</span> <span class="st">"Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges"</span>,</span>
@@ -297,7 +312,7 @@
 Binder, Martin, Florian Pfisterer, and Bernd Bischl. 2020. “Collecting Empirical Data about Hyperparameters for Data Driven AutoML.” <a href="https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf" class="external-link uri">https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf</a>.
 </div>
 <div id="ref-bischl_2021" class="csl-entry">
-Bischl, Bernd, Martin Binder, Michel Lang, Tobias Pielok, Jakob Richter, Stefan Coors, Janek Thomas, et al. 2021. “Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges.” <a href="https://arxiv.org/abs/2107.05847" class="external-link uri">https://arxiv.org/abs/2107.05847</a>.
+Bischl, Bernd, Martin Binder, Michel Lang, Tobias Pielok, Jakob Richter, Stefan Coors, Janek Thomas, et al. 2023. “Hyperparameter Optimization: Foundations, Algorithms, Best Practices and Open Challenges.” <em>Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery</em>. Wiley Online Library.
 </div>
 <div id="ref-kuehn_2018" class="csl-entry">
 Kuehn, Daniel, Philipp Probst, Janek Thomas, and Bernd Bischl. 2018. “Automatic Exploration of Machine Learning Experiments on OpenML.” <a href="https://arxiv.org/abs/1806.10961" class="external-link uri">https://arxiv.org/abs/1806.10961</a>.
