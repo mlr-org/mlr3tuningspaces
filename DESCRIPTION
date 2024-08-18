@@ -5,7 +5,9 @@ Authors@R: c(
     person("Marc", "Becker", , "marcbecker@posteo.de", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-8115-0400")),
     person("Michel", "Lang", , "michellang@gmail.com", role = "ctb",
-           comment = c(ORCID = "0000-0001-9754-0393"))
+           comment = c(ORCID = "0000-0001-9754-0393")),
+    person("Lukas", "Burk", , "github@quantenbrot.de", role = c("ctb"),
+           comment = c(ORCID = "0000-0001-7528-3795"))
   )
 Description: Collection of search spaces for hyperparameter optimization in the
   'mlr3' ecosystem. It features ready-to-use search spaces for many popular
@@ -35,7 +37,23 @@ Suggests:
     ranger (>= 0.12.1),
     rpart (>= 4.1-15),
     testthat (>= 3.0.0),
-    xgboost (>= 1.4.1.1)
+    xgboost (>= 1.4.1.1),
+    mlr3proba (>= 0.6.0),
+    mlr3extralearners (>= 0.8.0),
+    survivalmodels (>= 0.1.16),
+    mboost,
+    survivalsvm,
+    randomForestSRC,
+    partykit,
+    aorsf,
+    CoxBoost
+Remotes:
+    mlr-org/mlr3proba
+    mlr-org/mlr3extralearners
+    RaphaelS1/survivalmodels
+    binderh/CoxBoost
+Additional_repositories:
+  https://mlr-org.r-universe.dev
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -48,4 +66,5 @@ Collate:
     'tuning_spaces_default.R'
     'tuning_spaces_rbv1.R'
     'tuning_spaces_rbv2.R'
+    'tuning_spaces_sbb.R'
     'zzz.R'

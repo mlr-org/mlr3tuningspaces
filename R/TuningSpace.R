@@ -144,17 +144,18 @@ TuningSpace = R6Class("TuningSpace",
     #' Printer.
     #'
     #' @param ... (ignored).
-    print = function(...) {
+     print = function(...) {
       tab = imap_dtr(self$values, function(value, name) {
         data.table(
             id = name,
-            lower = value$content$lower,
-            upper = value$content$upper,
-            levels = list(value$content$param$levels),
-            logscale = isTRUE(value$content$logscale)
+            lower = if (inherits(value, "TuneToken")) value$content$lower,
+            upper = if (inherits(value, "TuneToken")) value$content$upper,
+            levels = if (inherits(value, "TuneToken")) list(value$content$param$levels),
+            logscale = if (inherits(value, "TuneToken")) isTRUE(value$content$logscale),
+            constant = if (!inherits(value, "TuneToken")) value
           )
         }, .fill = TRUE)
-      setcolorder(tab, c("id", "lower", "upper", "levels", "logscale"))
+      setcolorder(tab, c("id", "lower", "upper", "levels", "logscale", "constant"))
       catn(format(self), if (is.na(self$label)) "" else paste0(": ", self$label))
       print(tab)
     }
@@ -176,10 +177,18 @@ rd_info.TuningSpace = function(obj, ...) { # nolint
       switch(ps$params[name, , on = "id"]$cls,
         "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$levels[[1]])),
         "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$levels[[1]])),
-        {lower = c(space$content$param$lower, space$content$lower) # one is NULL
-        upper = c(space$content$upper, space$content$param$upper)
-        logscale = if (space$content$logscale) "Logscale" else character(1)
-        sprintf("* %s %s %s", name, rd_format_range(lower, upper), logscale)}
+        {
+          lower = c(space$content$param$lower, space$content$lower) # one is NULL
+          upper = c(space$content$upper, space$content$param$upper)
+          trafo = if (isTRUE(space$content$logscale)) {
+             "Logscale"
+            } else if (is.function(space$content$.trafo[[1]])) {
+              sprintf("(%s)", deparse(body(space$content$.trafo[[1]])))
+            } else {
+              character(1)
+            }
+          sprintf("* %s %s %s", name, rd_format_range(lower, upper), trafo)
+        }
       )
     })
   )
