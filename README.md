@@ -22,7 +22,7 @@ publications.
 
 | Publication                          | Learner | n Hyperparameter |
 |--------------------------------------|---------|------------------|
-| Bischl et al. (2021)                 | glmnet  | 2                |
+| Bischl et al. (2023)                 | glmnet  | 2                |
 |                                      | kknn    | 3                |
 |                                      | ranger  | 4                |
 |                                      | rpart   | 3                |
@@ -57,7 +57,7 @@ features a collection of case studies and demos about optimization.
 
 -   [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/)
     a classification tree with the default tuning space from Bischl et
-    al. (2021).
+    al. (2023).
 
 ## Installation
 
@@ -78,7 +78,7 @@ remotes::install_github("mlr-org/mlr3tuningspaces")
 ### Quick Tuning
 
 A learner passed to the `lts()` function arguments the learner with the
-default tuning space from Bischl et al. (2021).
+default tuning space from Bischl et al. (2023).
 
 ``` r
 library(mlr3tuningspaces)
@@ -99,8 +99,8 @@ instance = tune(
 instance$result
 ```
 
-    ##    minsplit minbucket        cp learner_param_vals  x_domain classif.ce
-    ## 1: 1.966882  3.038246 -4.376785          <list[4]> <list[3]>  0.2265625
+    ##          cp minbucket minsplit learner_param_vals  x_domain classif.ce
+    ## 1: -2.50293  3.110378  1.83171          <list[4]> <list[3]>  0.2148438
 
 ### Tuning Search Spaces
 
@@ -135,12 +135,28 @@ tuning_space$get_learner()
 
     ## <LearnerClassifRpart:classif.rpart>: Classification Tree
     ## * Model: -
-    ## * Parameters: xval=0, cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>,
-    ##   minbucket=<RangeTuneToken>, minsplit=<RangeTuneToken>
+    ## * Parameters: cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>, minbucket=<RangeTuneToken>,
+    ##   minsplit=<RangeTuneToken>, xval=0
     ## * Packages: mlr3, rpart
     ## * Predict Types:  [response], prob
     ## * Feature Types: logical, integer, numeric, factor, ordered
     ## * Properties: importance, missings, multiclass, selected_features, twoclass, weights
+
+### Pipelines
+
+Tuning spaces can be applied to the learners in a pipeline.
+
+``` r
+library(mlr3pipelines)
+
+# set default tuning space
+graph_learner = as_learner(po("subsample") %>>%
+  lts(lrn("classif.rpart")))
+
+# set rbv2 tuning space
+tuning_space = lts("classif.rpart.rbv2")
+graph_learner$graph$pipeops$classif.rpart$param_set$set_values(.values = tuning_space$values)
+```
 
 ### Adding New Tuning Spaces
 
@@ -149,7 +165,7 @@ peer-reviewed articles. You can suggest new tuning spaces in an issue or
 contribute a new collection yourself in a pull request. Take a look at
 an already implemented collection e.g. our [default tuning
 spaces](https://github.com/mlr-org/mlr3tuningspaces/blob/main/R/tuning_spaces_default.R)
-from Bischl et al. (2021). A `TuningSpace` is added to the
+from Bischl et al. (2023). A `TuningSpace` is added to the
 `mlr_tuning_spaces` dictionary with the `add_tuning_space()` function.
 Create a tuning space for each variant of the learner e.g. for
 `LearnerClassifRpart` and `LearnerRegrRpart`.
@@ -205,9 +221,10 @@ Empirical Data about Hyperparameters for Data Driven AutoML.”
 <div id="ref-bischl_2021" class="csl-entry">
 
 Bischl, Bernd, Martin Binder, Michel Lang, Tobias Pielok, Jakob Richter,
-Stefan Coors, Janek Thomas, et al. 2021. “Hyperparameter Optimization:
-Foundations, Algorithms, Best Practices and Open Challenges.”
-<https://arxiv.org/abs/2107.05847>.
+Stefan Coors, Janek Thomas, et al. 2023. “Hyperparameter Optimization:
+Foundations, Algorithms, Best Practices and Open Challenges.” *Wiley
+Interdisciplinary Reviews: Data Mining and Knowledge Discovery*. Wiley
+Online Library.
 
 </div>
 

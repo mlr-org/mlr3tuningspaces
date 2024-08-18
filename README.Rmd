@@ -133,6 +133,22 @@ Get the learner with tuning space.
 tuning_space$get_learner()
 ```
 
+### Pipelines
+
+Tuning spaces can be applied to the learners in a pipeline.
+
+```{r}
+library(mlr3pipelines)
+
+# set default tuning space
+graph_learner = as_learner(po("subsample") %>>%
+  lts(lrn("classif.rpart")))
+
+# set rbv2 tuning space
+tuning_space = lts("classif.rpart.rbv2")
+graph_learner$graph$pipeops$classif.rpart$param_set$set_values(.values = tuning_space$values)
+```
+
 ### Adding New Tuning Spaces
 
 We are looking forward to new collections of tuning spaces from peer-reviewed articles.
