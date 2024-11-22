@@ -100,7 +100,7 @@ vals = list(
   sample.fraction           = to_tune(0.1, 1),
   mtry.ratio                = to_tune(0, 1),
   respect.unordered.factors = to_tune(c("ignore", "order")),
-  min.node.size             = to_tune(1, 100)
+  min.node.size             = to_tune(p_int(1, 100))
 )
 
 add_tuning_space(
@@ -118,7 +118,7 @@ vals = list(
   sample.fraction           = to_tune(0.1, 1),
   mtry.ratio                = to_tune(0, 1),
   respect.unordered.factors = to_tune(c("ignore", "order")),
-  min.node.size             = to_tune(1, 100)
+  min.node.size             = to_tune(p_int(1, 100))
 )
 
 add_tuning_space(

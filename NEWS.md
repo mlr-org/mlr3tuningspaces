@@ -1,5 +1,7 @@
 # mlr3tuningspaces (development version)
 
+* compatibility: mlr3learners 0.9.0
+
 # mlr3tuningspaces 0.5.1
 
 * compatibility: Work with new mlr3tuning version 1.0.0

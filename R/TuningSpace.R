@@ -178,7 +178,7 @@ rd_info.TuningSpace = function(obj, ...) { # nolint
         "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$levels[[1]])),
         {lower = c(space$content$param$lower, space$content$lower) # one is NULL
         upper = c(space$content$upper, space$content$param$upper)
-        logscale = if (space$content$logscale) "Logscale" else character(1)
+        logscale = if (is.null(space$content$logscale) || !space$content$logscale) character(1) else "Logscale"
         sprintf("* %s %s %s", name, rd_format_range(lower, upper), logscale)}
       )
     })
