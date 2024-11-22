@@ -66,10 +66,6 @@ There are several sections about hyperparameter optimization in the [mlr3book](h
 * Getting started with the [book](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-tuning-spaces) section on mlr3tuningspaces.
 * Learn about [search space](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-learner-search-space).
 
-The [gallery](https://mlr-org.com/gallery-all-optimization.html) features a collection of case studies and demos about optimization.
-
-* [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/) a classification tree with the default tuning space from @bischl_2021.
-
 ## Installation
 
 Install the last release from CRAN:
