@@ -155,7 +155,9 @@ TuningSpace = R6Class("TuningSpace",
           )
         }, .fill = TRUE)
       setcolorder(tab, c("id", "lower", "upper", "levels", "logscale"))
-      catn(format(self), if (is.na(self$label)) "" else paste0(": ", self$label))
+
+      msg_h =  if (is.null(self$label) || is.na(self$label)) "" else paste0(": ", self$label)
+      cat_cli(cli_h1("{.cls {class(self)[1L]}} ({self$id}){msg_h}"))
       print(tab)
     }
   )
