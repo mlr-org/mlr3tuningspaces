@@ -2,6 +2,7 @@
 
 * BREAKING CHANGE: The `kknn` package was removed from CRAN.
   The `kknn` tuning spaces are removed from the package.
+* feat: Print with `cli` package.
 
 # mlr3tuningspaces 0.5.2
 
