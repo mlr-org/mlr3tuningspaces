@@ -100,7 +100,8 @@ Or a list of objects for the <code>ltss()</code> function.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># load tuning space</span></span></span>
 <span class="r-in"><span><span class="fu">lts</span><span class="op">(</span><span class="st">"classif.rpart.default"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.rpart.default&gt;: Classification Rpart with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="color: #0000BB; font-weight: bold;">&lt;TuningSpace&gt;</span><span style="font-weight: bold;"> (classif.rpart.default): Classification Rpart with Default</span> <span style="color: #00BBBB;">────</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           id lower upper levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt; &lt;num&gt; &lt;num&gt; &lt;list&gt;   &lt;lgcl&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1:  minsplit 2e+00 128.0 [NULL]     TRUE</span>
@@ -109,7 +110,8 @@ Or a list of objects for the <code>ltss()</code> function.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># load tuning space and add parameter</span></span></span>
 <span class="r-in"><span><span class="fu">lts</span><span class="op">(</span><span class="st">"classif.rpart.default"</span>, maxdepth <span class="op">=</span> <span class="fu"><a href="https://paradox.mlr-org.com/reference/to_tune.html" class="external-link">to_tune</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">15</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.rpart.default&gt;: Classification Rpart with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="color: #0000BB; font-weight: bold;">&lt;TuningSpace&gt;</span><span style="font-weight: bold;"> (classif.rpart.default): Classification Rpart with Default</span> <span style="color: #00BBBB;">────</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           id lower upper levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt; &lt;num&gt; &lt;num&gt; &lt;list&gt;   &lt;lgcl&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1:  minsplit 2e+00 128.0 [NULL]     TRUE</span>
@@ -119,7 +121,8 @@ Or a list of objects for the <code>ltss()</code> function.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># load tuning space and remove parameter</span></span></span>
 <span class="r-in"><span><span class="fu">lts</span><span class="op">(</span><span class="st">"classif.rpart.default"</span>, minsplit <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.rpart.default&gt;: Classification Rpart with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="color: #0000BB; font-weight: bold;">&lt;TuningSpace&gt;</span><span style="font-weight: bold;"> (classif.rpart.default): Classification Rpart with Default</span> <span style="color: #00BBBB;">────</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           id lower upper levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt; &lt;num&gt; &lt;num&gt; &lt;list&gt;   &lt;lgcl&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1: minbucket 1e+00  64.0 [NULL]     TRUE</span>
@@ -127,7 +130,8 @@ Or a list of objects for the <code>ltss()</code> function.</p>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># load tuning space and overwrite parameter</span></span></span>
 <span class="r-in"><span><span class="fu">lts</span><span class="op">(</span><span class="st">"classif.rpart.default"</span>, minsplit <span class="op">=</span> <span class="fu"><a href="https://paradox.mlr-org.com/reference/to_tune.html" class="external-link">to_tune</a></span><span class="op">(</span><span class="fl">32</span>, <span class="fl">128</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.rpart.default&gt;: Classification Rpart with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="color: #0000BB; font-weight: bold;">&lt;TuningSpace&gt;</span><span style="font-weight: bold;"> (classif.rpart.default): Classification Rpart with Default</span> <span style="color: #00BBBB;">────</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           id   lower upper levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt;   &lt;num&gt; &lt;num&gt; &lt;list&gt;   &lt;lgcl&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1:  minsplit 32.0000 128.0 [NULL]    FALSE</span>
@@ -161,7 +165,8 @@ Or a list of objects for the <code>ltss()</code> function.</p>
 <span class="r-in"><span><span class="co"># load multiple tuning spaces</span></span></span>
 <span class="r-in"><span><span class="fu">ltss</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"classif.rpart.default"</span>, <span class="st">"classif.ranger.default"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.rpart.default&gt;: Classification Rpart with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="color: #0000BB; font-weight: bold;">&lt;TuningSpace&gt;</span><span style="font-weight: bold;"> (classif.rpart.default): Classification Rpart with Default</span> <span style="color: #00BBBB;">────</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           id lower upper levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       &lt;char&gt; &lt;num&gt; &lt;num&gt; &lt;list&gt;   &lt;lgcl&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1:  minsplit 2e+00 128.0 [NULL]     TRUE</span>
@@ -169,7 +174,8 @@ Or a list of objects for the <code>ltss()</code> function.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 3:        cp 1e-04   0.1 [NULL]     TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;TuningSpace:classif.ranger.default&gt;: Classification Ranger with Default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="color: #0000BB; font-weight: bold;">&lt;TuningSpace&gt;</span><span style="font-weight: bold;"> (classif.ranger.default): Classification Ranger with Default</span> <span style="color: #00BBBB;">──</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 id lower upper levels logscale</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;char&gt; &lt;num&gt; &lt;num&gt; &lt;list&gt;   &lt;lgcl&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1:      mtry.ratio   0.0     1 [NULL]    FALSE</span>
