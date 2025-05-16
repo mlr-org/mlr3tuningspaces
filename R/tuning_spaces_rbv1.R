@@ -10,13 +10,11 @@
 #'
 #' @aliases
 #' mlr_tuning_spaces_classif.glmnet.rbv1
-#' mlr_tuning_spaces_classif.kknn.rbv1
 #' mlr_tuning_spaces_classif.ranger.rbv1
 #' mlr_tuning_spaces_classif.rpart.rbv1
 #' mlr_tuning_spaces_classif.svm.rbv1
 #' mlr_tuning_spaces_classif.xgboost.rbv1
 #' mlr_tuning_spaces_regr.glmnet.rbv1
-#' mlr_tuning_spaces_regr.kknn.rbv1
 #' mlr_tuning_spaces_regr.ranger.rbv1
 #' mlr_tuning_spaces_regr.rpart.rbv1
 #' mlr_tuning_spaces_regr.svm.rbv1
@@ -24,9 +22,6 @@
 #'
 #' @section glmnet tuning space:
 #' `r rd_info(lts("classif.glmnet.rbv1"))`
-#'
-#' @section kknn tuning space:
-#' `r rd_info(lts("classif.kknn.rbv1"))`
 #'
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.rbv1"))`
@@ -68,29 +63,6 @@ add_tuning_space(
   learner = "regr.glmnet",
   package = "mlr3learners",
   label = "Regression GLM with RandomBot"
-)
-
-# kknn
-vals = list(
-  k = to_tune(1, 30)
-)
-
-add_tuning_space(
-  id = "classif.kknn.rbv1",
-  values = vals,
-  tags = c("rbv1", "classification"),
-  learner = "classif.kknn",
-  package = "mlr3learners",
-  label = "Classification KKNN with RandomBot"
-)
-
-add_tuning_space(
-  id = "regr.kknn.rbv1",
-  values = vals,
-  tags = c("rbv1", "regression"),
-  learner = "regr.kknn",
-  package = "mlr3learners",
-  label = "Regression KKNN with RandomBot"
 )
 
 # ranger

@@ -23,19 +23,16 @@ publications.
 | Publication                          | Learner | n Hyperparameter |
 |--------------------------------------|---------|------------------|
 | Bischl et al. (2023)                 | glmnet  | 2                |
-|                                      | kknn    | 3                |
 |                                      | ranger  | 4                |
 |                                      | rpart   | 3                |
 |                                      | svm     | 4                |
 |                                      | xgboost | 8                |
 | Kuehn et al. (2018)                  | glmnet  | 2                |
-|                                      | kknn    | 1                |
 |                                      | ranger  | 8                |
 |                                      | rpart   | 4                |
 |                                      | svm     | 5                |
 |                                      | xgboost | 13               |
 | Binder, Pfisterer, and Bischl (2020) | glmnet  | 2                |
-|                                      | kknn    | 1                |
 |                                      | ranger  | 6                |
 |                                      | rpart   | 4                |
 |                                      | svm     | 4                |
@@ -126,14 +123,17 @@ Get the learner with tuning space.
 tuning_space$get_learner()
 ```
 
-    ## <LearnerClassifRpart:classif.rpart>: Classification Tree
-    ## * Model: -
-    ## * Parameters: cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>, minbucket=<RangeTuneToken>,
-    ##   minsplit=<RangeTuneToken>, xval=0
-    ## * Packages: mlr3, rpart
-    ## * Predict Types:  [response], prob
-    ## * Feature Types: logical, integer, numeric, factor, ordered
-    ## * Properties: importance, missings, multiclass, selected_features, twoclass, weights
+    ## 
+    ## ── <LearnerClassifRpart> (classif.rpart): Classification Tree ──────────────────────────────────────
+    ## • Model: -
+    ## • Parameters: cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>, minbucket=<RangeTuneToken>,
+    ## minsplit=<RangeTuneToken>, xval=0
+    ## • Packages: mlr3 and rpart
+    ## • Predict Types: [response] and prob
+    ## • Feature Types: logical, integer, numeric, factor, and ordered
+    ## • Encapsulation: none (fallback: -)
+    ## • Properties: importance, missings, multiclass, selected_features, twoclass, and weights
+    ## • Other settings: use_weights = 'use'
 
 ### Pipelines
 

@@ -3,13 +3,11 @@
 \name{mlr_tuning_spaces_rbv1}
 \alias{mlr_tuning_spaces_rbv1}
 \alias{mlr_tuning_spaces_classif.glmnet.rbv1}
-\alias{mlr_tuning_spaces_classif.kknn.rbv1}
 \alias{mlr_tuning_spaces_classif.ranger.rbv1}
 \alias{mlr_tuning_spaces_classif.rpart.rbv1}
 \alias{mlr_tuning_spaces_classif.svm.rbv1}
 \alias{mlr_tuning_spaces_classif.xgboost.rbv1}
 \alias{mlr_tuning_spaces_regr.glmnet.rbv1}
-\alias{mlr_tuning_spaces_regr.kknn.rbv1}
 \alias{mlr_tuning_spaces_regr.ranger.rbv1}
 \alias{mlr_tuning_spaces_regr.rpart.rbv1}
 \alias{mlr_tuning_spaces_regr.svm.rbv1}
@@ -28,13 +26,6 @@ Tuning spaces from the Kuehn (2018) article.
 \itemize{
 \item alpha \eqn{[0, 1]}{[0, 1]}
 \item s \eqn{[1e-04, 1000]}{[1e-04, 1000]} Logscale
-}
-}
-
-\section{kknn tuning space}{
-
-\itemize{
-\item k \eqn{[1, 30]}{[1, 30]}
 }
 }
 

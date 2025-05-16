@@ -40,19 +40,16 @@ Currently, we offer tuning spaces from three publications.
 | Publication  | Learner | n Hyperparameter |
 | ------------ | ------- | ---------------- |
 | @bischl_2021 | glmnet  | 2                |
-|              | kknn    | 3                |
 |              | ranger  | 4                |
 |              | rpart   | 3                |
 |              | svm     | 4                |
 |              | xgboost | 8                |
 | @kuehn_2018  | glmnet  | 2                |
-|              | kknn    | 1                |
 |              | ranger  | 8                |
 |              | rpart   | 4                |
 |              | svm     | 5                |
 |              | xgboost | 13               |
 | @binder_2020 | glmnet  | 2                |
-|              | kknn    | 1                |
 |              | ranger  | 6                |
 |              | rpart   | 4                |
 |              | svm     | 4                |
