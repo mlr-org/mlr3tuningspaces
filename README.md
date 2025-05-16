@@ -124,27 +124,16 @@ tuning_space$get_learner()
 ```
 
     ## 
-
-    ## ── LearnerClassifRpart (classif.rpart): Classification Tree ─────────────────────────────────────────────────────────────────────────────────────────────────────────────
-
+    ## ── <LearnerClassifRpart> (classif.rpart): Classification Tree ──────────────────────────────────────
     ## • Model: -
-
-    ## • Parameters: cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>, minbucket=<RangeTuneToken>, minsplit=<RangeTuneToken>, xval=0
-
-    ## • Packages: mlr3, rpart
-
-    ## • Predict Types: [response], prob
-
-    ## • Feature Types: logical, integer, numeric, factor, ordered
-
+    ## • Parameters: cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>, minbucket=<RangeTuneToken>,
+    ## minsplit=<RangeTuneToken>, xval=0
+    ## • Packages: mlr3 and rpart
+    ## • Predict Types: [response] and prob
+    ## • Feature Types: logical, integer, numeric, factor, and ordered
     ## • Encapsulation: none (fallback: -)
-
-    ## • Properties: importance, missings, multiclass, selected_features, twoclass, weights
-
-    ## Warning in sprintf("Other settings: use_weights = '", self$use_weights, : 2 arguments not used by
-    ## format 'Other settings: use_weights = ''
-
-    ## • Other settings: use_weights = '
+    ## • Properties: importance, missings, multiclass, selected_features, twoclass, and weights
+    ## • Other settings: use_weights = 'use'
 
 ### Pipelines
 
