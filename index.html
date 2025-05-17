@@ -6,20 +6,25 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Search Spaces for mlr3 • mlr3tuningspaces</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<script src="lightswitch.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" sizes="any" href="favicon.ico">
+<link rel="manifest" href="site.webmanifest">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="lightswitch.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Roboto-0.4.9/font.css" rel="stylesheet">
-<link href="deps/JetBrains_Mono-0.4.9/font.css" rel="stylesheet">
-<link href="deps/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Roboto-0.4.10/font.css" rel="stylesheet">
+<link href="deps/JetBrains_Mono-0.4.10/font.css" rel="stylesheet">
+<link href="deps/Roboto_Slab-0.4.10/font.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><script src="deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Search Spaces for mlr3">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Search Spaces for mlr3">
 <meta name="description" content="Collection of search spaces for hyperparameter optimization in the mlr3 ecosystem. It features ready-to-use search spaces for many popular machine learning algorithms. The search spaces are from scientific articles and work for a wide range of data sets.">
 <meta property="og:description" content="Collection of search spaces for hyperparameter optimization in the mlr3 ecosystem. It features ready-to-use search spaces for many popular machine learning algorithms. The search spaces are from scientific articles and work for a wide range of data sets.">
 <meta property="og:image" content="https://mlr3tuningspaces.mlr-org.com/logo.png">
@@ -32,7 +37,7 @@
 
     <a class="navbar-brand me-2" href="index.html">mlr3tuningspaces</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.5.2</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.6.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,38 +93,28 @@
 </tr>
 <tr class="even">
 <td></td>
-<td>kknn</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td></td>
 <td>ranger</td>
 <td>4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>rpart</td>
 <td>3</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>svm</td>
 <td>4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>xgboost</td>
 <td>8</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Kuehn et al. (2018)</td>
 <td>glmnet</td>
 <td>2</td>
-</tr>
-<tr class="even">
-<td></td>
-<td>kknn</td>
-<td>1</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -148,25 +143,20 @@
 </tr>
 <tr class="even">
 <td></td>
-<td>kknn</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td></td>
 <td>ranger</td>
 <td>6</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>rpart</td>
 <td>4</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td>svm</td>
 <td>4</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td></td>
 <td>xgboost</td>
 <td>10</td>
@@ -227,7 +217,7 @@
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://r-datatable.com" class="external-link">"data.table"</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># print keys and tuning spaces</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/data.table/man/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdatatable.gitlab.io/data.table/reference/as.data.table.html" class="external-link">as.data.table</a></span><span class="op">(</span><span class="va">mlr_tuning_spaces</span><span class="op">)</span></span></code></pre></div>
 <p>A key passed to the <code><a href="reference/lts.html">lts()</a></code> function returns the <code>TuningSpace</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tuning_space</span> <span class="op">=</span> <span class="fu"><a href="reference/lts.html">lts</a></span><span class="op">(</span><span class="st">"classif.rpart.rbv2"</span><span class="op">)</span></span>
@@ -241,14 +231,17 @@
 <p>Get the learner with tuning space.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tuning_space</span><span class="op">$</span><span class="fu">get_learner</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="do">## &lt;LearnerClassifRpart:classif.rpart&gt;: Classification Tree</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="do">## * Model: -</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="do">## * Parameters: cp=&lt;RangeTuneToken&gt;, maxdepth=&lt;RangeTuneToken&gt;, minbucket=&lt;RangeTuneToken&gt;,</span></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="do">##   minsplit=&lt;RangeTuneToken&gt;, xval=0</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="do">## * Packages: mlr3, rpart</span></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="do">## * Predict Types:  [response], prob</span></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="do">## * Feature Types: logical, integer, numeric, factor, ordered</span></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="do">## * Properties: importance, missings, multiclass, selected_features, twoclass, weights</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="do">## ── &lt;LearnerClassifRpart&gt; (classif.rpart): Classification Tree ──────────────────────────────────────</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="do">## • Model: -</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="do">## • Parameters: cp=&lt;RangeTuneToken&gt;, maxdepth=&lt;RangeTuneToken&gt;, minbucket=&lt;RangeTuneToken&gt;,</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="do">## minsplit=&lt;RangeTuneToken&gt;, xval=0</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="do">## • Packages: mlr3 and rpart</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="do">## • Predict Types: [response] and prob</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="do">## • Feature Types: logical, integer, numeric, factor, and ordered</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="do">## • Encapsulation: none (fallback: -)</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="do">## • Properties: importance, missings, multiclass, selected_features, twoclass, and weights</span></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="do">## • Other settings: use_weights = 'use'</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="pipelines">Pipelines<a class="anchor" aria-label="anchor" href="#pipelines"></a>
@@ -341,7 +334,7 @@ Kuehn, Daniel, Philipp Probst, Janek Thomas, and Bernd Bischl. 2018. “Automati
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Marc Becker <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-8115-0400" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Marc Becker <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0002-8115-0400" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 <li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
@@ -357,7 +350,7 @@ Kuehn, Daniel, Philipp Probst, Janek Thomas, and Bernd Bischl. 2018. “Automati
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.2.</p>
 </div>
 
     </footer>
