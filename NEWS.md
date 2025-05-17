@@ -1,3 +1,5 @@
+# mlr3tuningspaces (development version)
+
 # mlr3tuningspaces 0.6.0
 
 * BREAKING CHANGE: The `kknn` package was removed from CRAN.
