@@ -1,5 +1,15 @@
 # mlr3tuningspaces (development version)
 
+# mlr3tuningspaces 0.6.0
+
+* BREAKING CHANGE: The `kknn` package was removed from CRAN.
+  The `kknn` tuning spaces are removed from the package.
+* feat: Print with `cli` package.
+
+# mlr3tuningspaces 0.5.2
+
+* compatibility: mlr3learners 0.9.0
+
 # mlr3tuningspaces 0.5.1
 
 * compatibility: Work with new mlr3tuning version 1.0.0

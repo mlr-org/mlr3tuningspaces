@@ -36,7 +36,6 @@ gini
 glmnet
 https
 inv
-kknn
 maxdepth
 minbucket
 minsplit
@@ -51,4 +50,4 @@ svm
 triweight
 tuningspaces
 xgboost
-’
+'

@@ -40,19 +40,16 @@ Currently, we offer tuning spaces from three publications.
 | Publication  | Learner | n Hyperparameter |
 | ------------ | ------- | ---------------- |
 | @bischl_2021 | glmnet  | 2                |
-|              | kknn    | 3                |
 |              | ranger  | 4                |
 |              | rpart   | 3                |
 |              | svm     | 4                |
 |              | xgboost | 8                |
 | @kuehn_2018  | glmnet  | 2                |
-|              | kknn    | 1                |
 |              | ranger  | 8                |
 |              | rpart   | 4                |
 |              | svm     | 5                |
 |              | xgboost | 13               |
 | @binder_2020 | glmnet  | 2                |
-|              | kknn    | 1                |
 |              | ranger  | 6                |
 |              | rpart   | 4                |
 |              | svm     | 4                |
@@ -65,10 +62,6 @@ There are several sections about hyperparameter optimization in the [mlr3book](h
 
 * Getting started with the [book](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-tuning-spaces) section on mlr3tuningspaces.
 * Learn about [search space](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-learner-search-space).
-
-The [gallery](https://mlr-org.com/gallery-all-optimization.html) features a collection of case studies and demos about optimization.
-
-* [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/) a classification tree with the default tuning space from @bischl_2021.
 
 ## Installation
 

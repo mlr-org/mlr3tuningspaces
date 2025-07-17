@@ -3,13 +3,11 @@
 \name{mlr_tuning_spaces_default}
 \alias{mlr_tuning_spaces_default}
 \alias{mlr_tuning_spaces_classif.glmnet.default}
-\alias{mlr_tuning_spaces_classif.kknn.default}
 \alias{mlr_tuning_spaces_classif.ranger.default}
 \alias{mlr_tuning_spaces_classif.rpart.default}
 \alias{mlr_tuning_spaces_classif.svm.default}
 \alias{mlr_tuning_spaces_classif.xgboost.default}
 \alias{mlr_tuning_spaces_regr.glmnet.default}
-\alias{mlr_tuning_spaces_regr.kknn.default}
 \alias{mlr_tuning_spaces_regr.ranger.default}
 \alias{mlr_tuning_spaces_regr.rpart.default}
 \alias{mlr_tuning_spaces_regr.svm.default}
@@ -27,15 +25,6 @@ Tuning spaces from the Bischl (2023) article.
 \itemize{
 \item s \eqn{[1e-04, 10000]}{[1e-04, 10000]} Logscale
 \item alpha \eqn{[0, 1]}{[0, 1]}
-}
-}
-
-\section{kknn tuning space}{
-
-\itemize{
-\item k \eqn{[1, 50]}{[1, 50]} Logscale
-\item distance \eqn{[1, 5]}{[1, 5]}
-\item kernel [\dQuote{rectangular}, \dQuote{optimal}, \dQuote{epanechnikov}, \dQuote{biweight}, \dQuote{triweight}, \dQuote{cos}, \dQuote{inv}, \dQuote{gaussian}, \dQuote{rank}]
 }
 }
 

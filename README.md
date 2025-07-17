@@ -23,19 +23,16 @@ publications.
 | Publication                          | Learner | n Hyperparameter |
 |--------------------------------------|---------|------------------|
 | Bischl et al. (2023)                 | glmnet  | 2                |
-|                                      | kknn    | 3                |
 |                                      | ranger  | 4                |
 |                                      | rpart   | 3                |
 |                                      | svm     | 4                |
 |                                      | xgboost | 8                |
 | Kuehn et al. (2018)                  | glmnet  | 2                |
-|                                      | kknn    | 1                |
 |                                      | ranger  | 8                |
 |                                      | rpart   | 4                |
 |                                      | svm     | 5                |
 |                                      | xgboost | 13               |
 | Binder, Pfisterer, and Bischl (2020) | glmnet  | 2                |
-|                                      | kknn    | 1                |
 |                                      | ranger  | 6                |
 |                                      | rpart   | 4                |
 |                                      | svm     | 4                |
@@ -46,18 +43,11 @@ publications.
 There are several sections about hyperparameter optimization in the
 [mlr3book](https://mlr3book.mlr-org.com).
 
--   Getting started with the
-    [book](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-tuning-spaces)
-    section on mlr3tuningspaces.
--   Learn about [search
-    space](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-learner-search-space).
-
-The [gallery](https://mlr-org.com/gallery-all-optimization.html)
-features a collection of case studies and demos about optimization.
-
--   [Tune](https://mlr-org.com/gallery/optimization/2021-07-06-introduction-to-mlr3tuningspaces/)
-    a classification tree with the default tuning space from Bischl et
-    al. (2023).
+- Getting started with the
+  [book](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-tuning-spaces)
+  section on mlr3tuningspaces.
+- Learn about [search
+  space](https://mlr3book.mlr-org.com/chapters/chapter4/hyperparameter_optimization.html#sec-learner-search-space).
 
 ## Installation
 
@@ -122,10 +112,10 @@ tuning_space
 
     ## <TuningSpace:classif.rpart.rbv2>: Classification Rpart with RandomBot
     ##           id lower upper levels logscale
-    ## 1:        cp 1e-04     1            TRUE
-    ## 2:  maxdepth 1e+00    30           FALSE
-    ## 3: minbucket 1e+00   100           FALSE
-    ## 4:  minsplit 1e+00   100           FALSE
+    ## 1:        cp 1e-04     1 [NULL]     TRUE
+    ## 2:  maxdepth 1e+00    30 [NULL]    FALSE
+    ## 3: minbucket 1e+00   100 [NULL]    FALSE
+    ## 4:  minsplit 1e+00   100 [NULL]    FALSE
 
 Get the learner with tuning space.
 
@@ -133,14 +123,17 @@ Get the learner with tuning space.
 tuning_space$get_learner()
 ```
 
-    ## <LearnerClassifRpart:classif.rpart>: Classification Tree
-    ## * Model: -
-    ## * Parameters: cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>, minbucket=<RangeTuneToken>,
-    ##   minsplit=<RangeTuneToken>, xval=0
-    ## * Packages: mlr3, rpart
-    ## * Predict Types:  [response], prob
-    ## * Feature Types: logical, integer, numeric, factor, ordered
-    ## * Properties: importance, missings, multiclass, selected_features, twoclass, weights
+    ## 
+    ## ── <LearnerClassifRpart> (classif.rpart): Classification Tree ──────────────────────────────────────
+    ## • Model: -
+    ## • Parameters: cp=<RangeTuneToken>, maxdepth=<RangeTuneToken>, minbucket=<RangeTuneToken>,
+    ## minsplit=<RangeTuneToken>, xval=0
+    ## • Packages: mlr3 and rpart
+    ## • Predict Types: [response] and prob
+    ## • Feature Types: logical, integer, numeric, factor, and ordered
+    ## • Encapsulation: none (fallback: -)
+    ## • Properties: importance, missings, multiclass, selected_features, twoclass, and weights
+    ## • Other settings: use_weights = 'use'
 
 ### Pipelines
 

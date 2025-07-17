@@ -10,13 +10,11 @@
 #'
 #' @aliases
 #' mlr_tuning_spaces_classif.glmnet.default
-#' mlr_tuning_spaces_classif.kknn.default
 #' mlr_tuning_spaces_classif.ranger.default
 #' mlr_tuning_spaces_classif.rpart.default
 #' mlr_tuning_spaces_classif.svm.default
 #' mlr_tuning_spaces_classif.xgboost.default
 #' mlr_tuning_spaces_regr.glmnet.default
-#' mlr_tuning_spaces_regr.kknn.default
 #' mlr_tuning_spaces_regr.ranger.default
 #' mlr_tuning_spaces_regr.rpart.default
 #' mlr_tuning_spaces_regr.svm.default
@@ -24,9 +22,6 @@
 #'
 #' @section glmnet tuning space:
 #' `r rd_info(lts("classif.glmnet.default"))`
-#'
-#' @section kknn tuning space:
-#' `r rd_info(lts("classif.kknn.default"))`
 #'
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.default"))`
@@ -65,31 +60,6 @@ add_tuning_space(
   learner = "regr.glmnet",
   package = "mlr3learners",
   label = "Regression GLM with Default"
-)
-
-# kknn
-vals = list(
-  k = to_tune(1, 50, logscale = TRUE),
-  distance = to_tune(1, 5),
-  kernel = to_tune(c("rectangular", "optimal", "epanechnikov", "biweight", "triweight", "cos",  "inv",  "gaussian", "rank"))
-)
-
-add_tuning_space(
-  id = "classif.kknn.default",
-  values = vals,
-  tags = c("default", "classification"),
-  learner = "classif.kknn",
-  package = "mlr3learners",
-  label = "Classification KKNN with Default"
-)
-
-add_tuning_space(
-  id = "regr.kknn.default",
-  values = vals,
-  tags = c("default", "regression"),
-  learner = "regr.kknn",
-  package = "mlr3learners",
-  label = "Regression KKNN with Default"
 )
 
 # ranger

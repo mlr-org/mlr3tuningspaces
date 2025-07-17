@@ -155,8 +155,10 @@ TuningSpace = R6Class("TuningSpace",
             constant = if (!inherits(value, "TuneToken")) value
           )
         }, .fill = TRUE)
-      setcolorder(tab, c("id", "lower", "upper", "levels", "logscale", "constant"))
-      catn(format(self), if (is.na(self$label)) "" else paste0(": ", self$label))
+      setcolorder(tab, c("id", "lower", "upper", "levels", "logscale"))
+
+      msg_h =  if (is.null(self$label) || is.na(self$label)) "" else paste0(": ", self$label)
+      cat_cli(cli_h1("{.cls {class(self)[1L]}} ({self$id}){msg_h}"))
       print(tab)
     }
   )
@@ -177,18 +179,10 @@ rd_info.TuningSpace = function(obj, ...) { # nolint
       switch(ps$params[name, , on = "id"]$cls,
         "ParamLgl" = sprintf("* %s \\[%s\\]", name, as_short_string(space$content$levels[[1]])),
         "ParamFct" = sprintf("* %s \\[%s\\]", name, rd_format_string(space$content$levels[[1]])),
-        {
-          lower = c(space$content$param$lower, space$content$lower) # one is NULL
-          upper = c(space$content$upper, space$content$param$upper)
-          trafo = if (isTRUE(space$content$logscale)) {
-             "Logscale"
-            } else if (is.function(space$content$.trafo[[1]])) {
-              sprintf("(%s)", deparse(body(space$content$.trafo[[1]])))
-            } else {
-              character(1)
-            }
-          sprintf("* %s %s %s", name, rd_format_range(lower, upper), trafo)
-        }
+        {lower = c(space$content$param$lower, space$content$lower) # one is NULL
+        upper = c(space$content$upper, space$content$param$upper)
+        logscale = if (is.null(space$content$logscale) || !space$content$logscale) character(1) else "Logscale"
+        sprintf("* %s %s %s", name, rd_format_range(lower, upper), logscale)}
       )
     })
   )

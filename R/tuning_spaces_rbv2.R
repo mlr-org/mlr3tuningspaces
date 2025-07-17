@@ -10,13 +10,11 @@
 #'
 #' @aliases
 #' mlr_tuning_spaces_classif.glmnet.rbv2
-#' mlr_tuning_spaces_classif.kknn.rbv2
 #' mlr_tuning_spaces_classif.ranger.rbv2
 #' mlr_tuning_spaces_classif.rpart.rbv2
 #' mlr_tuning_spaces_classif.svm.rbv2
 #' mlr_tuning_spaces_classif.xgboost.rbv2
 #' mlr_tuning_spaces_regr.glmnet.rbv2
-#' mlr_tuning_spaces_regr.kknn.rbv2
 #' mlr_tuning_spaces_regr.ranger.rbv2
 #' mlr_tuning_spaces_regr.rpart.rbv2
 #' mlr_tuning_spaces_regr.svm.rbv2
@@ -24,9 +22,6 @@
 #'
 #' @section glmnet tuning space:
 #' `r rd_info(lts("classif.glmnet.rbv2"))`
-#'
-#' @section kknn tuning space:
-#' `r rd_info(lts("classif.kknn.rbv2"))`
 #'
 #' @section ranger tuning space:
 #' `r rd_info(lts("classif.ranger.rbv2"))`
@@ -69,29 +64,6 @@ add_tuning_space(
   label = "Regression GLM with RandomBot"
 )
 
-# kknn
-vals = list(
-  k = to_tune(1, 30)
-)
-
-add_tuning_space(
-  id = "classif.kknn.rbv2",
-  values = vals,
-  tags = c("rbv2", "classification"),
-  learner = "classif.kknn",
-  package = "mlr3learners",
-  label = "Classification KKNN with RandomBot"
-)
-
-add_tuning_space(
-  id = "regr.kknn.rbv2",
-  values = vals,
-  tags = c("rbv2", "regression"),
-  learner = "regr.kknn",
-  package = "mlr3learners",
-  label = "Regression KKNN with RandomBot"
-)
-
 # ranger
 vals = list(
   num.trees                 = to_tune(1, 2000),
@@ -99,7 +71,7 @@ vals = list(
   sample.fraction           = to_tune(0.1, 1),
   mtry.ratio                = to_tune(0, 1),
   respect.unordered.factors = to_tune(c("ignore", "order", "partition")),
-  min.node.size             = to_tune(1, 100),
+  min.node.size             = to_tune(p_int(1, 100)),
   splitrule                 = to_tune(c("gini", "extratrees")),
   num.random.splits         = to_tune(1, 100)
 )
@@ -119,7 +91,7 @@ vals = list(
   sample.fraction           = to_tune(0.1, 1),
   mtry.ratio                = to_tune(0, 1),
   respect.unordered.factors = to_tune(c("ignore", "order", "partition")),
-  min.node.size             = to_tune(1, 100),
+  min.node.size             = to_tune(p_int(1, 100)),
   num.random.splits         = to_tune(1, 100)
 )
 
