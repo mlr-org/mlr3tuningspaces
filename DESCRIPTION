@@ -35,7 +35,9 @@ Suggests:
     ranger (>= 0.12.1),
     rpart (>= 4.1-15),
     testthat (>= 3.0.0),
-    xgboost (>= 1.4.1.1)
+    xgboost (>= 1.4.1.1),
+    torch (>= 0.15.0),
+    mlr3torch (>= 0.3.9)
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -48,4 +50,5 @@ Collate:
     'tuning_spaces_default.R'
     'tuning_spaces_rbv1.R'
     'tuning_spaces_rbv2.R'
+    'tuning_spaces_rtdl.R'
     'zzz.R'

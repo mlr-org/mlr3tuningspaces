@@ -1,4 +1,5 @@
 # mlr3tuningspaces (development version)
+* feat: Added tuning spaces for deep neural networks from the Gorishniy, Rubachev, Khrulkov, Babenko (2021) article.
 
 # mlr3tuningspaces 0.6.0
 

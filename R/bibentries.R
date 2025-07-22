@@ -31,5 +31,13 @@ bibentries = c(
     booktitle = "Proceedings of the 7th ICML Workshop on Automated Machine Learning (AutoML 2020)",
     date      = "2020",
     url       = "https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf"
+  ),
+
+  gorishniy2021revisiting = bibentry("article",
+    title = "Revisiting Deep Learning  for Tabular Data",
+    author = "Yury Gorishniy and Ivan Rubachev and Valentin Khrulkov and Artem Babenko",
+    journal = "arXiv",
+    volume = "2106.11959",
+    year = "2021",
   )
 )

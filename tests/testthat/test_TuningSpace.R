@@ -16,7 +16,7 @@ test_that("get_learner function works with changed parameters", {
   expect_equal(search_space$get_learner()$param_set$values$nrounds$content$upper, 10000)
 })
 
-test_that("as.dat.table.TuningSpace works", {
+test_that("as.data.table.TuningSpace works", {
   keys =  mlr_tuning_spaces$keys()
   walk(keys, function(key) {
     tab = as.data.table(lts(key))
