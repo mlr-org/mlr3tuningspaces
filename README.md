@@ -22,24 +22,24 @@ publications.
 
 | Publication                                        | Learner        | n Hyperparameter |
 |----------------------------------------------------|----------------|-------------------|
-| Bischl et al. (2023)                               | glmnet         | 2                 |
-|                                                    | ranger         | 4                 |
-|                                                    | rpart          | 3                 |
-|                                                    | svm            | 4                 |
-|                                                    | xgboost        | 8                 |
-| Kuehn et al. (2018)                                | glmnet         | 2                 |
-|                                                    | ranger         | 8                 |
-|                                                    | rpart          | 4                 |
-|                                                    | svm            | 5                 |
-|                                                    | xgboost        | 13                |
-| Binder, Pfisterer, and Bischl (2020)               | glmnet         | 2                 |
-|                                                    | ranger         | 6                 |
-|                                                    | rpart          | 4                 |
-|                                                    | svm            | 4                 |
-|                                                    | xgboost        | 10                |
-| Gorishniy, Rubachev, Khrulkov, and Babenko (2021)  | mlp            | 7                 |
-|                                                    | tab_resnet     | 9                 |
-|                                                    | ft_transformer | 12                |
+| Bischl et al. (2023)                              | glmnet         | 2                 |
+|                                                   | ranger         | 4                 |
+|                                                   | rpart          | 3                 |
+|                                                   | svm            | 4                 |
+|                                                   | xgboost        | 8                 |
+| Kuehn et al. (2018)                               | glmnet         | 2                 |
+|                                                   | ranger         | 8                 |
+|                                                   | rpart          | 4                 |
+|                                                   | svm            | 5                 |
+|                                                   | xgboost        | 13                |
+| Binder, Pfisterer, and Bischl (2020)              | glmnet         | 2                 |
+|                                                   | ranger         | 6                 |
+|                                                   | rpart          | 4                 |
+|                                                   | svm            | 4                 |
+|                                                   | xgboost        | 10                |
+| Gorishniy, Rubachev, Khrulkov, and Babenko (2021) | mlp            | 7                 |
+|                                                   | tab_resnet     | 9                 |
+|                                                   | ft_transformer | 12                |
 
 ## Resources
 
