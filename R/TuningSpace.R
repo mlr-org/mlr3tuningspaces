@@ -216,6 +216,10 @@ as.data.table.TuningSpace = function(x, ...) {
     if (test_class(value, "ObjectTuneToken")) {
       # old paradox: value$content$param
       as.data.table(value$content$param %??% value$content)[, c("lower", "upper", "levels")]
+    } else if (is.atomic(value)) {
+      data.table(lower = NA, upper = NA, levels = NA, logscale = FALSE)
+    } else if (is.function(value)) {
+      data.table(lower = NA, upper = NA, levels = NA, logscale = FALSE)
     } else {
       as.data.table(value$content)
     }
