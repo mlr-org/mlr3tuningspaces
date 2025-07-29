@@ -108,13 +108,20 @@ no_wd = function(name) {
 }
 
 rtdl_param_groups = function(parameters) {
+  split_param_names = strsplit(names(parameters), ".", fixed = TRUE)
+
   ffn_norm_idx = grepl("ffn_normalization", names(parameters), fixed = TRUE)
-  ffn_norm_num_in_module_list = as.integer(strsplit(names(parameters)[ffn_norm_idx][1], ".", fixed = TRUE)[[1]][2])
-  cls_num_in_module_list = ffn_norm_num_in_module_list - 1
-  nums_in_module_list = sapply(strsplit(names(parameters), ".", fixed = TRUE), function(x) as.integer(x[2]))
+  first_ffn_norm_num_in_module_list = as.integer(split_param_names[ffn_norm_idx][[1]][2])
+  cls_num_in_module_list = first_ffn_norm_num_in_module_list - 1
+  nums_in_module_list = sapply(split_param_names, function(x) as.integer(x[2]))
   tokenizer_idx = nums_in_module_list < cls_num_in_module_list
 
-  no_wd_idx = map_lgl(names(parameters), no_wd) | tokenizer_idx
+  # the last normalization layer is unnamed, so we need to find it based on its position in the module list
+  last_module_num_in_module_list = as.integer(split_param_names[[length(split_param_names)]][2])
+  last_norm_num_in_module_list = last_module_num_in_module_list - 2
+  last_norm_idx = nums_in_module_list == last_norm_num_in_module_list
+
+  no_wd_idx = map_lgl(names(parameters), no_wd) | tokenizer_idx | last_norm_idx
   no_wd_group = parameters[no_wd_idx]
 
   main_group = parameters[!no_wd_idx]
