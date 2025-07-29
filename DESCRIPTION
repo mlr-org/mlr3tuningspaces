@@ -37,7 +37,7 @@ Suggests:
     testthat (>= 3.0.0),
     xgboost (>= 1.4.1.1),
     torch (>= 0.15.0),
-    mlr3torch (>= 0.3.0.9)
+    mlr3torch (>= 0.3)
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
