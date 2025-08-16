@@ -2,6 +2,7 @@
 library(mlr3)
 library(mlr3misc)
 library(mlr3learners)
+library(mlr3torch)
 library(paradox)
 library(R6)
 

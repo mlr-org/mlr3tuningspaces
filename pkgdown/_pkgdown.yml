@@ -56,6 +56,10 @@ reference:
     contents:
       - mlr_tuning_spaces_rbv2
       - starts_with("mlr_tuning_spaces_rbv2")
+  - title: Gorishniy 2021
+    contents:
+      - mlr_tuning_spaces_rtdl
+      - starts_with("mlr_tuning_spaces_rtdl")
   - title: Package
     contents:
       - mlr3tuningspaces-package

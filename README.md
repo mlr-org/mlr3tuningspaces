@@ -17,26 +17,29 @@ Status](https://www.r-pkg.org/badges/version-ago/mlr3tuningspaces)](https://cran
 optimization in the [mlr3](https://github.com/mlr-org/mlr3/) ecosystem.
 It features ready-to-use search spaces for many popular machine learning
 algorithms. The search spaces are from scientific articles and work for
-a wide range of data sets. Currently, we offer tuning spaces from three
+a wide range of data sets. Currently, we offer tuning spaces from four
 publications.
 
-| Publication                          | Learner | n Hyperparameter |
-|--------------------------------------|---------|------------------|
-| Bischl et al. (2023)                 | glmnet  | 2                |
-|                                      | ranger  | 4                |
-|                                      | rpart   | 3                |
-|                                      | svm     | 4                |
-|                                      | xgboost | 8                |
-| Kuehn et al. (2018)                  | glmnet  | 2                |
-|                                      | ranger  | 8                |
-|                                      | rpart   | 4                |
-|                                      | svm     | 5                |
-|                                      | xgboost | 13               |
-| Binder, Pfisterer, and Bischl (2020) | glmnet  | 2                |
-|                                      | ranger  | 6                |
-|                                      | rpart   | 4                |
-|                                      | svm     | 4                |
-|                                      | xgboost | 10               |
+| Publication                                        | Learner        | n Hyperparameter |
+|----------------------------------------------------|----------------|-------------------|
+| Bischl et al. (2023)                              | glmnet         | 2                 |
+|                                                   | ranger         | 4                 |
+|                                                   | rpart          | 3                 |
+|                                                   | svm            | 4                 |
+|                                                   | xgboost        | 8                 |
+| Kuehn et al. (2018)                               | glmnet         | 2                 |
+|                                                   | ranger         | 8                 |
+|                                                   | rpart          | 4                 |
+|                                                   | svm            | 5                 |
+|                                                   | xgboost        | 13                |
+| Binder, Pfisterer, and Bischl (2020)              | glmnet         | 2                 |
+|                                                   | ranger         | 6                 |
+|                                                   | rpart          | 4                 |
+|                                                   | svm            | 4                 |
+|                                                   | xgboost        | 10                |
+| Gorishniy, Rubachev, Khrulkov, and Babenko (2021) | mlp            | 7                 |
+|                                                   | tab_resnet     | 9                 |
+|                                                   | ft_transformer | 12                |
 
 ## Resources
 
