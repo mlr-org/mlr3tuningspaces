@@ -33,6 +33,14 @@ bibentries = c(
     url       = "https://www.automl.org/wp-content/uploads/2020/07/AutoML_2020_paper_63.pdf"
   ),
 
+  gorishniy2021revisiting = bibentry("article",
+    title = "Revisiting Deep Learning  for Tabular Data",
+    author = "Yury Gorishniy and Ivan Rubachev and Valentin Khrulkov and Artem Babenko",
+    journal = "arXiv",
+    volume = "2106.11959",
+    year = "2021",
+  ),
+  
   burk_2024 = bibentry("misc",
     key           = "burk_2024",
     title         = "A Large-Scale Neutral Comparison Study of Survival Models on Low-Dimensional Data",
