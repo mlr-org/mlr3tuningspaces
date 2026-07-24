@@ -38,7 +38,7 @@ learner$param_set$values = tuning_space$values
 # Tune learner
 instance = tune(
   tnr("random_search"),
-  task = tsk("pima"),
+  task = tsk("sonar"),
   learner = learner,
   resampling = rsmp ("holdout"),
   measure = msr("classif.ce"),
