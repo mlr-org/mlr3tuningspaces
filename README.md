@@ -78,10 +78,10 @@ library(mlr3tuningspaces)
 
 learner = lts(lrn("classif.rpart"))
 
-# tune learner on pima data set
+# tune learner on sonar data set
 instance = tune(
   tnr("random_search"),
-  task = tsk("pima"),
+  task = tsk("sonar"),
   learner = learner,
   resampling = rsmp("holdout"),
   measure = msr("classif.ce"),
