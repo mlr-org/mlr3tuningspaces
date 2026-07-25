@@ -38,4 +38,5 @@
 ^paper$
 ^pkgdown$
 ^revdep$
+^references\.bib$
 ^tests/testthat/_object_snapshots$

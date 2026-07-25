@@ -1,4 +1,6 @@
-# mlr3tuningspaces (development version)
+# mlr3tuningspaces 0.7.0
+
+* compatibility: mlr3 1.7.2
 * feat: Added tuning spaces for deep neural networks from the Gorishniy, Rubachev, Khrulkov, Babenko (2021) article.
 
 # mlr3tuningspaces 0.6.0
