@@ -14,12 +14,12 @@ Source:
 [`DESCRIPTION`](https://github.com/mlr-org/mlr3tuningspaces/blob/main/DESCRIPTION)
 
 Becker M (2026). *mlr3tuningspaces: Search Spaces for 'mlr3'*. R package
-version 0.6.0.9000, <https://mlr3tuningspaces.mlr-org.com>.
+version 0.7.0.9000, <https://mlr3tuningspaces.mlr-org.com>.
 
     @Manual{,
       title = {mlr3tuningspaces: Search Spaces for 'mlr3'},
       author = {Marc Becker},
       year = {2026},
-      note = {R package version 0.6.0.9000},
+      note = {R package version 0.7.0.9000},
       url = {https://mlr3tuningspaces.mlr-org.com},
     }
