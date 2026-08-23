@@ -39,5 +39,16 @@ bibentries = c(
     journal = "arXiv",
     volume = "2106.11959",
     year = "2021",
+  ),
+  
+  burk_2024 = bibentry("misc",
+    key           = "burk_2024",
+    title         = "A Large-Scale Neutral Comparison Study of Survival Models on Low-Dimensional Data",
+    author        = "Lukas Burk and John Zobolas and Bernd Bischl and Andreas Bender and Marvin N. Wright and Raphael Sonabend",
+    year          = "2024",
+    eprint        = "2406.04098",
+    archivePrefix = "arXiv",
+    primaryClass  = "stat.ML",
+    url           = "https://arxiv.org/abs/2406.04098"
   )
 )

@@ -5,7 +5,9 @@ Authors@R: c(
     person("Marc", "Becker", , "marcbecker@posteo.de", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-8115-0400")),
     person("Michel", "Lang", , "michellang@gmail.com", role = "ctb",
-           comment = c(ORCID = "0000-0001-9754-0393"))
+           comment = c(ORCID = "0000-0001-9754-0393")),
+    person("Lukas", "Burk", , "github@quantenbrot.de", role = c("ctb"),
+           comment = c(ORCID = "0000-0001-7528-3795"))
   )
 Description: Collection of search spaces for hyperparameter optimization in the
   'mlr3' ecosystem. It features ready-to-use search spaces for many popular
